@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
     
     float spawnAnimationDuration = 1.8f;
     float hurtAnimationDuration = .8f;
+    float attackAnimationDuration = 1.2f;
 
     protected enum EnemyState
     {
@@ -213,7 +214,7 @@ public class Enemy : MonoBehaviour
 
         // Transitions
         //TransitionToIdle();
-        //TransitionToAttack();
+        TransitionToAttack();
 
         // If target is outside reset range - Reset
         if (target != null)
@@ -227,15 +228,26 @@ public class Enemy : MonoBehaviour
 
     public void EnemyResetState()
     {
+        // Animate
         enemyAnimator.Play("Wander");
         enemyAnimator.SetFloat("Horizontal", startingPosition.x);
         enemyAnimator.SetFloat("Vertical", startingPosition.y);
 
     }
 
-    public void EnemyAttackState()
+    protected virtual void EnemyAttackState()
     {
+        // Animate
+        enemyAnimator.SetFloat("Horizontal", target.position.x - enemyRB.position.x);
+        enemyAnimator.SetFloat("Vertical", target.position.y - enemyRB.position.y);
 
+        StartCoroutine(AttackDelay());
+    }
+    IEnumerator AttackDelay()
+    {
+        yield return new WaitForSeconds(attackAnimationDuration);
+
+        enemyState = EnemyState.idle;
     }
 
     protected virtual void EnemyHurtState()
