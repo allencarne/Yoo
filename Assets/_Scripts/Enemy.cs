@@ -7,14 +7,16 @@ public class Enemy : MonoBehaviour
     // Variables
     [SerializeField] protected float enemySpeed;
     [SerializeField] protected float enemyCurrentSpeed;
+
     [SerializeField] protected float wanderRadius;
     [SerializeField] protected float aggroRange;
     [SerializeField] protected float attackRange;
     [SerializeField] protected float resetRange;
-    [SerializeField] protected float idleTime;
-    [SerializeField] protected Vector2 newMoveDirection;
 
-    bool canWander = false;
+    protected float idleTime;
+    protected bool canWander = false;
+    protected Vector2 newMoveDirection;
+    [SerializeField] protected Vector2 startingPosition;
 
     // Components
     protected Transform target;
@@ -42,13 +44,14 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         enemyAnimator = GetComponentInChildren<Animator>();
-        enemyRB= GetComponent<Rigidbody2D>();
+        enemyRB = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Start()
     {
         enemyCurrentSpeed = enemySpeed;
+        startingPosition = transform.position;
     }
 
     protected virtual void Update()
@@ -92,6 +95,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Move Enemy in Wander State
         if (newMoveDirection != Vector2.zero)
         {
             enemyRB.velocity = newMoveDirection * enemyCurrentSpeed;
@@ -208,12 +212,24 @@ public class Enemy : MonoBehaviour
         }
 
         // Transitions
-        TransitionToIdle();
+        //TransitionToIdle();
         //TransitionToAttack();
+
+        // If target is outside reset range - Reset
+        if (target != null)
+        {
+            if (Vector2.Distance(target.position, enemyRB.position) >= resetRange)
+            {
+                enemyState = EnemyState.idle;
+            }
+        }
     }
 
     public void EnemyResetState()
     {
+        enemyAnimator.Play("Wander");
+        enemyAnimator.SetFloat("Horizontal", startingPosition.x);
+        enemyAnimator.SetFloat("Vertical", startingPosition.y);
 
     }
 
