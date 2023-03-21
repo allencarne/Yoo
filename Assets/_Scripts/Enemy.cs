@@ -109,11 +109,13 @@ public class Enemy : MonoBehaviour
 
     IEnumerator WaitForSpawn()
     {
-        // Disable Collider and RigidBody
+        // Disable Collider
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
 
         yield return new WaitForSeconds(spawnAnimationDuration);
 
-        // Enable Collider and RigidBody
+        // Enable Collider
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
 
         enemyState = EnemyState.idle;
     }
