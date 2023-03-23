@@ -4,31 +4,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Variables
-    [SerializeField] protected float enemySpeed;
-    [SerializeField] protected float enemyCurrentSpeed;
+    [Header("Components")]
+    [SerializeField] Animator enemyAnimator;
+    [SerializeField] Rigidbody2D enemyRB;
+    Transform target;
 
-    [SerializeField] protected float wanderRadius;
-    [SerializeField] protected float aggroRange;
-    [SerializeField] protected float attackRange;
-    [SerializeField] protected float resetRange;
+    [Header("Variables")]
+    [SerializeField] float enemyCurrentSpeed;
+    [SerializeField] float aggroRange;
+    [SerializeField] float resetRange;
+    [SerializeField] float wanderRange;
+    [SerializeField] float attackRange;
+    float idleTime;
+    Vector2 startingPosition;
+    Vector2 resetDirection;
+    Vector2 wanderDirection;
 
-    protected float idleTime;
-    protected bool canWander = false;
-    protected Vector2 newMoveDirection;
-    [SerializeField] protected Vector2 startingPosition;
+    bool canWander = false;
 
-    // Components
-    protected Transform target;
-    protected Rigidbody2D enemyRB;
-    protected Animator enemyAnimator;
-
-    
-    float spawnAnimationDuration = 1.8f;
-    float hurtAnimationDuration = .8f;
-    float attackAnimationDuration = 1.2f;
-
-    protected enum EnemyState
+    enum EnemyState
     {
         spawn,
         idle,
@@ -40,26 +34,23 @@ public class Enemy : MonoBehaviour
         death
     }
 
-    protected EnemyState enemyState = EnemyState.spawn;
+    EnemyState state = EnemyState.spawn;
 
-    void Awake()
+    private void Awake()
     {
-        enemyAnimator = GetComponentInChildren<Animator>();
-        enemyRB = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Start()
     {
-        enemyCurrentSpeed = enemySpeed;
         startingPosition = transform.position;
     }
 
-    protected virtual void Update()
+    private void Update()
     {
-        Debug.Log(enemyState);
+        Debug.Log(state);
 
-        switch (enemyState)
+        switch (state)
         {
             case EnemyState.spawn:
                 EnemySpawnState();
@@ -86,46 +77,43 @@ public class Enemy : MonoBehaviour
                 EnemyDeathState();
                 break;
         }
-
-        // Testing
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            enemyState = EnemyState.hurt;
-        }
     }
 
     private void FixedUpdate()
     {
-        // Move Enemy in Wander State
-        if (newMoveDirection != Vector2.zero)
+        // Chase State Movement
+        if (state == EnemyState.chase && target != null)
         {
-            enemyRB.velocity = newMoveDirection * enemyCurrentSpeed;
+            Vector2 direction = target.position - transform.position;
+            direction.Normalize();
+
+            enemyRB.MovePosition(enemyRB.position + direction * enemyCurrentSpeed * Time.deltaTime);
+        }
+
+        // Reset State Movement
+        if (state == EnemyState.reset)
+        {
+            resetDirection = startingPosition - enemyRB.position;
+            resetDirection.Normalize();
+
+            enemyRB.MovePosition(enemyRB.position + resetDirection * enemyCurrentSpeed * Time.deltaTime);
+        }
+
+        // Wander State Movement
+        if (wanderDirection != Vector2.zero)
+        {
+            wanderDirection.Normalize();
+            enemyRB.MovePosition(enemyRB.position + wanderDirection * enemyCurrentSpeed * Time.deltaTime);
         }
     }
 
-    protected virtual void EnemySpawnState()
+    public void EnemySpawnState()
     {
         // Animate
         enemyAnimator.Play("Spawn");
-
-        // Behaviour
-        StartCoroutine(WaitForSpawn());
     }
 
-    IEnumerator WaitForSpawn()
-    {
-        // Disable Collider
-        gameObject.GetComponent<CircleCollider2D>().enabled = false;
-
-        yield return new WaitForSeconds(spawnAnimationDuration);
-
-        // Enable Collider
-        gameObject.GetComponent<CircleCollider2D>().enabled = true;
-
-        enemyState = EnemyState.idle;
-    }
-
-    public virtual void EnemyIdleState()
+    public void EnemyIdleState()
     {
         // Animate
         enemyAnimator.Play("Idle");
@@ -139,7 +127,7 @@ public class Enemy : MonoBehaviour
             switch (change)
             {
                 case 0:
-                    enemyState = EnemyState.wander;
+                    state = EnemyState.wander;
                     canWander = true;
                     idleTime = 0;
                     break;
@@ -149,40 +137,36 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        // Transitions
-        TransitionToChase();
-        TransitionToAttack();
+        // If Target is inside aggro range - Chase
+        if (target != null)
+        {
+            if (Vector2.Distance(target.position, enemyRB.position) <= aggroRange)
+            {
+                state = EnemyState.chase;
+            }
+        }
     }
 
     public void EnemyWanderState()
     {
-        // Animate
         enemyAnimator.Play("Wander");
-        enemyAnimator.SetFloat("Horizontal", newMoveDirection.x);
-        enemyAnimator.SetFloat("Vertical", newMoveDirection.y);
+        enemyAnimator.SetFloat("Horizontal", wanderDirection.x);
+        enemyAnimator.SetFloat("Vertical", wanderDirection.y);
 
-        // Behaviour
         if (canWander)
         {
-            // Prevents from wandering more than once
             canWander = false;
 
-            // Get Random direction inside wander radius
-            newMoveDirection = Random.insideUnitCircle * wanderRadius;
+            wanderDirection = Random.insideUnitCircle * wanderRange;
 
-            // Movement code is in FixedUpdate
             StartCoroutine(WanderDelay());
         }
-
-        // Transition
-        TransitionToChase();
-        TransitionToAttack();
     }
 
     IEnumerator WanderDelay()
     {
         yield return new WaitForSeconds(2);
-        
+
         // Reset Wander Bool
         canWander = true;
 
@@ -190,132 +174,71 @@ public class Enemy : MonoBehaviour
         enemyRB.velocity = new Vector2(0, 0);
 
         // Reset New Move Direction to 0 (Condition is with fixed update)
-        newMoveDirection = Vector2.zero;
+        wanderDirection = Vector2.zero;
 
         // Transition to Idle
-        enemyState = EnemyState.idle;
+        state = EnemyState.idle;
+
     }
 
     public void EnemyChaseState()
     {
-        // Animate
+        // Animation
         enemyAnimator.Play("Chase");
         enemyAnimator.SetFloat("Horizontal", target.position.x - enemyRB.position.x);
         enemyAnimator.SetFloat("Vertical", target.position.y - enemyRB.position.y);
 
-        // Behaviour
-        if (target != null)
-        {
-            Vector2 direction = target.position - transform.position;
-            direction.Normalize();
-
-            enemyRB.MovePosition(enemyRB.position + direction * enemyCurrentSpeed * Time.fixedDeltaTime);
-        }
-
-        // Transitions
-        //TransitionToIdle();
-        TransitionToAttack();
-
-        // If target is outside reset range - Reset
+        // If Target is outside reset range - Reset
         if (target != null)
         {
             if (Vector2.Distance(target.position, enemyRB.position) >= resetRange)
             {
-                enemyState = EnemyState.idle;
+                state = EnemyState.reset;
             }
         }
+    }
+
+    public void EnemyAttackState()
+    {
+
     }
 
     public void EnemyResetState()
     {
-        // Animate
+        // Animation
         enemyAnimator.Play("Wander");
-        enemyAnimator.SetFloat("Horizontal", startingPosition.x);
-        enemyAnimator.SetFloat("Vertical", startingPosition.y);
+        enemyAnimator.SetFloat("Horizontal", resetDirection.x);
+        enemyAnimator.SetFloat("Vertical", resetDirection.y);
 
+        // Transition
+        if (Vector2.Distance(startingPosition, enemyRB.position) <= 1)
+        {
+            state = EnemyState.idle;
+        }
     }
 
-    protected virtual void EnemyAttackState()
+    public void EnemyHurtState()
     {
-        // Animate
-        enemyAnimator.SetFloat("Horizontal", target.position.x - enemyRB.position.x);
-        enemyAnimator.SetFloat("Vertical", target.position.y - enemyRB.position.y);
 
-        StartCoroutine(AttackDelay());
-    }
-    IEnumerator AttackDelay()
-    {
-        yield return new WaitForSeconds(attackAnimationDuration);
-
-        enemyState = EnemyState.idle;
-    }
-
-    protected virtual void EnemyHurtState()
-    {
-        // Animate
-        enemyAnimator.Play("Hurt");
-
-        StartCoroutine(WaitForHurt());
-    }
-
-    IEnumerator WaitForHurt()
-    {
-        yield return new WaitForSeconds(hurtAnimationDuration);
-
-        enemyState = EnemyState.idle;
     }
 
     public void EnemyDeathState()
     {
-        
+
     }
 
-    // Helper Methods
-    public void TransitionToIdle()
+    public void AE_Idle()
     {
-        // If target is outsite aggro range - Idle
-        if (target != null)
-        {
-            if (Vector2.Distance(target.position, enemyRB.position) >= aggroRange)
-            {
-                enemyState = EnemyState.idle;
-            }
-        }
-    }
-
-    public void TransitionToChase()
-    {
-        // If target is in aggro range - Chase
-        if (target != null)
-        {
-            if (Vector2.Distance(target.position, enemyRB.position) <= aggroRange)
-            {
-                enemyState = EnemyState.chase;
-            }
-        }
-    }
-
-    public void TransitionToAttack()
-    {
-        // If target is in attack range - Attack
-        if (target != null)
-        {
-            if (Vector2.Distance(target.position, enemyRB.position) <= attackRange)
-            {
-                enemyState = EnemyState.attack;
-            }
-        }
+        state = EnemyState.idle;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, aggroRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, resetRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(transform.position, resetRange);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, wanderRadius);
     }
 }
