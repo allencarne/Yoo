@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     Vector2 wanderDirection;
 
     bool canWander = false;
+    bool isEnemyHurt = false;
 
     enum EnemyState
     {
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         startingPosition = transform.position;
+        this.GetComponent<CircleCollider2D>().enabled = false;
     }
 
     private void Update()
@@ -76,6 +78,13 @@ public class Enemy : MonoBehaviour
             case EnemyState.death:
                 EnemyDeathState();
                 break;
+        }
+
+        // Testing
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            isEnemyHurt = false;
+            state = EnemyState.hurt;
         }
     }
 
@@ -170,9 +179,6 @@ public class Enemy : MonoBehaviour
         // Reset Wander Bool
         canWander = true;
 
-        // Prevents Enemy from sliding after wander is finished
-        enemyRB.velocity = new Vector2(0, 0);
-
         // Reset New Move Direction to 0 (Condition is with fixed update)
         wanderDirection = Vector2.zero;
 
@@ -219,7 +225,11 @@ public class Enemy : MonoBehaviour
 
     public void EnemyHurtState()
     {
-
+        if (!isEnemyHurt)
+        {
+            isEnemyHurt= true;
+            enemyAnimator.Play("Hurt", -1, 0f);
+        }
     }
 
     public void EnemyDeathState()
@@ -227,9 +237,12 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void AE_Idle()
+    // Helper Methods
+
+    public void AE_Spawn()
     {
         state = EnemyState.idle;
+        this.GetComponent<CircleCollider2D>().enabled = true;
     }
 
     private void OnDrawGizmos()
