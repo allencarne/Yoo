@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mushroom_Hurt_Right
+  m_Name: Snail_Death
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,21 +21,21 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1276301278, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
+      value: {fileID: 1789077755, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
     - time: 0.083333336
-      value: {fileID: -217946099, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
+      value: {fileID: 1871391003, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
     - time: 0.16666667
-      value: {fileID: -1944491526, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
+      value: {fileID: -375927478, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
     - time: 0.25
-      value: {fileID: 388962709, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
+      value: {fileID: 1659551975, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
     - time: 0.33333334
-      value: {fileID: -162155764, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
+      value: {fileID: 1472720860, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
     - time: 0.41666666
-      value: {fileID: -626608278, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
+      value: {fileID: -1915766303, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
     - time: 0.5
-      value: {fileID: -1122714881, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
+      value: {fileID: -1469952554, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
     - time: 0.5833333
-      value: {fileID: -360236586, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
+      value: {fileID: 1908895097, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -58,25 +58,25 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1276301278, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
-    - {fileID: -217946099, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
-    - {fileID: -1944491526, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
-    - {fileID: 388962709, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
-    - {fileID: -162155764, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
-    - {fileID: -626608278, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
-    - {fileID: -1122714881, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
-    - {fileID: -360236586, guid: d94121334ff3174458b65235a1eb8a6d, type: 3}
+    - {fileID: 1789077755, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
+    - {fileID: 1871391003, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
+    - {fileID: -375927478, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
+    - {fileID: 1659551975, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
+    - {fileID: 1472720860, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
+    - {fileID: -1915766303, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
+    - {fileID: -1469952554, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
+    - {fileID: 1908895097, guid: f9a1c0afb9a5b2e45b7a8360bfa8bda2, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6666667
+    m_StopTime: 0.6666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -90,11 +90,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.6666667
-    functionName: AE_Hurt
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] Animator enemyAnimator;
+    [SerializeField] protected Animator enemyAnimator;
     [SerializeField] Rigidbody2D enemyRB;
     Transform target;
 
@@ -170,6 +170,16 @@ public class Enemy : MonoBehaviour
 
             StartCoroutine(WanderDelay());
         }
+
+        // If Target is inside aggro range - Chase
+        if (target != null)
+        {
+            if (Vector2.Distance(target.position, enemyRB.position) <= aggroRange)
+            {
+                wanderDirection = Vector2.zero;
+                state = EnemyState.chase;
+            }
+        }
     }
 
     IEnumerator WanderDelay()
@@ -202,11 +212,20 @@ public class Enemy : MonoBehaviour
                 state = EnemyState.reset;
             }
         }
+
+        // If target is in attack range - Attack
+        if (target != null)
+        {
+            if (Vector2.Distance(target.position, enemyRB.position) <= attackRange)
+            {
+                state = EnemyState.attack;
+            }
+        }
     }
 
-    public void EnemyAttackState()
+    protected virtual void EnemyAttackState()
     {
-
+        
     }
 
     public void EnemyResetState()
@@ -230,6 +249,9 @@ public class Enemy : MonoBehaviour
             isEnemyHurt= true;
             enemyAnimator.Play("Hurt", -1, 0f);
         }
+
+        // If enemy is wandering when entering hurt state - stops the wander movement
+        wanderDirection = Vector2.zero;
     }
 
     public void EnemyDeathState()
@@ -243,6 +265,11 @@ public class Enemy : MonoBehaviour
     {
         state = EnemyState.idle;
         this.GetComponent<CircleCollider2D>().enabled = true;
+    }
+
+    public void AE_Hurt()
+    {
+        state = EnemyState.idle;
     }
 
     private void OnDrawGizmos()
