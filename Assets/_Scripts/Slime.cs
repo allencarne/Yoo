@@ -11,15 +11,18 @@ public class Slime : Enemy
     {
         base.EnemyAttackState();
 
-        // Animation
-        enemyAnimator.Play("Bite");
-
         if (canAttack)
         {
+            // Prevents from running more than once
             canAttack = false;
 
+            // Animation
+            enemyAnimator.Play("Bite");
+
+            // Attack Prefab
             Instantiate(biteTelegraph, transform.position, enemyAimer.rotation);
 
+            // CoolDown
             StartCoroutine(BiteCoolDown());
         }
     }

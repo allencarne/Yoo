@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyAimer : MonoBehaviour
 {
-    public float offset;
     public Transform firePoint;
     Transform target;
     public static bool pauseDirection = false;

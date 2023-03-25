@@ -240,7 +240,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void EnemyAttackState()
     {
-
+        
     }
 
     public void EnemyResetState()
