@@ -213,7 +213,7 @@ MonoBehaviour:
   aggroRange: 3
   resetRange: 5
   wanderRange: 1.5
-  attackRange: 0.5
+  attackRange: 0.6
   slamTelegraph: {fileID: 2564946158382656502, guid: 2d75b150b7cbd6c48a2bf22691ea2a73, type: 3}
   slamCoolDown: 3
 --- !u!58 &4022038824452976922

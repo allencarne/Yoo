@@ -19,6 +19,9 @@ public class Slime : Enemy
             // Animation
             enemyAnimator.Play("Bite");
 
+            // Prevents enemy from being moved while casting
+            enemyRB.isKinematic = true;
+
             // Attack Prefab
             Instantiate(biteTelegraph, transform.position, enemyAimer.rotation);
 

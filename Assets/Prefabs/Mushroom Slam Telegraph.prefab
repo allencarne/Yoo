@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1484371953575509011}
   - component: {fileID: 3443127698975377487}
   - component: {fileID: 945294612457059045}
+  - component: {fileID: -6156043065409201054}
   m_Layer: 0
   m_Name: Mushroom Slam Telegraph
   m_TagString: Untagged
@@ -118,3 +119,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-6156043065409201054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2564946158382656502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9e5dc9df46282408f85b9f2d206d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

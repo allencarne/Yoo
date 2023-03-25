@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [Header("Components")]
     [SerializeField] protected Animator enemyAnimator;
     [SerializeField] protected Transform enemyAimer;
-    [SerializeField] Rigidbody2D enemyRB;
+    [SerializeField] protected Rigidbody2D enemyRB;
     protected Transform target;
 
     [Header("Variables")]
@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
     bool canWander = false;
     bool isEnemyHurt = false;
     bool inCombat = false;
+
+    public static event System.Action OnEnemyHurt;
 
     enum EnemyState
     {
@@ -262,10 +264,13 @@ public class Enemy : MonoBehaviour
 
     public void EnemyHurtState()
     {
+        enemyRB.isKinematic = false;
+
         if (!isEnemyHurt)
         {
-            isEnemyHurt= true;
+            isEnemyHurt = true;
             enemyAnimator.Play("Hurt", -1, 0f);
+            OnEnemyHurt?.Invoke();
         }
 
         // If enemy is wandering when entering hurt state - stops the wander movement
@@ -292,7 +297,9 @@ public class Enemy : MonoBehaviour
 
     public void AE_Attack()
     {
+        enemyRB.isKinematic = false;
         state = EnemyState.idle;
+
     }
 
     private void OnDrawGizmos()

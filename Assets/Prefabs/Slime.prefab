@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66a453a2c55981469dee3e854f6ebdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 90
   firePoint: {fileID: 9060367447608800043}
 --- !u!1 &3249285051763240965
 GameObject:
@@ -218,7 +217,22 @@ MonoBehaviour:
   aggroRange: 3
   resetRange: 5
   wanderRange: 1.5
-  attackRange: 0.5
+  attackRange: 0.6
+  OnEnemyHurt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: bf9e5dc9df46282408f85b9f2d206d2c, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   biteTelegraph: {fileID: 3858061026189259149, guid: 97d7e12ba33348b4fa5974b793c6df10, type: 3}
   biteCoolDown: 3
 --- !u!212 &3249285051763241021
