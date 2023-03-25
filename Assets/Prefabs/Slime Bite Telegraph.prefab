@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6826524444272098102}
   - component: {fileID: 6647226257524604790}
   - component: {fileID: 4838628418195087306}
+  - component: {fileID: 6338121645676469658}
   m_Layer: 0
   m_Name: Slime Bite Telegraph
   m_TagString: Untagged
@@ -131,4 +132,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9e5dc9df46282408f85b9f2d206d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+--- !u!114 &6338121645676469658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858061026189259149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690443f36d1bf17428e05dc8d50dab1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitBox: {fileID: 8880034268029018274, guid: e38c6216d11c09742b781f785b5d1229, type: 3}
