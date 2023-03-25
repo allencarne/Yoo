@@ -6,8 +6,9 @@ public class Enemy : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] protected Animator enemyAnimator;
+    [SerializeField] protected Transform enemyAimer;
     [SerializeField] Rigidbody2D enemyRB;
-    Transform target;
+    protected Transform target;
 
     [Header("Variables")]
     [SerializeField] float enemyCurrentSpeed;
@@ -20,8 +21,10 @@ public class Enemy : MonoBehaviour
     Vector2 resetDirection;
     Vector2 wanderDirection;
 
+    protected bool canAttack = true;
     bool canWander = false;
     bool isEnemyHurt = false;
+    bool inCombat = false;
 
     enum EnemyState
     {
@@ -154,6 +157,15 @@ public class Enemy : MonoBehaviour
                 state = EnemyState.chase;
             }
         }
+
+        // If Target is inside reset range and in combat - Chase
+        if (target != null)
+        {
+            if (Vector2.Distance(target.position, enemyRB.position) <= resetRange && inCombat)
+            {
+                state = EnemyState.chase;
+            }
+        }
     }
 
     public void EnemyWanderState()
@@ -204,6 +216,9 @@ public class Enemy : MonoBehaviour
         enemyAnimator.SetFloat("Horizontal", target.position.x - enemyRB.position.x);
         enemyAnimator.SetFloat("Vertical", target.position.y - enemyRB.position.y);
 
+        // Behaviour
+        inCombat = true;
+
         // If Target is outside reset range - Reset
         if (target != null)
         {
@@ -234,6 +249,9 @@ public class Enemy : MonoBehaviour
         enemyAnimator.Play("Wander");
         enemyAnimator.SetFloat("Horizontal", resetDirection.x);
         enemyAnimator.SetFloat("Vertical", resetDirection.y);
+
+        // Reset combat bool
+        inCombat = false;
 
         // Transition
         if (Vector2.Distance(startingPosition, enemyRB.position) <= 1)
@@ -268,6 +286,11 @@ public class Enemy : MonoBehaviour
     }
 
     public void AE_Hurt()
+    {
+        state = EnemyState.idle;
+    }
+
+    public void AE_Attack()
     {
         state = EnemyState.idle;
     }

@@ -127,7 +127,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
+      pivot: {x: 0.5, y: 0.8125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -148,7 +148,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
+      pivot: {x: 0.5, y: 0.8125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -169,7 +169,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
+      pivot: {x: 0.5, y: 0.8125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,7 +190,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
+      pivot: {x: 0.5, y: 0.8125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -211,7 +211,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
+      pivot: {x: 0.5, y: 0.8125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -232,7 +232,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
+      pivot: {x: 0.5, y: 0.8125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -253,7 +253,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
+      pivot: {x: 0.5, y: 0.8125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -274,7 +274,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
+      pivot: {x: 0.5, y: 0.8125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -295,7 +295,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
+      pivot: {x: 0.5, y: 0.8125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -316,7 +316,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
+      pivot: {x: 0.5, y: 0.8125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -324,48 +324,6 @@ TextureImporter:
       bones: []
       spriteID: 5dc07708018ae104db85613f369b5935
       internalID: 1748205267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slime_Bite_Telegraph_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6338d9ecabfea674e905d8df40e853d6
-      internalID: 1617603750
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slime_Bite_Telegraph_11
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.15625, y: 0.484375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b2f0180befd0cb45b3abb48e35dce74
-      internalID: 123886336
       vertices: []
       indices: 
       edges: []
@@ -385,9 +343,7 @@ TextureImporter:
       Slime_Bite_Telegraph_5: -317115298
       Slime_Bite_Telegraph_9: 1748205267
       Slime_Bite_Telegraph_1: -926315762
-      Slime_Bite_Telegraph_10: 1617603750
       Slime_Bite_Telegraph_7: 1027085433
-      Slime_Bite_Telegraph_11: 123886336
       Slime_Bite_Telegraph_3: -256827780
       Slime_Bite_Telegraph_4: 2095334880
       Slime_Bite_Telegraph_8: -1678455107

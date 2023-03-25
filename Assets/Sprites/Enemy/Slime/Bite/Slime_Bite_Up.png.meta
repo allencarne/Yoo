@@ -412,27 +412,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Slime_Bite_Up_14
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54014a745d4d6bd4dacc42aa65dff52b
-      internalID: -660283261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -449,7 +428,6 @@ TextureImporter:
       Slime_Bite_Up_5: 744788162
       Slime_Bite_Up_6: 1430777274
       Slime_Bite_Up_9: 1917713364
-      Slime_Bite_Up_14: -660283261
       Slime_Bite_Up_13: -1524328537
       Slime_Bite_Up_2: -1141854169
       Slime_Bite_Up_4: 1489768397

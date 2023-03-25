@@ -412,27 +412,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Slime_Bite_Down_14
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da4dc5b1d676fc94caf71c575830d9e9
-      internalID: -1772580707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -445,7 +424,6 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Slime_Bite_Down_9: 1902466624
-      Slime_Bite_Down_14: -1772580707
       Slime_Bite_Down_7: -2023598418
       Slime_Bite_Down_13: -402545169
       Slime_Bite_Down_10: -2023596504

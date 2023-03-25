@@ -412,27 +412,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Slime_Bite_Right_14
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f2619d5c0cc02d40a3fc60ddf43e78f
-      internalID: -470457185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -445,7 +424,6 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Slime_Bite_Right_0: -720105718
-      Slime_Bite_Right_14: -470457185
       Slime_Bite_Right_5: 2123043928
       Slime_Bite_Right_1: -1626477903
       Slime_Bite_Right_10: 194043875
