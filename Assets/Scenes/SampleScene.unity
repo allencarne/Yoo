@@ -569,13 +569,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAnimator: {fileID: 0}
+  enemyAimer: {fileID: 0}
   enemyRB: {fileID: 0}
   enemyCurrentSpeed: 0
   aggroRange: 0
   resetRange: 0
   wanderRange: 0
   attackRange: 0
-  inCombat: 0
 --- !u!1 &267583635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,7 +1236,7 @@ SpriteRenderer:
   m_Size: {x: 0.36, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &686874421
@@ -1544,12 +1544,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -100
-  m_Sprite: {fileID: 21300000, guid: 1e7c6becbc4b0bf4ba38af8a9e0d7616, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2d98cc8d0641c24d8597a3e5f5f15a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.20392157}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.36, y: 0.32}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2ffd31ebabdce419fe6325648e783e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
+  offset: 90
   firePoint: {fileID: 1648259577}
 --- !u!1 &817741251
 GameObject:
@@ -3209,7 +3209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3249285051763240967, guid: c36f275c5dfde1846ab77179d99c9459, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3249285051763240967, guid: c36f275c5dfde1846ab77179d99c9459, type: 3}
       propertyPath: m_LocalPosition.y

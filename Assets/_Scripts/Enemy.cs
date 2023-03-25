@@ -231,7 +231,7 @@ public class Enemy : MonoBehaviour
         // If target is in attack range - Attack
         if (target != null)
         {
-            if (Vector2.Distance(target.position, enemyRB.position) <= attackRange)
+            if (Vector2.Distance(target.position, enemyRB.position) <= attackRange && canAttack)
             {
                 state = EnemyState.attack;
             }
@@ -240,7 +240,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void EnemyAttackState()
     {
-        
+
     }
 
     public void EnemyResetState()
