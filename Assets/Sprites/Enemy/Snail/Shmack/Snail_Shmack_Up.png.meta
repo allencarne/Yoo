@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e400156efa507784fb5ef231356a5d54
+guid: c3cd400e05e37894e8c045e3e60d8638
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Snail_Shmack_Down_0
+      name: Snail_Shmack_Up_0
       rect:
         serializedVersion: 2
         x: 0
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a8a58bb4df868f4f9ba497ceb2be157
-      internalID: 968444146
+      spriteID: 9cd5a646a421be44aa1b6a07878697d1
+      internalID: -660235011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_1
+      name: Snail_Shmack_Up_1
       rect:
         serializedVersion: 2
         x: 64
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f09772013daf94e478bab752c4b859c1
-      internalID: -1132015577
+      spriteID: e39b205e5b07c9142aae6d1b7d7c9192
+      internalID: 1746775558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_2
+      name: Snail_Shmack_Up_2
       rect:
         serializedVersion: 2
         x: 128
@@ -175,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c42975d627968514287c2000f2faa9a4
-      internalID: 1135948139
+      spriteID: a707a6a6355573b42a3622273d7ef4b6
+      internalID: -1123381808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_3
+      name: Snail_Shmack_Up_3
       rect:
         serializedVersion: 2
         x: 192
@@ -196,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a458af85df2a97c4b91153096b88e3e3
-      internalID: -1263588930
+      spriteID: b68b4e50404d8f1469e89f271ff79789
+      internalID: 1004223188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_4
+      name: Snail_Shmack_Up_4
       rect:
         serializedVersion: 2
         x: 256
@@ -217,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94fd77ee0487f1840af98645a646adbe
-      internalID: -996905353
+      spriteID: abf0ae60cb3c01c4ab0baa9ebd85f04c
+      internalID: 1522501511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_5
+      name: Snail_Shmack_Up_5
       rect:
         serializedVersion: 2
         x: 320
@@ -238,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87d3dfaad44bd894b9bd9ab852195b56
-      internalID: -1737063705
+      spriteID: f453cdee970001840b09a65abb61d61c
+      internalID: -451171423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_6
+      name: Snail_Shmack_Up_6
       rect:
         serializedVersion: 2
         x: 384
@@ -259,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82634734448c6dd47a0e48e8735dd896
-      internalID: -1149684088
+      spriteID: 8c0c85d8c0ec5a840998789319a5a065
+      internalID: 462122469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_7
+      name: Snail_Shmack_Up_7
       rect:
         serializedVersion: 2
         x: 448
@@ -280,14 +280,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85fee85fbdda605439456458eb80cf8f
-      internalID: -258309894
+      spriteID: fe8feccf19aae22499ff7bf088e27688
+      internalID: -2010600961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_8
+      name: Snail_Shmack_Up_8
       rect:
         serializedVersion: 2
         x: 512
@@ -301,14 +301,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b0ac01c97527654f8968aecf4e083b5
-      internalID: 1002806964
+      spriteID: 5a3ee2feb3d825c438d5bba4f5e72aa1
+      internalID: 1910248066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_9
+      name: Snail_Shmack_Up_9
       rect:
         serializedVersion: 2
         x: 576
@@ -322,14 +322,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b354789ba3e710f4abb253b15eabaf00
-      internalID: -1110610662
+      spriteID: 6ce48f66efa142542ad179597700dc3d
+      internalID: 1726185501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_10
+      name: Snail_Shmack_Up_10
       rect:
         serializedVersion: 2
         x: 640
@@ -343,14 +343,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77b683a904188f5409d7f105726cf12d
-      internalID: 1594532468
+      spriteID: 576ceb41c8581804e8223f808548d04d
+      internalID: -940608205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_11
+      name: Snail_Shmack_Up_11
       rect:
         serializedVersion: 2
         x: 704
@@ -364,14 +364,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee9b9f4432a3b85429950156a15af273
-      internalID: -818183459
+      spriteID: a11a1533187642f499cdf6046f10b0a2
+      internalID: 1132508960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_12
+      name: Snail_Shmack_Up_12
       rect:
         serializedVersion: 2
         x: 768
@@ -385,14 +385,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c89a9d1df8a23fd49952f243ddb6e11a
-      internalID: -30630069
+      spriteID: f5af4d117143bc042a80fbb8069146ce
+      internalID: -1602209602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_13
+      name: Snail_Shmack_Up_13
       rect:
         serializedVersion: 2
         x: 832
@@ -406,14 +406,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3601b3fae3af994cba43d29810c26ba
-      internalID: 2036203128
+      spriteID: 8db0ee5d231a0a0419652c78f8afd535
+      internalID: 987104440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Snail_Shmack_Down_14
+      name: Snail_Shmack_Up_14
       rect:
         serializedVersion: 2
         x: 896
@@ -427,8 +427,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94d06abac348df54d812bb92b83a1e52
-      internalID: 654796691
+      spriteID: 37243b89bd8ae63449aff1ce34173a88
+      internalID: -1476571989
       vertices: []
       indices: 
       edges: []
@@ -444,21 +444,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Snail_Shmack_Down_14: 654796691
-      Snail_Shmack_Down_5: -1737063705
-      Snail_Shmack_Down_3: -1263588930
-      Snail_Shmack_Down_12: -30630069
-      Snail_Shmack_Down_1: -1132015577
-      Snail_Shmack_Down_9: -1110610662
-      Snail_Shmack_Down_10: 1594532468
-      Snail_Shmack_Down_11: -818183459
-      Snail_Shmack_Down_7: -258309894
-      Snail_Shmack_Down_0: 968444146
-      Snail_Shmack_Down_13: 2036203128
-      Snail_Shmack_Down_8: 1002806964
-      Snail_Shmack_Down_4: -996905353
-      Snail_Shmack_Down_2: 1135948139
-      Snail_Shmack_Down_6: -1149684088
+      Snail_Shmack_Up_11: 1132508960
+      Snail_Shmack_Up_7: -2010600961
+      Snail_Shmack_Up_0: -660235011
+      Snail_Shmack_Up_12: -1602209602
+      Snail_Shmack_Up_1: 1746775558
+      Snail_Shmack_Up_2: -1123381808
+      Snail_Shmack_Up_4: 1522501511
+      Snail_Shmack_Up_13: 987104440
+      Snail_Shmack_Up_10: -940608205
+      Snail_Shmack_Up_8: 1910248066
+      Snail_Shmack_Up_9: 1726185501
+      Snail_Shmack_Up_3: 1004223188
+      Snail_Shmack_Up_5: -451171423
+      Snail_Shmack_Up_6: 462122469
+      Snail_Shmack_Up_14: -1476571989
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
