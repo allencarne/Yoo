@@ -8,7 +8,7 @@ public class EnemyTelegraph : MonoBehaviour
 
     public void AE_EndOfAnimation()
     {
-        var hitbox = Instantiate(hitBox, transform.position, transform.rotation);
+        GameObject hitbox = Instantiate(hitBox, transform.position, transform.rotation);
 
         Destroy(hitbox, .1f);
     }
