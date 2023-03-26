@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6420768888268064903}
   - component: {fileID: 1801224423991697631}
   - component: {fileID: 29606413420352346}
+  - component: {fileID: 860534137273307978}
   m_Layer: 0
   m_Name: Slime Bite Hitbox
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1801224423991697631
 SpriteRenderer:
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.39484793, y: 0.63013196}
   m_EdgeRadius: 0
+--- !u!114 &860534137273307978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880034268029018274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd51401f50887a49a14b59b52b4aeb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
