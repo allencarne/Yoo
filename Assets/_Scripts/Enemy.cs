@@ -16,8 +16,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] float resetRange;
     [SerializeField] float wanderRange;
     [SerializeField] float attackRange;
-    float idleTime;
-    Vector2 startingPosition;
+    protected float idleTime;
+    protected Vector2 startingPosition;
     Vector2 resetDirection;
     Vector2 wanderDirection;
 
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 
     public static event System.Action OnEnemyHurt;
 
-    enum EnemyState
+    protected enum EnemyState
     {
         spawn,
         idle,
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         death
     }
 
-    EnemyState state = EnemyState.spawn;
+    protected EnemyState state = EnemyState.spawn;
 
     private void Awake()
     {
@@ -127,7 +127,7 @@ public class Enemy : MonoBehaviour
         enemyAnimator.Play("Spawn");
     }
 
-    public void EnemyIdleState()
+    protected virtual void EnemyIdleState()
     {
         // Animate
         enemyAnimator.Play("Idle");
@@ -245,7 +245,7 @@ public class Enemy : MonoBehaviour
         
     }
 
-    public void EnemyResetState()
+    protected virtual void EnemyResetState()
     {
         // Animation
         enemyAnimator.Play("Wander");
@@ -262,7 +262,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EnemyHurtState()
+    protected virtual void EnemyHurtState()
     {
         enemyRB.isKinematic = false;
 
