@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fa5ad4daf49acdb4e8d9613844ed8445
+guid: 82a1dc9775a79c744856adb54c89d447
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Spawn_Body_LightBrown_0
+      name: Player_Spawn_Bow_0
       rect:
         serializedVersion: 2
         x: 64
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 528050599bfbed2439a840ade1f5db59
-      internalID: -110021391
+      spriteID: 2bb2d2babc695e640830e2d58f516ceb
+      internalID: -2024692463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Spawn_Body_LightBrown_1
+      name: Player_Spawn_Bow_1
       rect:
         serializedVersion: 2
         x: 128
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29277a228f51e9b4ba83fc6d090c6159
-      internalID: 1689018077
+      spriteID: b2822df5bd042074d99a053eb391ac85
+      internalID: 451329694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Spawn_Body_LightBrown_2
+      name: Player_Spawn_Bow_2
       rect:
         serializedVersion: 2
         x: 192
@@ -175,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 116431c3aebfc4c45a826862d08af500
-      internalID: 924972187
+      spriteID: 806664779086f424096fc874ecb6cf89
+      internalID: -1112855145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Spawn_Body_LightBrown_3
+      name: Player_Spawn_Bow_3
       rect:
         serializedVersion: 2
         x: 256
@@ -196,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50c592cac32cdd54696a52061546b344
-      internalID: 487238738
+      spriteID: eb3330e025b955347b1982c08d246196
+      internalID: -2116636945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Spawn_Body_LightBrown_4
+      name: Player_Spawn_Bow_4
       rect:
         serializedVersion: 2
         x: 320
@@ -217,8 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe05cb53fc762b1469ed06bd19d2b16e
-      internalID: 690398579
+      spriteID: fbd8dc67baf67504fbf8565318339c1f
+      internalID: 52732762
       vertices: []
       indices: 
       edges: []
@@ -234,11 +234,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Spawn_Body_LightBrown_3: 487238738
-      Player_Spawn_Body_LightBrown_0: -110021391
-      Player_Spawn_Body_LightBrown_1: 1689018077
-      Player_Spawn_Body_LightBrown_2: 924972187
-      Player_Spawn_Body_LightBrown_4: 690398579
+      Player_Spawn_Bow_2: -1112855145
+      Player_Spawn_Bow_4: 52732762
+      Player_Spawn_Bow_1: 451329694
+      Player_Spawn_Bow_3: -2116636945
+      Player_Spawn_Bow_0: -2024692463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
