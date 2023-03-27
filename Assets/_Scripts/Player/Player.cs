@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Components")]
+    [SerializeField] Animator animator;
+    [SerializeField] Rigidbody2D rb;
+
+    [Header("Variables")]
+    [SerializeField] float moveSpeed;
+    //[SerializeField] float currentMoveSpeed;
+    [HideInInspector] Vector2 movement;
+
     [Header("Keys")]
     [SerializeField] KeyCode upKey;
     [SerializeField] KeyCode downKey;
@@ -37,6 +46,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(state);
+
         switch (state)
         {
             case PlayerState.Spawn:
@@ -79,21 +90,73 @@ public class Player : MonoBehaviour
                 PlayerUltimateState();
                 break;
         }
+
+        if (animator.GetFloat("Vertical") >= 5)
+        {
+            GameObject.Find("Sword").GetComponent<SpriteRenderer>().sortingOrder = 1;
+            //GameObject.Find("Bow").GetComponent<SpriteRenderer>().sortingOrder = 1;
+            //GameObject.Find("Staff").GetComponent<SpriteRenderer>().sortingOrder = 1;
+            //GameObject.Find("Dagger").GetComponent<SpriteRenderer>().sortingOrder = 1;
+        } else
+        {
+            GameObject.Find("Sword").GetComponent<SpriteRenderer>().sortingOrder = -1;
+            //GameObject.Find("Bow").GetComponent<SpriteRenderer>().sortingOrder = -1;
+            //GameObject.Find("Staff").GetComponent<SpriteRenderer>().sortingOrder = -1;
+            //GameObject.Find("Dagger").GetComponent<SpriteRenderer>().sortingOrder = -1;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (state == PlayerState.Run)
+        {
+            // Move in direction of movement keys
+            rb.MovePosition(rb.position + movement * Time.deltaTime);
+        }
     }
 
     public void PlayerSpawnState()
     {
-
+        // Animation
+        animator.Play("Spawn");
     }
 
     public void PlayerIdleState()
     {
+        // Animation
+        animator.Play("Idle");
+        animator.Play("Idle", 1);
+        animator.Play("Idle", 2);
+        animator.Play("Idle", 3);
+        animator.Play("Idle", 4);
 
+        // Tranitions
+        MoveKeyPressed();
     }
 
     public void PlayerRunState()
     {
+        // Animation
+        animator.Play("Run");
+        animator.Play("Run", 1);
+        animator.Play("Run", 2);
+        animator.Play("Run", 3);
+        animator.Play("Run", 4);
 
+        // Set idle Animation after move
+        if (movement != Vector2.zero)
+        {
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+        }
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        // Input
+        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        movement = moveInput.normalized * moveSpeed;
+
+        // Transitions
+        NoMoveKeyPressed();
     }
 
     public void PlayerHurtState()
@@ -144,5 +207,32 @@ public class Player : MonoBehaviour
     public void PlayerUltimateState()
     {
 
+    }
+
+    // Helper Methods
+
+    public void AE_Spawn()
+    {
+        state = PlayerState.Idle;
+    }
+
+    // Input
+
+    public void MoveKeyPressed()
+    {
+        //  Movement Key Pressed
+        if (Input.GetKey(upKey) || Input.GetKey(leftKey) || Input.GetKey(downKey) || Input.GetKey(rightKey))
+        {
+            state = PlayerState.Run;
+        }
+    }
+
+    public void NoMoveKeyPressed()
+    {
+        // No Movement Key Pressed
+        if (!Input.GetKey(upKey) && !Input.GetKey(leftKey) && !Input.GetKey(downKey) && !Input.GetKey(rightKey))
+        {
+            state = PlayerState.Idle;
+        }
     }
 }
