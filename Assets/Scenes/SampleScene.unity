@@ -735,6 +735,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bf6cf3745f1244d948d16b5beed6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upKey: 119
+  downKey: 115
+  leftKey: 97
+  rightKey: 100
+  basicAttackKey: 323
+  abilityKey: 324
+  mobilityKey: 32
+  defensiveKey: 113
+  utilityKey: 101
+  ultimateKey: 114
 --- !u!1 &1147364032
 GameObject:
   m_ObjectHideFlags: 3
@@ -1186,7 +1196,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -224274205, guid: 5292a017cf1a5a54baeea217927477ec, type: 3}
+  m_Sprite: {fileID: 1642799139, guid: c562a97184ed4834e858ed9e4c191feb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

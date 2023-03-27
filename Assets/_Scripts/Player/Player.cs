@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Keys")]
+    [SerializeField] KeyCode upKey;
+    [SerializeField] KeyCode downKey;
+    [SerializeField] KeyCode leftKey;
+    [SerializeField] KeyCode rightKey;
+    [SerializeField] KeyCode basicAttackKey;
+    [SerializeField] KeyCode abilityKey;
+    [SerializeField] KeyCode mobilityKey;
+    [SerializeField] KeyCode defensiveKey;
+    [SerializeField] KeyCode utilityKey;
+    [SerializeField] KeyCode ultimateKey;
+
     enum PlayerState
     {
         Spawn,
