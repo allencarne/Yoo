@@ -173,6 +173,10 @@ public class Player : MonoBehaviour
         {
             isPlayerHurt = true;
             animator.Play("Hurt", -1, 0f);
+            animator.Play("Hurt", 1, 0f);
+            animator.Play("Hurt", 2, 0f);
+            animator.Play("Hurt", 3, 0f);
+            animator.Play("Hurt", 4, 0f);
         }
     }
 
