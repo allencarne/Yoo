@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     //[SerializeField] float currentMoveSpeed;
     [HideInInspector] Vector2 movement;
     bool isPlayerHurt = false;
+    bool isPlayerDead = false;
 
     [Header("Keys")]
     [SerializeField] KeyCode upKey;
@@ -93,10 +94,21 @@ public class Player : MonoBehaviour
         }
 
         // Testing
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             isPlayerHurt = false;
             state = PlayerState.Hurt;
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            isPlayerDead = false;
+            state = PlayerState.Death;
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            state = PlayerState.Spawn;
         }
 
         if (animator.GetFloat("Vertical") >= 5)
@@ -182,7 +194,15 @@ public class Player : MonoBehaviour
 
     public void PlayerDeathState()
     {
-
+        if (!isPlayerDead)
+        {
+            isPlayerDead = true;
+            animator.Play("Death", -1, 0f);
+            animator.Play("Death", 1, 0f);
+            animator.Play("Death", 2, 0f);
+            animator.Play("Death", 3, 0f);
+            animator.Play("Death", 4, 0f);
+        }
     }
 
     public void PlayerBasicAttackState()
