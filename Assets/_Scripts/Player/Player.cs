@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed;
     //[SerializeField] float currentMoveSpeed;
     [HideInInspector] Vector2 movement;
+    bool isPlayerHurt = false;
 
     [Header("Keys")]
     [SerializeField] KeyCode upKey;
@@ -91,6 +92,13 @@ public class Player : MonoBehaviour
                 break;
         }
 
+        // Testing
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            isPlayerHurt = false;
+            state = PlayerState.Hurt;
+        }
+
         if (animator.GetFloat("Vertical") >= 5)
         {
             GameObject.Find("Sword").GetComponent<SpriteRenderer>().sortingOrder = 1;
@@ -161,7 +169,11 @@ public class Player : MonoBehaviour
 
     public void PlayerHurtState()
     {
-
+        if (!isPlayerHurt)
+        {
+            isPlayerHurt = true;
+            animator.Play("Hurt", -1, 0f);
+        }
     }
 
     public void PlayerDeathState()
@@ -212,6 +224,11 @@ public class Player : MonoBehaviour
     // Helper Methods
 
     public void AE_Spawn()
+    {
+        state = PlayerState.Idle;
+    }
+
+    public void AE_Hurt()
     {
         state = PlayerState.Idle;
     }
