@@ -5,8 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] Animator animator;
+    [SerializeField] protected Animator animator;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Transform aimer;
 
     [Header("Variables")]
     [SerializeField] float moveSpeed;
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
     [HideInInspector] Vector2 movement;
     bool isPlayerHurt = false;
     bool isPlayerDead = false;
+
+    protected bool canBasicAttack = true;
 
     [Header("Keys")]
     [SerializeField] KeyCode upKey;
@@ -27,7 +30,7 @@ public class Player : MonoBehaviour
     [SerializeField] KeyCode utilityKey;
     [SerializeField] KeyCode ultimateKey;
 
-    enum PlayerState
+    protected enum PlayerState
     {
         Spawn,
         Idle,
@@ -44,7 +47,7 @@ public class Player : MonoBehaviour
         Ultimate,
     }
 
-    PlayerState state = PlayerState.Spawn;
+    protected PlayerState state = PlayerState.Spawn;
 
     private void Update()
     {
@@ -152,6 +155,7 @@ public class Player : MonoBehaviour
 
         // Tranitions
         MoveKeyPressed();
+        BasicAttackKeyPressed();
     }
 
     public void PlayerRunState()
@@ -177,6 +181,7 @@ public class Player : MonoBehaviour
 
         // Transitions
         NoMoveKeyPressed();
+        BasicAttackKeyPressed();
     }
 
     public void PlayerHurtState()
@@ -205,7 +210,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void PlayerBasicAttackState()
+    protected virtual void PlayerBasicAttackState()
     {
 
     }
@@ -274,6 +279,14 @@ public class Player : MonoBehaviour
         if (!Input.GetKey(upKey) && !Input.GetKey(leftKey) && !Input.GetKey(downKey) && !Input.GetKey(rightKey))
         {
             state = PlayerState.Idle;
+        }
+    }
+
+    public void BasicAttackKeyPressed()
+    {
+        if (Input.GetKey(basicAttackKey) && canBasicAttack)
+        {
+            state = PlayerState.BasicAttack;
         }
     }
 }

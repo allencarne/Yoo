@@ -737,6 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 982352994}
   rb: {fileID: 982352991}
+  aimer: {fileID: 1648259577}
   moveSpeed: 5
   upKey: 119
   downKey: 115
@@ -748,6 +749,7 @@ MonoBehaviour:
   defensiveKey: 113
   utilityKey: 101
   ultimateKey: 114
+  basicAttackCoolDown: 1
 --- !u!1 &1147364032
 GameObject:
   m_ObjectHideFlags: 3
@@ -1199,7 +1201,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 491946731, guid: e86c52a6dbe3d8e4f8dfcf31b1e23b92, type: 3}
+  m_Sprite: {fileID: 76452143, guid: 76e48512ab1f63b40ad30b96f03d9997, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
