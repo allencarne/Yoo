@@ -18,10 +18,12 @@ public class Player : MonoBehaviour
     protected Camera cam;
 
     [Header("Variables")]
-    [HideInInspector] Vector2 movement;
+    [SerializeField] protected float basicAttackSlideForce;
+    [SerializeField] protected float basicAttackRange;
     protected Vector2 angleToMouse;
-    [HideInInspector] bool isPlayerHurt = false;
-    [HideInInspector] bool isPlayerDead = false;
+    Vector2 movement;
+    bool isPlayerHurt = false;
+    bool isPlayerDead = false;
 
     protected bool canBasicAttack = true;
 
@@ -281,6 +283,32 @@ public class Player : MonoBehaviour
     }
 
     // Helper Methods
+
+    protected virtual void SlideForward()
+    {
+        // Calculates the difference between the mouse position and player position
+        angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+        // If Mouse is outside attack range - Slide
+        if (Vector3.Distance(rb.position, cam.ScreenToWorldPoint(Input.mousePosition)) > basicAttackRange)
+        {
+            // Normalize movement vector and times it by attack move distance
+            angleToMouse = angleToMouse.normalized * basicAttackSlideForce;
+
+            // Slide in Attack Direction
+            rb.MovePosition(rb.position + angleToMouse * moveSpeed * Time.deltaTime);
+        }
+
+        // If Movement key is held while attacking - Slide
+        if (Input.GetKey(upKey) || Input.GetKey(leftKey) || Input.GetKey(downKey) || Input.GetKey(rightKey))
+        {
+            // Normalize movement vector and times it by attack move distance
+            angleToMouse = angleToMouse.normalized * basicAttackSlideForce;
+
+            // Slide in Attack Direction
+            rb.MovePosition(rb.position + angleToMouse * moveSpeed * Time.deltaTime);
+        }
+    }
 
     // Input
 

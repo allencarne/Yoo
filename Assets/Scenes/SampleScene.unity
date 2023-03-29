@@ -735,10 +735,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bf6cf3745f1244d948d16b5beed6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
+  maxMoveSpeed: 5
+  health: 0
+  maxHealth: 10
   animator: {fileID: 982352994}
   rb: {fileID: 982352991}
   aimer: {fileID: 1648259577}
-  moveSpeed: 5
+  basicAttackSlideForce: 10
+  basicAttackRange: 10.2
   upKey: 119
   downKey: 115
   leftKey: 97
