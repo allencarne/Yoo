@@ -32,7 +32,13 @@ public class Dummy : Enemy
 
     protected override void EnemyHurtState(float damage)
     {
-        base.EnemyHurtState(damage);
+        //base.EnemyHurtState(damage);
+
+        if (isEnemyHurt)
+        {
+            isEnemyHurt = false;
+            enemyAnimator.Play("Hurt", -1, 0f);
+        }
 
         idleTime = 0;
     }

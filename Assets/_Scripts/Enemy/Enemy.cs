@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
 
     protected bool canAttack = true;
     bool canWander = false;
-    bool isEnemyHurt = false;
+    protected bool isEnemyHurt = false;
     bool inCombat = false;
 
     public static event System.Action OnEnemyHurt;
@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
         // Testing
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            isEnemyHurt = false;
+            isEnemyHurt = true;
             state = EnemyState.hurt;
         }
 
@@ -283,10 +283,12 @@ public class Enemy : MonoBehaviour
     {
         enemyRB.isKinematic = false;
 
-        if (!isEnemyHurt)
+        if (isEnemyHurt)
         {
-            isEnemyHurt = true;
+            isEnemyHurt = false;
             enemyAnimator.Play("Hurt", -1, 0f);
+            enemyAnimator.SetFloat("Horizontal", enemyRB.position.x - target.position.x);
+            enemyAnimator.SetFloat("Vertical", enemyRB.position.y - target.position.y);
             OnEnemyHurt?.Invoke();
         }
 
@@ -322,9 +324,16 @@ public class Enemy : MonoBehaviour
     // Helper Methods
     public void TakeDamage(float damage)
     {
-        isEnemyHurt = false;
+        // Enemy hurt bool - Necessary so hurt state only runs once
+        isEnemyHurt = true;
+
+        // Sets enemy state to hurt state
         state = EnemyState.hurt;
+
+        // Reduce health
         enemyHealth -= damage;
+
+        // Healthbar lerp
         enemyHealthbar.lerpTimer = 0f;
     }
 
