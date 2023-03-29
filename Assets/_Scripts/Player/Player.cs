@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     [SerializeField] float health;
     [SerializeField] float maxHealth;
 
-
     [Header("Components")]
     [SerializeField] protected Animator animator;
     [SerializeField] protected Rigidbody2D rb;
