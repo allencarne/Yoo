@@ -831,6 +831,7 @@ GameObject:
   - component: {fileID: 982352993}
   - component: {fileID: 982352994}
   - component: {fileID: 982352995}
+  - component: {fileID: 982352996}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -958,6 +959,7 @@ MonoBehaviour:
   maxMoveSpeed: 5
   health: 0
   maxHealth: 10
+  healthbar: {fileID: 982352996}
   animator: {fileID: 982352994}
   rb: {fileID: 982352991}
   aimer: {fileID: 1648259577}
@@ -976,6 +978,23 @@ MonoBehaviour:
   windSlashPrefab: {fileID: 4553433666271236552, guid: c400f6e4aad52334eab165d98d7f3da3, type: 3}
   windSlashCoolDown: 1
   isWindSlashActive: 0
+--- !u!114 &982352996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982352986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d030abd7a7cde43bedb5153c606aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarFront: {fileID: 700109831}
+  healthBarBack: {fileID: 1992225840}
+  playerUI: {fileID: 212121581}
+  chipSpeed: 2
+  lerpTimer: 0
 --- !u!1 &1138466928
 GameObject:
   m_ObjectHideFlags: 0

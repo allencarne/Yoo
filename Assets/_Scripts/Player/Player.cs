@@ -7,10 +7,11 @@ public class Player : MonoBehaviour
     [Header("Stats")]
     [SerializeField] protected float moveSpeed;
     [SerializeField] float maxMoveSpeed;
-    [SerializeField] float health;
-    [SerializeField] float maxHealth;
+    public float health;
+    public float maxHealth;
 
     [Header("Components")]
+    [SerializeField] HealthBar healthbar;
     [SerializeField] protected Animator animator;
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Transform aimer;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     Vector2 movement;
     bool isPlayerHurt = false;
     bool isPlayerDead = false;
+    float damage;
 
     protected bool canBasicAttack = true;
 
@@ -84,7 +86,7 @@ public class Player : MonoBehaviour
                 PlayerRunState();
                 break;
             case PlayerState.Hurt:
-                PlayerHurtState();
+                PlayerHurtState(damage);
                 break;
             case PlayerState.Death:
                 PlayerDeathState();
@@ -131,6 +133,16 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             state = PlayerState.Spawn;
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            TakeDamage(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            RestoreHealth(1);
         }
 
         if (animator.GetFloat("Vertical") >= 5)
@@ -203,7 +215,7 @@ public class Player : MonoBehaviour
         BasicAttackKeyPressed();
     }
 
-    public void PlayerHurtState()
+    public void PlayerHurtState(float damage)
     {
         if (!isPlayerHurt)
         {
@@ -307,6 +319,18 @@ public class Player : MonoBehaviour
             // Slide in Attack Direction
             rb.MovePosition(rb.position + angleToMouse * moveSpeed * Time.deltaTime);
         }
+    }
+
+    void TakeDamage(float damage)
+    {
+        health -= damage;
+        healthbar.lerpTimer = 0f;
+    }
+
+    void RestoreHealth(float healAmount)
+    {
+        health += healAmount;
+        healthbar.lerpTimer = 0f;
     }
 
     // Input
