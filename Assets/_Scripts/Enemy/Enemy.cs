@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     bool inCombat = false;
 
     public static event System.Action OnEnemyHurt;
+    public static event System.Action OnEnemyDeath;
 
     protected enum EnemyState
     {
@@ -303,14 +304,16 @@ public class Enemy : MonoBehaviour
 
         if (enemyHealth <= 0)
         {
-            enemyAnimator.Play("Death");
-            Destroy(gameObject, .7f);
+            state = EnemyState.death;
+
+            OnEnemyDeath?.Invoke();
         }
     }
 
     public void EnemyDeathState()
     {
-
+        enemyAnimator.Play("Death");
+        Destroy(gameObject, .7f);
     }
 
     // Animation Events
