@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Stats")]
+    [SerializeField] protected float moveSpeed;
+    [SerializeField] float maxMoveSpeed;
+    [SerializeField] float health;
+    [SerializeField] float maxHealth;
+
+
     [Header("Components")]
     [SerializeField] protected Animator animator;
     [SerializeField] protected Rigidbody2D rb;
@@ -11,8 +18,6 @@ public class Player : MonoBehaviour
     protected Camera cam;
 
     [Header("Variables")]
-    [SerializeField] protected float moveSpeed;
-    //[SerializeField] float currentMoveSpeed;
     [HideInInspector] Vector2 movement;
     protected Vector2 angleToMouse;
     [HideInInspector] bool isPlayerHurt = false;
@@ -54,6 +59,12 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         cam = Camera.main;
+    }
+
+    private void Start()
+    {
+        health = maxHealth;
+        moveSpeed = maxMoveSpeed;
     }
 
     private void Update()

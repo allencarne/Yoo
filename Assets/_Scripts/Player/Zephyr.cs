@@ -12,12 +12,15 @@ public class Zephyr : Player
     [SerializeField] float windSlashAttackRange;
     [SerializeField] float windSlashSlideForce;
     [SerializeField] bool isWindSlashActive = false;
+    bool canSlide = false;
 
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        if (isWindSlashActive)
+        if (canSlide)
         {
+            canSlide = false;
+            Debug.Log("Test");
             SlideForward();
         }
     }
@@ -49,6 +52,8 @@ public class Zephyr : Player
         if (isWindSlashActive)
         {
             isWindSlashActive = false;
+
+            canSlide = true;
 
             Instantiate(windSlashPrefab, transform.position, aimer.rotation);
         }
@@ -89,9 +94,6 @@ public class Zephyr : Player
             // Normalize movement vector and times it by attack move distance
             angleToMouse = angleToMouse.normalized * windSlashSlideForce;
 
-            // Disables collision of Player and Enemy
-            Physics2D.IgnoreLayerCollision(3, 6, true);
-
             // Slide in Attack Direction
             rb.MovePosition(rb.position + angleToMouse * moveSpeed * Time.deltaTime);
         }
@@ -101,9 +103,6 @@ public class Zephyr : Player
         {
             // Normalize movement vector and times it by attack move distance
             angleToMouse = angleToMouse.normalized * windSlashSlideForce;
-
-            // Disables collision of Player and Enemy
-            Physics2D.IgnoreLayerCollision(3, 6, true);
 
             // Slide in Attack Direction
             rb.MovePosition(rb.position + angleToMouse * moveSpeed * Time.deltaTime);
