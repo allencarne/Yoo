@@ -23,6 +23,9 @@ public class EnemyAimer : MonoBehaviour
 
     public void Rotate()
     {
-        transform.up = transform.position - target.transform.position;
+        if (target)
+        {
+            transform.up = transform.position - target.transform.position;
+        }
     }
 }

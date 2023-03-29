@@ -232,8 +232,11 @@ public class Enemy : MonoBehaviour
     {
         // Animation
         enemyAnimator.Play("Chase");
-        enemyAnimator.SetFloat("Horizontal", target.position.x - enemyRB.position.x);
-        enemyAnimator.SetFloat("Vertical", target.position.y - enemyRB.position.y);
+        if (target)
+        {
+            enemyAnimator.SetFloat("Horizontal", target.position.x - enemyRB.position.x);
+            enemyAnimator.SetFloat("Vertical", target.position.y - enemyRB.position.y);
+        }
 
         // Behaviour
         inCombat = true;
@@ -287,13 +290,22 @@ public class Enemy : MonoBehaviour
         {
             isEnemyHurt = false;
             enemyAnimator.Play("Hurt", -1, 0f);
-            enemyAnimator.SetFloat("Horizontal", enemyRB.position.x - target.position.x);
-            enemyAnimator.SetFloat("Vertical", enemyRB.position.y - target.position.y);
+            if (target)
+            {
+                enemyAnimator.SetFloat("Horizontal", enemyRB.position.x - target.position.x);
+                enemyAnimator.SetFloat("Vertical", enemyRB.position.y - target.position.y);
+            }
             OnEnemyHurt?.Invoke();
         }
 
         // If enemy is wandering when entering hurt state - stops the wander movement
         wanderDirection = Vector2.zero;
+
+        if (enemyHealth <= 0)
+        {
+            enemyAnimator.Play("Death");
+            Destroy(gameObject, .7f);
+        }
     }
 
     public void EnemyDeathState()

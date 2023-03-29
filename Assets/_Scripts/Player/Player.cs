@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            isPlayerDead = false;
+            isPlayerDead = true;
             state = PlayerState.Death;
         }
 
@@ -233,18 +233,26 @@ public class Player : MonoBehaviour
             animator.Play("Hurt", 3, 0f);
             animator.Play("Hurt", 4, 0f);
         }
+
+        if (health <= 0)
+        {
+            isPlayerDead = true;
+            state = PlayerState.Death;
+        }
     }
 
     public void PlayerDeathState()
     {
-        if (!isPlayerDead)
+        if (isPlayerDead)
         {
-            isPlayerDead = true;
+            isPlayerDead = false;
             animator.Play("Death", -1, 0f);
             animator.Play("Death", 1, 0f);
             animator.Play("Death", 2, 0f);
             animator.Play("Death", 3, 0f);
             animator.Play("Death", 4, 0f);
+
+            Destroy(gameObject, .7f);
         }
     }
 
