@@ -5,10 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] protected float moveSpeed;
-    [SerializeField] float maxMoveSpeed;
     public float health;
     public float maxHealth;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float maxMoveSpeed;
 
     [Header("Components")]
     [SerializeField] HealthBar healthbar;
@@ -29,10 +29,10 @@ public class Player : MonoBehaviour
     protected bool canBasicAttack = true;
 
     [Header("Keys")]
-    [SerializeField] protected KeyCode upKey;
-    [SerializeField] protected KeyCode downKey;
-    [SerializeField] protected KeyCode leftKey;
-    [SerializeField] protected KeyCode rightKey;
+    [SerializeField] KeyCode upKey;
+    [SerializeField] KeyCode downKey;
+    [SerializeField] KeyCode leftKey;
+    [SerializeField] KeyCode rightKey;
     [SerializeField] KeyCode basicAttackKey;
     [SerializeField] KeyCode abilityKey;
     [SerializeField] KeyCode mobilityKey;

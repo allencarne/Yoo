@@ -30,9 +30,9 @@ public class Dummy : Enemy
         idleTime = 0;
     }
 
-    protected override void EnemyHurtState()
+    protected override void EnemyHurtState(float damage)
     {
-        base.EnemyHurtState();
+        base.EnemyHurtState(damage);
 
         idleTime = 0;
     }

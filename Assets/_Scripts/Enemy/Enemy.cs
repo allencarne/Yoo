@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Stats")]
+    public float enemyHealth;
+    public float enemyMaxHealth;
+    [SerializeField] float enemyMoveSpeed;
+    [SerializeField] float enemyMaxMoveSpeed;
+
     [Header("Components")]
+    [SerializeField] EnemyHealthBar enemyHealthbar;
     [SerializeField] protected Animator enemyAnimator;
     [SerializeField] protected Transform enemyAimer;
     [SerializeField] protected Rigidbody2D enemyRB;
     protected Transform target;
 
     [Header("Variables")]
-    [SerializeField] float enemyCurrentSpeed;
     [SerializeField] float aggroRange;
     [SerializeField] float resetRange;
     [SerializeField] float wanderRange;
@@ -20,6 +26,7 @@ public class Enemy : MonoBehaviour
     protected Vector2 startingPosition;
     Vector2 resetDirection;
     Vector2 wanderDirection;
+    float damage;
 
     protected bool canAttack = true;
     bool canWander = false;
@@ -49,6 +56,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        enemyHealth = enemyMaxHealth;
+        enemyMoveSpeed = enemyMaxMoveSpeed;
         startingPosition = transform.position;
         this.GetComponent<CircleCollider2D>().enabled = false;
     }
@@ -76,7 +85,7 @@ public class Enemy : MonoBehaviour
                 EnemyResetState();
                 break;
             case EnemyState.hurt:
-                EnemyHurtState();
+                EnemyHurtState(damage);
                 break;
             case EnemyState.death:
                 EnemyDeathState();
@@ -84,10 +93,20 @@ public class Enemy : MonoBehaviour
         }
 
         // Testing
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             isEnemyHurt = false;
             state = EnemyState.hurt;
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            TakeDamage(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            RestoreHealth(1);
         }
     }
 
@@ -99,7 +118,7 @@ public class Enemy : MonoBehaviour
             Vector2 direction = target.position - transform.position;
             direction.Normalize();
 
-            enemyRB.MovePosition(enemyRB.position + direction * enemyCurrentSpeed * Time.deltaTime);
+            enemyRB.MovePosition(enemyRB.position + direction * enemyMoveSpeed * Time.deltaTime);
         }
 
         // Reset State Movement
@@ -108,14 +127,14 @@ public class Enemy : MonoBehaviour
             resetDirection = startingPosition - enemyRB.position;
             resetDirection.Normalize();
 
-            enemyRB.MovePosition(enemyRB.position + resetDirection * enemyCurrentSpeed * Time.deltaTime);
+            enemyRB.MovePosition(enemyRB.position + resetDirection * enemyMoveSpeed * Time.deltaTime);
         }
 
         // Wander State Movement
         if (wanderDirection != Vector2.zero)
         {
             wanderDirection.Normalize();
-            enemyRB.MovePosition(enemyRB.position + wanderDirection * enemyCurrentSpeed * Time.deltaTime);
+            enemyRB.MovePosition(enemyRB.position + wanderDirection * enemyMoveSpeed * Time.deltaTime);
         }
     }
 
@@ -260,7 +279,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void EnemyHurtState()
+    protected virtual void EnemyHurtState(float damage)
     {
         enemyRB.isKinematic = false;
 
@@ -280,7 +299,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    // Helper Methods
+    // Animation Events
 
     public void AE_Spawn()
     {
@@ -298,6 +317,19 @@ public class Enemy : MonoBehaviour
         enemyRB.isKinematic = false;
         state = EnemyState.idle;
 
+    }
+
+    // Helper Methods
+    public void TakeDamage(float damage)
+    {
+        enemyHealth -= damage;
+        enemyHealthbar.lerpTimer = 0f;
+    }
+
+    void RestoreHealth(float healAmount)
+    {
+        enemyHealth += healAmount;
+        enemyHealthbar.lerpTimer = 0f;
     }
 
     private void OnDrawGizmos()
