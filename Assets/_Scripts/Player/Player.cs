@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     [SerializeField] protected float basicAttackSlideForce;
     [SerializeField] protected float basicAttackRange;
     protected Vector2 angleToMouse;
+    protected bool canSlide = false;
     Vector2 movement;
     bool isPlayerHurt = false;
     bool isPlayerDead = false;
@@ -120,7 +121,7 @@ public class Player : MonoBehaviour
         // Testing
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            isPlayerHurt = false;
+            isPlayerHurt = true;
             state = PlayerState.Hurt;
         }
 
@@ -166,6 +167,12 @@ public class Player : MonoBehaviour
         {
             // Move in direction of movement keys
             rb.MovePosition(rb.position + movement * Time.deltaTime);
+        }
+
+        if (canSlide)
+        {
+            canSlide = false;
+            SlideForward();
         }
     }
 
@@ -217,9 +224,9 @@ public class Player : MonoBehaviour
 
     public void PlayerHurtState(float damage)
     {
-        if (!isPlayerHurt)
+        if (isPlayerHurt)
         {
-            isPlayerHurt = true;
+            isPlayerHurt = false;
             animator.Play("Hurt", -1, 0f);
             animator.Play("Hurt", 1, 0f);
             animator.Play("Hurt", 2, 0f);
@@ -321,15 +328,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
+        // Player hurt bool - Necessary so hurt state only runs once
+        isPlayerHurt = true;
+
+        // Sets player state to hurt state
+        state = PlayerState.Hurt;
+
+        // Reduce Health
         health -= damage;
+
+        // Healthbar Lerp
         healthbar.lerpTimer = 0f;
     }
 
     void RestoreHealth(float healAmount)
     {
+        // Restore Health
         health += healAmount;
+
+        // HealthBar Lerp
         healthbar.lerpTimer = 0f;
     }
 

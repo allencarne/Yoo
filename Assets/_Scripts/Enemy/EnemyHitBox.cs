@@ -6,9 +6,17 @@ public class EnemyHitBox : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        Player player = collision.GetComponent<Player>();
+        Rigidbody2D playerRB = collision.GetComponent<Rigidbody2D>();
+
+        if (player != null)
         {
-            Debug.Log("We got em' boys");
+            // Deal Damage
+            player.TakeDamage(1);
+
+            // Hit Spark
+
+
         }
     }
 }

@@ -8,19 +8,10 @@ public class Zephyr : Player
     [SerializeField] GameObject windSlashPrefab;
 
     [Header("Variables")]
+    [SerializeField] float windSlashDamage;
     [SerializeField] float windSlashCoolDown;
+    [SerializeField] float windSlashKnockBackForce;
     [SerializeField] bool isWindSlashActive = false;
-    bool canSlide = false;
-
-    protected override void FixedUpdate()
-    {
-        base.FixedUpdate();
-        if (canSlide)
-        {
-            canSlide = false;
-            SlideForward();
-        }
-    }
 
     protected override void PlayerBasicAttackState()
     {

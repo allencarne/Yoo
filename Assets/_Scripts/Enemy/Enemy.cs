@@ -330,10 +330,10 @@ public class Enemy : MonoBehaviour
         // Sets enemy state to hurt state
         state = EnemyState.hurt;
 
-        // Reduce health
+        // Reduce Health
         enemyHealth -= damage;
 
-        // Healthbar lerp
+        // Healthbar Lerp
         enemyHealthbar.lerpTimer = 0f;
     }
 
