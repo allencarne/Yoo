@@ -6,9 +6,10 @@ public class WindSlash : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy != null)
         {
-            Debug.Log("Hit");
+            enemy.TakeDamage(1);
         }
     }
 }

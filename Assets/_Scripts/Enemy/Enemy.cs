@@ -322,6 +322,8 @@ public class Enemy : MonoBehaviour
     // Helper Methods
     public void TakeDamage(float damage)
     {
+        isEnemyHurt = false;
+        state = EnemyState.hurt;
         enemyHealth -= damage;
         enemyHealthbar.lerpTimer = 0f;
     }
