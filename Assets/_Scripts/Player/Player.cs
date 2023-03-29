@@ -6,23 +6,25 @@ public class Player : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] protected Animator animator;
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] Transform aimer;
+    [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] protected Transform aimer;
+    protected Camera cam;
 
     [Header("Variables")]
-    [SerializeField] float moveSpeed;
+    [SerializeField] protected float moveSpeed;
     //[SerializeField] float currentMoveSpeed;
     [HideInInspector] Vector2 movement;
-    bool isPlayerHurt = false;
-    bool isPlayerDead = false;
+    protected Vector2 angleToMouse;
+    [HideInInspector] bool isPlayerHurt = false;
+    [HideInInspector] bool isPlayerDead = false;
 
     protected bool canBasicAttack = true;
 
     [Header("Keys")]
-    [SerializeField] KeyCode upKey;
-    [SerializeField] KeyCode downKey;
-    [SerializeField] KeyCode leftKey;
-    [SerializeField] KeyCode rightKey;
+    [SerializeField] protected KeyCode upKey;
+    [SerializeField] protected KeyCode downKey;
+    [SerializeField] protected KeyCode leftKey;
+    [SerializeField] protected KeyCode rightKey;
     [SerializeField] KeyCode basicAttackKey;
     [SerializeField] KeyCode abilityKey;
     [SerializeField] KeyCode mobilityKey;
@@ -48,6 +50,11 @@ public class Player : MonoBehaviour
     }
 
     protected PlayerState state = PlayerState.Spawn;
+
+    private void Awake()
+    {
+        cam = Camera.main;
+    }
 
     private void Update()
     {
@@ -129,7 +136,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (state == PlayerState.Run)
         {
@@ -250,7 +257,7 @@ public class Player : MonoBehaviour
 
     }
 
-    // Helper Methods
+    // Animation Events
 
     public void AE_Spawn()
     {
@@ -261,6 +268,8 @@ public class Player : MonoBehaviour
     {
         state = PlayerState.Idle;
     }
+
+    // Helper Methods
 
     // Input
 

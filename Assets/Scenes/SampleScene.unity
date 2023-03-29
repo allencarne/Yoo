@@ -749,7 +749,11 @@ MonoBehaviour:
   defensiveKey: 113
   utilityKey: 101
   ultimateKey: 114
-  basicAttackCoolDown: 1
+  windSlashPrefab: {fileID: 4553433666271236552, guid: c400f6e4aad52334eab165d98d7f3da3, type: 3}
+  windSlashCoolDown: 1
+  windSlashAttackRange: 10.2
+  windSlashSlideForce: 10
+  isWindSlashActive: 0
 --- !u!1 &1147364032
 GameObject:
   m_ObjectHideFlags: 3
@@ -1201,7 +1205,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 76452143, guid: 76e48512ab1f63b40ad30b96f03d9997, type: 3}
+  m_Sprite: {fileID: -672834128, guid: 76fb1eb473e789241baeeb29a3010f98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
