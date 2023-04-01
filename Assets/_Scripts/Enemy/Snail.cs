@@ -7,6 +7,8 @@ public class Snail : Enemy
     [SerializeField] GameObject shmackTelegraph;
     [SerializeField] float shmackCoolDown;
 
+    public static event System.Action OnSnailDeath;
+
     protected override void EnemyAttackState()
     {
         base.EnemyAttackState();
@@ -35,5 +37,15 @@ public class Snail : Enemy
         yield return new WaitForSeconds(shmackCoolDown);
 
         canAttack = true;
+    }
+
+    protected override void EnemyHurtState(float damage)
+    {
+        base.EnemyHurtState(damage);
+
+        if (enemyHealth <= 0)
+        {
+            OnSnailDeath?.Invoke();
+        }
     }
 }

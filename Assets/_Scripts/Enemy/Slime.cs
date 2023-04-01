@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +6,8 @@ public class Slime : Enemy
 {
     [SerializeField] GameObject biteTelegraph;
     [SerializeField] float biteCoolDown;
+
+    public static event System.Action OnSlimeDeath;
 
     protected override void EnemyAttackState()
     {
@@ -36,5 +37,15 @@ public class Slime : Enemy
         yield return new WaitForSeconds(biteCoolDown);
 
         canAttack = true;
+    }
+
+    protected override void EnemyHurtState(float damage)
+    {
+        base.EnemyHurtState(damage);
+
+        if (enemyHealth <= 0)
+        {
+            OnSlimeDeath?.Invoke();
+        }
     }
 }

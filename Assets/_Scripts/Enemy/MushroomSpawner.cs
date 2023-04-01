@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class MushroomSpawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] Vector3 size;
@@ -13,12 +13,12 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        Enemy.OnEnemyDeath += OnEnemyDeath;
+        Mushroom.OnMushroomDeath += OnEnemyDeath;
     }
 
     private void OnDisable()
     {
-        Enemy.OnEnemyDeath -= OnEnemyDeath;
+        Mushroom.OnMushroomDeath -= OnEnemyDeath;
     }
 
     void Update()

@@ -34,7 +34,6 @@ public class Enemy : MonoBehaviour
     bool inCombat = false;
 
     public static event System.Action OnEnemyHurt;
-    public static event System.Action OnEnemyDeath;
 
     protected enum EnemyState
     {
@@ -305,8 +304,6 @@ public class Enemy : MonoBehaviour
         if (enemyHealth <= 0)
         {
             state = EnemyState.death;
-
-            OnEnemyDeath?.Invoke();
         }
     }
 

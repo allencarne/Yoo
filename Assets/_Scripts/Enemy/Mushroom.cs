@@ -7,6 +7,8 @@ public class Mushroom : Enemy
     [SerializeField] GameObject slamTelegraph;
     [SerializeField] float slamCoolDown;
 
+    public static event System.Action OnMushroomDeath;
+
     protected override void EnemyAttackState()
     {
         base.EnemyAttackState();
@@ -35,5 +37,15 @@ public class Mushroom : Enemy
         yield return new WaitForSeconds(slamCoolDown);
 
         canAttack = true;
+    }
+
+    protected override void EnemyHurtState(float damage)
+    {
+        base.EnemyHurtState(damage);
+
+        if (enemyHealth <= 0)
+        {
+            OnMushroomDeath?.Invoke();
+        }
     }
 }
