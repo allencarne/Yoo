@@ -208,8 +208,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297527451}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -230,8 +230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 3249285051763240965, guid: c36f275c5dfde1846ab77179d99c9459, type: 3}
   size: {x: 5, y: 5, z: 0}
-  center: {x: 7, y: 0, z: 0}
-  enemyCount: 0
   maxEnemyCount: 5
 --- !u!1 &519420028
 GameObject:
@@ -406,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881448847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -427,8 +425,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7724802461809699464, guid: f0f62968af2e39946bf2d90659965623, type: 3}
   size: {x: 5, y: 5, z: 0}
-  center: {x: 0, y: 7, z: 0}
-  enemyCount: 0
   maxEnemyCount: 5
 --- !u!4 &982352988 stripped
 Transform:
@@ -530,6 +526,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1163151049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8233113973608920429, guid: cd0b75bbc3b7a9f468665b078120eff4, type: 3}
+  m_PrefabInstance: {fileID: 8233113974591074615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1218304919
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218304919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -576,8 +577,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4022038824452976932, guid: fd61369c0c6472d43a7d5961cb3a6fc9, type: 3}
   size: {x: 5, y: 5, z: 0}
-  center: {x: -7, y: 0, z: 0}
-  enemyCount: 0
   maxEnemyCount: 5
 --- !u!1 &1500339474
 GameObject:
@@ -791,6 +790,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1620271914}
+  - component: {fileID: 1620271915}
   m_Layer: 0
   m_Name: PlayerSpawner
   m_TagString: Untagged
@@ -813,6 +813,19 @@ Transform:
   m_Father: {fileID: 1593505703}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1620271915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620271913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3b3516460c5284fb5e24529f9249f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 1163151049}
 --- !u!1 &1730868100
 GameObject:
   m_ObjectHideFlags: 0

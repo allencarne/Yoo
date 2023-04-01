@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class SlimeSpawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] Vector3 size;
-    [SerializeField] Vector3 center;
 
-    public int enemyCount;
+    int enemyCount;
     public int maxEnemyCount;
 
     private void OnEnable()
@@ -33,7 +33,7 @@ public class SlimeSpawner : MonoBehaviour
     {
         enemyCount++;
 
-        Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2));
+        Vector3 pos = transform.position + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2));
 
         Instantiate(enemyPrefab, pos, Quaternion.identity);
     }
@@ -46,6 +46,6 @@ public class SlimeSpawner : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(center, size);
+        Gizmos.DrawWireCube(transform.position, size);
     }
 }

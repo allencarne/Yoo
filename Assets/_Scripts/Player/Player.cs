@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
 
     protected bool canBasicAttack = true;
 
+    public static event System.Action OnPlayerDeath;
+
     [Header("Keys")]
     [SerializeField] KeyCode upKey;
     [SerializeField] KeyCode downKey;
@@ -251,6 +253,8 @@ public class Player : MonoBehaviour
             animator.Play("Death", 2, 0f);
             animator.Play("Death", 3, 0f);
             animator.Play("Death", 4, 0f);
+
+            OnPlayerDeath?.Invoke();
 
             Destroy(gameObject, .7f);
         }
