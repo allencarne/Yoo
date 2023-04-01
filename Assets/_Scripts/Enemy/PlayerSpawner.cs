@@ -16,8 +16,19 @@ public class PlayerSpawner : MonoBehaviour
         Player.OnPlayerDeath -= SpawnPlayer;
     }
 
+    private void Start()
+    {
+        Instantiate(playerPrefab);
+    }
+
     void SpawnPlayer()
     {
+        StartCoroutine(SpawnDelay());
+    }
+
+    IEnumerator SpawnDelay()
+    {
+        yield return new WaitForSeconds(1);
         Instantiate(playerPrefab);
     }
 }
