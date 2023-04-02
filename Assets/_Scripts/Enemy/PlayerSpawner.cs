@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] GameObject playerPrefab;
+    [SerializeField] CinemachineVirtualCamera virtualCam;
 
     private void OnEnable()
     {
@@ -18,7 +20,8 @@ public class PlayerSpawner : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(playerPrefab);
+        var player = Instantiate(playerPrefab);
+        virtualCam.Follow = player.transform;
     }
 
     void SpawnPlayer()
@@ -29,6 +32,8 @@ public class PlayerSpawner : MonoBehaviour
     IEnumerator SpawnDelay()
     {
         yield return new WaitForSeconds(1);
-        Instantiate(playerPrefab);
+
+        var player = Instantiate(playerPrefab);
+        virtualCam.Follow = player.transform;
     }
 }
