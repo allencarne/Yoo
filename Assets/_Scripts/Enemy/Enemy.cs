@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Start()
@@ -173,6 +173,7 @@ public class Enemy : MonoBehaviour
         {
             if (Vector2.Distance(target.position, enemyRB.position) <= aggroRange)
             {
+                idleTime = 0;
                 state = EnemyState.chase;
             }
         }
@@ -182,6 +183,7 @@ public class Enemy : MonoBehaviour
         {
             if (Vector2.Distance(target.position, enemyRB.position) <= resetRange && inCombat)
             {
+                idleTime = 0;
                 state = EnemyState.chase;
             }
         }
@@ -363,5 +365,13 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, resetRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            target = collision.transform;
+        }
     }
 }
