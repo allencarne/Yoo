@@ -48,7 +48,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2080217386214913073}
   - component: {fileID: 883355348154022899}
-  - component: {fileID: 131702874360399011}
   m_Layer: 0
   m_Name: AimIndicator
   m_TagString: Untagged
@@ -124,19 +123,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &131702874360399011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558003054338710514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66a453a2c55981469dee3e854f6ebdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 9060367447608800043}
 --- !u!1 &1956284377487220278
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +402,7 @@ MonoBehaviour:
   wanderRange: 1.5
   attackRange: 0.6
   biteTelegraph: {fileID: 3858061026189259149, guid: 97d7e12ba33348b4fa5974b793c6df10, type: 3}
-  biteCoolDown: 3
+  biteCoolDown: 1.2
 --- !u!212 &3249285051763241021
 SpriteRenderer:
   m_ObjectHideFlags: 0

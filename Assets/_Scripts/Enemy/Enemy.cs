@@ -108,6 +108,16 @@ public class Enemy : MonoBehaviour
         {
             RestoreHealth(1);
         }
+
+        if (target != null)
+        {
+            inCombat = true;
+        } else
+        {
+            inCombat = false;
+        }
+
+        EnemyAimer();
     }
 
     private void FixedUpdate()
@@ -238,10 +248,13 @@ public class Enemy : MonoBehaviour
         {
             enemyAnimator.SetFloat("Horizontal", target.position.x - enemyRB.position.x);
             enemyAnimator.SetFloat("Vertical", target.position.y - enemyRB.position.y);
+        } else
+        {
+            state = EnemyState.reset;
         }
 
         // Behaviour
-        inCombat = true;
+        //inCombat = true;
 
         // If Target is outside reset range - Reset
         if (target != null)
@@ -249,6 +262,7 @@ public class Enemy : MonoBehaviour
             if (Vector2.Distance(target.position, enemyRB.position) >= resetRange)
             {
                 state = EnemyState.reset;
+                target = null;
             }
         }
 
@@ -275,7 +289,7 @@ public class Enemy : MonoBehaviour
         enemyAnimator.SetFloat("Vertical", resetDirection.y);
 
         // Reset combat bool
-        inCombat = false;
+        //inCombat = false;
 
         // Transition
         if (Vector2.Distance(startingPosition, enemyRB.position) <= 1)
@@ -349,6 +363,14 @@ public class Enemy : MonoBehaviour
 
         // Healthbar Lerp
         enemyHealthbar.lerpTimer = 0f;
+    }
+
+    public void EnemyAimer()
+    {
+        if (target)
+        {
+            enemyAimer.up = enemyAimer.transform.position - target.transform.position;
+        }
     }
 
     void RestoreHealth(float healAmount)

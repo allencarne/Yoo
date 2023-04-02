@@ -31,7 +31,7 @@ public class PlayerSpawner : MonoBehaviour
 
     IEnumerator SpawnDelay()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
 
         var player = Instantiate(playerPrefab);
         virtualCam.Follow = player.transform;
