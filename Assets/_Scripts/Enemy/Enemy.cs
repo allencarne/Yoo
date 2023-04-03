@@ -49,16 +49,16 @@ public class Enemy : MonoBehaviour
 
     protected EnemyState state = EnemyState.spawn;
 
-    private void Awake()
-    {
-        //target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
     private void Start()
     {
+        // Set
         enemyHealth = enemyMaxHealth;
         enemyMoveSpeed = enemyMaxMoveSpeed;
+
+        // Records the starting position for Reset State
         startingPosition = transform.position;
+
+        // Prevents enemy from being attacked while spawning
         this.GetComponent<CircleCollider2D>().enabled = false;
     }
 
@@ -92,18 +92,20 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
-        // Testing
+        // Testing - Hurt
         if (Input.GetKeyDown(KeyCode.Z))
         {
             isEnemyHurt = true;
             state = EnemyState.hurt;
         }
 
+        // Testing - Take Damage
         if (Input.GetKeyDown(KeyCode.V))
         {
             TakeDamage(1);
         }
 
+        // Testing - Resetore Health
         if (Input.GetKeyDown(KeyCode.B))
         {
             RestoreHealth(1);
@@ -151,6 +153,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    #region Enemy States
     public void EnemySpawnState()
     {
         // Animate
@@ -162,9 +165,13 @@ public class Enemy : MonoBehaviour
         // Animate
         enemyAnimator.Play("Idle");
 
-        // Behaviour
+        // Prevents enemy from sliding after being attacked
+        enemyRB.velocity = Vector2.zero;
+
+        // Increase idle time every second while in idle state
         idleTime += 1 * Time.deltaTime;
 
+        // If idletime is over X, 50% chance of Wandering or resetting idle time
         if (idleTime >= 5)
         {
             int change = Random.Range(0, 2);
@@ -204,10 +211,12 @@ public class Enemy : MonoBehaviour
 
     public void EnemyWanderState()
     {
+        // Animate
         enemyAnimator.Play("Wander");
         enemyAnimator.SetFloat("Horizontal", wanderDirection.x);
         enemyAnimator.SetFloat("Vertical", wanderDirection.y);
 
+        // Get a random wander direction
         if (canWander)
         {
             canWander = false;
@@ -251,6 +260,7 @@ public class Enemy : MonoBehaviour
         // In Combat (Allows enemy to continue chasing after being attacked)
         inCombat = true;
 
+        // If a target is found, Chase towards target - Else, Reset State
         if (target)
         {
             enemyAnimator.SetFloat("Horizontal", target.position.x - enemyRB.position.x);
@@ -300,8 +310,10 @@ public class Enemy : MonoBehaviour
 
     protected virtual void EnemyHurtState(float damage)
     {
+        // Allows enemy to be pushed around
         enemyRB.isKinematic = false;
 
+        // Animate and If enemy telegraph is spawned, Destroy it
         if (isEnemyHurt)
         {
             isEnemyHurt = false;
@@ -317,6 +329,7 @@ public class Enemy : MonoBehaviour
         // If enemy is wandering when entering hurt state - stops the wander movement
         wanderDirection = Vector2.zero;
 
+        // Transition to Death State
         if (enemyHealth <= 0)
         {
             state = EnemyState.death;
@@ -325,37 +338,47 @@ public class Enemy : MonoBehaviour
 
     public void EnemyDeathState()
     {
+        // Animate
         enemyAnimator.Play("Death");
+
+        // Destroy after delay
         Destroy(gameObject, .7f);
     }
+    #endregion
 
-    // Animation Events
-
+    #region Animation Events
     public void AE_Spawn()
     {
-        state = EnemyState.idle;
+        // Enable Collider
         this.GetComponent<CircleCollider2D>().enabled = true;
+
+        // Set State
+        state = EnemyState.idle;
     }
 
     public void AE_Hurt()
     {
+        // Set State
         state = EnemyState.idle;
     }
 
     public void AE_Attack()
     {
+        // Allows enemy to pushed around
         enemyRB.isKinematic = false;
+
+        // Set State
         state = EnemyState.idle;
-
     }
+    #endregion
 
-    // Helper Methods
+    #region Helper Methods
     public void TakeDamage(float damage)
     {
         // Enemy hurt bool - Necessary so hurt state only runs once
         isEnemyHurt = true;
 
-        // Sets enemy state to hurt state
+        // Set State
         state = EnemyState.hurt;
 
         // Reduce Health
@@ -367,6 +390,7 @@ public class Enemy : MonoBehaviour
 
     public void EnemyAimer()
     {
+        // Aim at target direction
         if (target)
         {
             enemyAimer.up = enemyAimer.transform.position - target.transform.position;
@@ -396,4 +420,5 @@ public class Enemy : MonoBehaviour
             target = collision.transform;
         }
     }
+    #endregion
 }
