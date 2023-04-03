@@ -109,12 +109,15 @@ public class Enemy : MonoBehaviour
             RestoreHealth(1);
         }
 
-        if (target != null)
+        // If target is outside of reset range - Reset (Also drops target and incombat is false)
+        if (target)
         {
-            inCombat = true;
-        } else
-        {
-            inCombat = false;
+            if (Vector2.Distance(target.position, enemyRB.position) >= resetRange)
+            {
+                target = null;
+                inCombat = false;
+                state = EnemyState.reset;
+            }
         }
 
         EnemyAimer();
@@ -244,6 +247,10 @@ public class Enemy : MonoBehaviour
     {
         // Animation
         enemyAnimator.Play("Chase");
+
+        // In Combat (Allows enemy to continue chasing after being attacked)
+        inCombat = true;
+
         if (target)
         {
             enemyAnimator.SetFloat("Horizontal", target.position.x - enemyRB.position.x);
@@ -253,16 +260,12 @@ public class Enemy : MonoBehaviour
             state = EnemyState.reset;
         }
 
-        // Behaviour
-        //inCombat = true;
-
         // If Target is outside reset range - Reset
         if (target != null)
         {
             if (Vector2.Distance(target.position, enemyRB.position) >= resetRange)
             {
                 state = EnemyState.reset;
-                target = null;
             }
         }
 
@@ -287,9 +290,6 @@ public class Enemy : MonoBehaviour
         enemyAnimator.Play("Wander");
         enemyAnimator.SetFloat("Horizontal", resetDirection.x);
         enemyAnimator.SetFloat("Vertical", resetDirection.y);
-
-        // Reset combat bool
-        //inCombat = false;
 
         // Transition
         if (Vector2.Distance(startingPosition, enemyRB.position) <= 1)
