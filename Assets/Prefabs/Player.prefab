@@ -611,7 +611,7 @@ Transform:
   - {fileID: 8233113974432671216}
   - {fileID: 8233113974517434077}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8233113973608920424
 Rigidbody2D:
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 8233113974005649489}
   m_Layer: 0
   m_Name: AimIndicator
-  m_TagString: Untagged
+  m_TagString: Aim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

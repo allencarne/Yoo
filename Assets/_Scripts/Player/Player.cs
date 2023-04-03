@@ -120,34 +120,60 @@ public class Player : MonoBehaviour
                 break;
         }
 
-        // Testing
+        // Testing - Hurt
         if (Input.GetKeyDown(KeyCode.Z))
         {
             isPlayerHurt = true;
             state = PlayerState.Hurt;
         }
 
+        // Testing - Death
         if (Input.GetKeyDown(KeyCode.X))
         {
             isPlayerDead = true;
             state = PlayerState.Death;
         }
 
+        // Testing - Spawn
         if (Input.GetKeyDown(KeyCode.C))
         {
             state = PlayerState.Spawn;
         }
 
+        // Testing - Damage
         if (Input.GetKeyDown(KeyCode.V))
         {
             TakeDamage(1);
         }
 
+        // Testing - Heal
         if (Input.GetKeyDown(KeyCode.B))
         {
             RestoreHealth(1);
         }
 
+        // Testing 
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Time.timeScale = 1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            Time.timeScale = .7f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            Time.timeScale = .5f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            Time.timeScale = .3f;
+        }
+
+        // Sorting Order
         if (animator.GetFloat("Vertical") >= 5)
         {
             GameObject.Find("Sword").GetComponent<SpriteRenderer>().sortingOrder = 1;
