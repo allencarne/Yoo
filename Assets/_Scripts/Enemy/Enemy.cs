@@ -124,6 +124,12 @@ public class Enemy : MonoBehaviour
             }
         }
 
+        if (target == null && inCombat)
+        {
+            inCombat = false;
+            state = EnemyState.reset;
+        }
+
         EnemyAimer();
     }
 

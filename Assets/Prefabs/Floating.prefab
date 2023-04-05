@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6783010073288946834}
   - component: {fileID: 4913768445410720944}
   - component: {fileID: 2876641214961302970}
-  - component: {fileID: 2600403563543882322}
+  - component: {fileID: 8244244872169727276}
   m_Layer: 0
   m_Name: Floating Text
   m_TagString: Untagged
@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.41672683}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6783010073288946834
@@ -124,7 +124,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &2600403563543882322
+--- !u!114 &8244244872169727276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1998848105694589493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9009b28a3c0d524584f5eb0b4737dbe, type: 3}
+  m_Script: {fileID: 11500000, guid: a74aa023b27ba384bb3da2d34d6cbf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3506151159445678707
