@@ -15,7 +15,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected Animator enemyAnimator;
     [SerializeField] protected Transform enemyAimer;
     [SerializeField] protected Rigidbody2D enemyRB;
-    [SerializeField] GameObject floatingText;
+    [SerializeField] GameObject floatingTextDamage;
+    [SerializeField] GameObject floatingTextHeal;
     protected Transform target;
 
     [Header("Variables")]
@@ -394,9 +395,25 @@ public class Enemy : MonoBehaviour
 
     void ShowDamage(string text)
     {
-        if (floatingText)
+        if (floatingTextDamage)
         {
-            GameObject prefab = Instantiate(floatingText, transform.position, Quaternion.identity);
+            GameObject prefab = Instantiate(floatingTextDamage, transform.position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMesh>().text = text;
+        }
+    }
+
+    void RestoreHealth(float healAmount)
+    {
+        ShowHeal(healAmount.ToString());
+        enemyHealth += healAmount;
+        enemyHealthbar.lerpTimer = 0f;
+    }
+
+    void ShowHeal(string text)
+    {
+        if (floatingTextHeal)
+        {
+            GameObject prefab = Instantiate(floatingTextHeal, transform.position, Quaternion.identity);
             prefab.GetComponentInChildren<TextMesh>().text = text;
         }
     }
@@ -408,12 +425,6 @@ public class Enemy : MonoBehaviour
         {
             enemyAimer.up = enemyAimer.transform.position - target.transform.position;
         }
-    }
-
-    void RestoreHealth(float healAmount)
-    {
-        enemyHealth += healAmount;
-        enemyHealthbar.lerpTimer = 0f;
     }
 
     private void OnDrawGizmos()

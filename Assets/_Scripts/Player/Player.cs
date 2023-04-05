@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     [SerializeField] protected Animator animator;
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Transform aimer;
+    [SerializeField] GameObject floatingTextDamage;
+    [SerializeField] GameObject floatingTextHeal;
     protected Camera cam;
 
     [Header("Variables")]
@@ -252,9 +254,11 @@ public class Player : MonoBehaviour
 
     public void PlayerHurtState(float damage)
     {
+
         if (isPlayerHurt)
         {
             isPlayerHurt = false;
+
             animator.Play("Hurt", -1, 0f);
             animator.Play("Hurt", 1, 0f);
             animator.Play("Hurt", 2, 0f);
@@ -374,6 +378,9 @@ public class Player : MonoBehaviour
         // Sets player state to hurt state
         state = PlayerState.Hurt;
 
+        // Damage Text
+        ShowDamage(damage.ToString());
+
         // Reduce Health
         health -= damage;
 
@@ -381,13 +388,33 @@ public class Player : MonoBehaviour
         healthbar.lerpTimer = 0f;
     }
 
+    void ShowDamage(string text)
+    {
+        if (floatingTextDamage)
+        {
+            GameObject prefab = Instantiate(floatingTextDamage, transform.position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMesh>().text = text;
+        }
+    }
+
     void RestoreHealth(float healAmount)
     {
+        ShowHeal(healAmount.ToString());
+
         // Restore Health
         health += healAmount;
 
         // HealthBar Lerp
         healthbar.lerpTimer = 0f;
+    }
+
+    void ShowHeal(string text)
+    {
+        if (floatingTextHeal)
+        {
+            GameObject prefab = Instantiate(floatingTextHeal, transform.position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMesh>().text = text;
+        }
     }
 
     // Input
