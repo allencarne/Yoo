@@ -425,6 +425,7 @@ MonoBehaviour:
   enemyAnimator: {fileID: 4022038824452976924}
   enemyAimer: {fileID: 4171882770338719882}
   enemyRB: {fileID: 4022038824452976920}
+  floatingText: {fileID: 3506151159445678707, guid: 6690ee472bb94d0458c4cc63bf4f357a, type: 3}
   aggroRange: 3
   resetRange: 5
   wanderRange: 1.5
