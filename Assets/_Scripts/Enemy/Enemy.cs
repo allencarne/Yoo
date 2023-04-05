@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected Animator enemyAnimator;
     [SerializeField] protected Transform enemyAimer;
     [SerializeField] protected Rigidbody2D enemyRB;
+    [SerializeField] GameObject floatingText;
     protected Transform target;
 
     [Header("Variables")]
@@ -381,11 +382,23 @@ public class Enemy : MonoBehaviour
         // Set State
         state = EnemyState.hurt;
 
+        // Floating Text
+        ShowDamage(damage.ToString());
+
         // Reduce Health
         enemyHealth -= damage;
 
         // Healthbar Lerp
         enemyHealthbar.lerpTimer = 0f;
+    }
+
+    void ShowDamage(string text)
+    {
+        if (floatingText)
+        {
+            GameObject prefab = Instantiate(floatingText, transform.position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMesh>().text = text;
+        }
     }
 
     public void EnemyAimer()
