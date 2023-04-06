@@ -19,7 +19,7 @@ public class WindSlash : MonoBehaviour
 
             // Hit Spark
             Instantiate(zephyrHitSpark, collision.transform.position, collision.transform.rotation);
-            Instantiate(windSlashHitSpark, collision.transform.position, transform.rotation);
+            Instantiate(windSlashHitSpark, collision.transform.position, transform.rotation, collision.transform);
 
             // KnockBack
             Vector2 direction = (enemy.transform.position - transform.position).normalized;
