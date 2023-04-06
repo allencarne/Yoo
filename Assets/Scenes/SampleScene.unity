@@ -995,7 +995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 3249285051763240965, guid: c36f275c5dfde1846ab77179d99c9459, type: 3}
   size: {x: 5, y: 5, z: 0}
-  maxEnemyCount: 1
+  maxEnemyCount: 5
 --- !u!1 &346852114
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,7 +2894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &881448848
 Transform:
   m_ObjectHideFlags: 0
@@ -3920,7 +3920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1218304920
 Transform:
   m_ObjectHideFlags: 0
