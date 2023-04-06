@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd51401f50887a49a14b59b52b4aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHitSpark: {fileID: 1257035211360671276, guid: 5fe2782372b01334c884e92f5e2facad, type: 3}
+  enemySpecificHitSpark: {fileID: 8515518446814211612, guid: 97a306a764a47c7479b09de0e21c79fb, type: 3}
 --- !u!61 &-162809124245500348
 BoxCollider2D:
   m_ObjectHideFlags: 0

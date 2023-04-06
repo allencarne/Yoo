@@ -392,7 +392,7 @@ public class Player : MonoBehaviour
     {
         if (floatingTextDamage)
         {
-            GameObject prefab = Instantiate(floatingTextDamage, transform.position, Quaternion.identity);
+            GameObject prefab = Instantiate(floatingTextDamage, transform.position, Quaternion.identity, transform);
             prefab.GetComponentInChildren<TextMesh>().text = text;
         }
     }
@@ -412,7 +412,7 @@ public class Player : MonoBehaviour
     {
         if (floatingTextHeal)
         {
-            GameObject prefab = Instantiate(floatingTextHeal, transform.position, Quaternion.identity);
+            GameObject prefab = Instantiate(floatingTextHeal, transform.position, Quaternion.identity, transform);
             prefab.GetComponentInChildren<TextMesh>().text = text;
         }
     }

@@ -143,3 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd51401f50887a49a14b59b52b4aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHitSpark: {fileID: 1257035211360671276, guid: 5fe2782372b01334c884e92f5e2facad, type: 3}
+  enemySpecificHitSpark: {fileID: 2230566035861457674, guid: 01f7dfe5a48f4e1418ef0e7220350302, type: 3}
