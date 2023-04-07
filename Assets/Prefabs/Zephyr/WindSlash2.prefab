@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 228765929834258993}
   - component: {fileID: 3374881051107148306}
   - component: {fileID: 311035037205550118}
+  - component: {fileID: -2488191695574659083}
   m_Layer: 0
   m_Name: WindSlash2
   m_TagString: Untagged
@@ -148,7 +149,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0045869946, y: -0.8898828}
@@ -164,3 +165,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2948556, y: 1.4863105}
   m_EdgeRadius: 0
+--- !u!114 &-2488191695574659083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8014090847236514753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2367a295c4a81c408224dcda2d74029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zephyrHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
+  windSlashHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}

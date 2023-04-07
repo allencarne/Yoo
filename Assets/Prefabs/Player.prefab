@@ -264,7 +264,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1724481741, guid: 76e48512ab1f63b40ad30b96f03d9997, type: 3}
+  m_Sprite: {fileID: 1322200768, guid: 4e42f48482dc4c44ea3e2c5c10ddd72c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -603,12 +603,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8233113974005649491}
   - {fileID: 8233113972959511147}
   - {fileID: 8233113973901384250}
   - {fileID: 8233113972554192688}
   - {fileID: 8233113972998591799}
   - {fileID: 8233113974432671216}
+  - {fileID: 8233113974005649491}
   - {fileID: 8233113974517434077}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -730,8 +730,10 @@ MonoBehaviour:
   utilityKey: 101
   ultimateKey: 114
   windSlashPrefab: {fileID: 4553433666271236552, guid: c400f6e4aad52334eab165d98d7f3da3, type: 3}
+  windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
+  windSlash3Prefab: {fileID: 4188387910762008136, guid: f037c164b38a4134b973d8600f5e9a1c, type: 3}
   windSlashDamage: 0
-  windSlashCoolDown: 1
+  windSlashCoolDown: 1.5
   windSlashKnockBackForce: 0
   isWindSlashActive: 0
 --- !u!114 &8233113973608920403
@@ -862,7 +864,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 1011662556, guid: 36f7bb75b98ba68498bf1271912f2298, type: 3}
+  m_Sprite: {fileID: 118170479, guid: dc3a1ce242fe30447901657604104126, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

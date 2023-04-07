@@ -29,7 +29,9 @@ public class Player : MonoBehaviour
     [HideInInspector] bool isPlayerDead = false;
     [HideInInspector] float damage;
 
-    [HideInInspector] protected bool canBasicAttack = true;
+    protected bool canBasicAttack = true;
+    protected bool canBasicAttack2 = false;
+    protected bool canBasicAttack3 = false;
 
     public static event System.Action OnPlayerDeath;
 
@@ -77,7 +79,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(rb.velocity);
+        Debug.Log(state);
 
         switch (state)
         {
@@ -295,12 +297,12 @@ public class Player : MonoBehaviour
 
     }
 
-    public void PlayerBasicAttack2State()
+    protected virtual void PlayerBasicAttack2State()
     {
 
     }
 
-    public void PlayerBasicAttack3State()
+    protected virtual void PlayerBasicAttack3State()
     {
 
     }
@@ -442,6 +444,22 @@ public class Player : MonoBehaviour
         if (Input.GetKey(basicAttackKey) && canBasicAttack)
         {
             state = PlayerState.BasicAttack;
+        }
+    }
+
+    protected virtual void BasicAttack2KeyPressed()
+    {
+        if (Input.GetKey(basicAttackKey) && canBasicAttack2)
+        {
+            state = PlayerState.BasicAttack2;
+        }
+    }
+
+    protected virtual void BasicAttack3KeyPressed()
+    {
+        if (Input.GetKey(basicAttackKey) && canBasicAttack3)
+        {
+            state = PlayerState.BasicAttack3;
         }
     }
 }
