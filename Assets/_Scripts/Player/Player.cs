@@ -17,19 +17,19 @@ public class Player : MonoBehaviour
     [SerializeField] protected Transform aimer;
     [SerializeField] GameObject floatingTextDamage;
     [SerializeField] GameObject floatingTextHeal;
-    protected Camera cam;
+    [HideInInspector] protected Camera cam;
 
     [Header("Variables")]
     [SerializeField] protected float basicAttackSlideForce;
     [SerializeField] protected float basicAttackRange;
-    protected Vector2 angleToMouse;
-    protected bool canSlide = false;
-    Vector2 movement;
-    bool isPlayerHurt = false;
-    bool isPlayerDead = false;
-    float damage;
+    [HideInInspector] protected Vector2 angleToMouse;
+    [HideInInspector] protected bool canSlide = false;
+    [HideInInspector] Vector2 movement;
+    [HideInInspector] bool isPlayerHurt = false;
+    [HideInInspector] bool isPlayerDead = false;
+    [HideInInspector] float damage;
 
-    protected bool canBasicAttack = true;
+    [HideInInspector] protected bool canBasicAttack = true;
 
     public static event System.Action OnPlayerDeath;
 
@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(state);
+        Debug.Log(rb.velocity);
 
         switch (state)
         {
