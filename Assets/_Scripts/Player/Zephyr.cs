@@ -169,7 +169,10 @@ public class Zephyr : Player
 
     public void AE_WindSlash2()
     {
-        canBasicAttack2 = true;
+        if (state == PlayerState.BasicAttack)
+        {
+            canBasicAttack2 = true;
+        }
     }
 
     public void AE_WindSlash3()
