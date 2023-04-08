@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Zephyr : Player
 {
-    [Header("Components")]
+    [Header("WindSlash")]
     [SerializeField] GameObject windSlashPrefab;
     [SerializeField] GameObject windSlash2Prefab;
     [SerializeField] GameObject windSlash3Prefab;
-
-    [Header("Variables")]
     [SerializeField] float windSlashDamage;
     [SerializeField] float windSlashCoolDown;
     [SerializeField] float windSlashKnockBackForce;
-    [SerializeField] bool isWindSlashActive = false;
+    bool isWindSlashActive = false;
+
+    [Header("Sweeping Gust")]
+    [SerializeField] GameObject SweepingGustPrefab;
+    [SerializeField] float sweepingGustDamage;
+    [SerializeField] float sweepingGustCoolDown;
+    [SerializeField] float sweepingGustForce;
+    [SerializeField] float sweepingGustPullForce;
+    bool isSweepingGustActive = false;
 
     protected override void PlayerBasicAttackState()
     {
@@ -161,6 +167,61 @@ public class Zephyr : Player
             state = PlayerState.Idle;
         }
     }
+
+    protected override void PlayerAbilityState()
+    {
+        if (canAbility)
+        {
+            canAbility = false;
+
+            // Animation
+            animator.Play("Sword Swing Right");
+            animator.Play("Sword Swing Right", 1);
+
+            // Calculates angle from mouse position and player position
+            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+            // Set Attack Animation Depending on Mouse Position
+            animator.SetFloat("Aim Horizontal", angleToMouse.x);
+            animator.SetFloat("Aim Vertical", angleToMouse.y);
+            // Set Idle to last attack position
+            animator.SetFloat("Horizontal", angleToMouse.x);
+            animator.SetFloat("Vertical", angleToMouse.y);
+
+            StartCoroutine(SweepingGustDelay());
+            StartCoroutine(SweepingGustAnimationDuration());
+            StartCoroutine(SweepingGustCoolDown());
+        }
+
+        if (isSweepingGustActive)
+        {
+            isSweepingGustActive = false;
+
+            GameObject gust = Instantiate(SweepingGustPrefab, transform.position, aimer.rotation);
+            Rigidbody2D gustRB = gust.GetComponent<Rigidbody2D>();
+            gustRB.AddForce(angleToMouse.normalized * sweepingGustForce, ForceMode2D.Impulse);
+        }
+    }
+
+    IEnumerator SweepingGustDelay()
+    {
+        yield return new WaitForSeconds(.3f);
+        isSweepingGustActive = true;
+    }
+
+    IEnumerator SweepingGustAnimationDuration()
+    {
+        yield return new WaitForSeconds(.7f);
+        state = PlayerState.Idle;
+    }
+
+    IEnumerator SweepingGustCoolDown()
+    {
+        yield return new WaitForSeconds(sweepingGustCoolDown);
+        canAbility = true;
+    }
+
+    // Animation Events
 
     public void AE_WindSlash()
     {

@@ -23,7 +23,7 @@ public class WindSlash : MonoBehaviour
 
             // KnockBack
             Vector2 direction = (enemy.transform.position - transform.position).normalized;
-            enemyRB.velocity = direction * 10;
+            enemyRB.velocity = direction * 4;
         }
     }
 }

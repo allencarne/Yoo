@@ -717,7 +717,7 @@ MonoBehaviour:
   aimer: {fileID: 8233113972949139662}
   floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
   floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
-  basicAttackSlideForce: 10
+  basicAttackSlideForce: 5
   basicAttackRange: 10.2
   upKey: 119
   downKey: 115
@@ -733,9 +733,13 @@ MonoBehaviour:
   windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
   windSlash3Prefab: {fileID: 4188387910762008136, guid: f037c164b38a4134b973d8600f5e9a1c, type: 3}
   windSlashDamage: 0
-  windSlashCoolDown: 1.5
+  windSlashCoolDown: 1.6
   windSlashKnockBackForce: 0
-  isWindSlashActive: 0
+  SweepingGustPrefab: {fileID: 1189672801622665948, guid: b0c0d4150de69e640b4b159c39814c69, type: 3}
+  sweepingGustDamage: 0
+  sweepingGustCoolDown: 1
+  sweepingGustForce: 10
+  sweepingGustPullForce: 0
 --- !u!114 &8233113973608920403
 MonoBehaviour:
   m_ObjectHideFlags: 0
