@@ -10,6 +10,11 @@ public class SweepingGust : MonoBehaviour
     // Damage
     // sweeping Gust Pull Force
 
+    private void Update()
+    {
+        //Debug.Log();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Enemy enemy = collision.GetComponent<Enemy>();
@@ -25,8 +30,8 @@ public class SweepingGust : MonoBehaviour
             Instantiate(sweepingGustHitSpark, collision.transform.position, transform.rotation, collision.transform);
 
             // Pull
-            //Vector2 direction = (transform.position - collision.transform.forward).normalized;
-            Vector2 direction = (enemy.transform.position - collision.transform.forward).normalized;
+            Vector2 direction = (enemy.transform.position - transform.rotation.eulerAngles).normalized;
+
             enemyRB.velocity = direction * 10;
         }
     }
