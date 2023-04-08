@@ -42,6 +42,7 @@ public class Zephyr : Player
             animator.SetFloat("Horizontal", angleToMouse.x);
             animator.SetFloat("Vertical", angleToMouse.y);
 
+            StartCoroutine(WindSlashDelay());
             StartCoroutine(BasicAttackAnimationDuration());
             StartCoroutine(BasicAttackCoolDown());
         }
@@ -57,6 +58,12 @@ public class Zephyr : Player
         }
 
         BasicAttack2KeyPressed();
+    }
+
+    IEnumerator WindSlashDelay()
+    {
+        yield return new WaitForSeconds(.3f);
+        isWindSlashActive = true;
     }
 
     IEnumerator BasicAttackAnimationDuration()
@@ -97,6 +104,7 @@ public class Zephyr : Player
             animator.SetFloat("Horizontal", angleToMouse.x);
             animator.SetFloat("Vertical", angleToMouse.y);
 
+            StartCoroutine(WindSlashDelay());
             StartCoroutine(BasicAttack2AnimationDuration());
         }
 
@@ -144,6 +152,7 @@ public class Zephyr : Player
             animator.SetFloat("Horizontal", angleToMouse.x);
             animator.SetFloat("Vertical", angleToMouse.y);
 
+            StartCoroutine(WindSlashDelay());
             StartCoroutine(BasicAttack3AnimationDuration());
         }
 
@@ -222,11 +231,6 @@ public class Zephyr : Player
     }
 
     // Animation Events
-
-    public void AE_WindSlash()
-    {
-        isWindSlashActive = true;
-    }
 
     public void AE_WindSlash2()
     {

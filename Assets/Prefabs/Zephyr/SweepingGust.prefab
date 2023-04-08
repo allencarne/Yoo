@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7743338435739674032}
   - component: {fileID: 8981957026740503414}
   - component: {fileID: 858807045489702237}
-  - component: {fileID: 7205423385500896222}
   - component: {fileID: 2745011437729731866}
+  - component: {fileID: 2350149818775144424}
   m_Layer: 0
   m_Name: SweepingGust
   m_TagString: Untagged
@@ -153,20 +153,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &7205423385500896222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189672801622665948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2367a295c4a81c408224dcda2d74029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zephyrHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
-  windSlashHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}
 --- !u!50 &2745011437729731866
 Rigidbody2D:
   serializedVersion: 4
@@ -194,3 +180,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2350149818775144424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189672801622665948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5565d5d0bb7e07a4ead9949f9b6e5756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zephyrHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
+  sweepingGustHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}
