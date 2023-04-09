@@ -6,14 +6,20 @@ public class SweepingGust : MonoBehaviour
 {
     [SerializeField] GameObject zephyrHitSpark;
     [SerializeField] GameObject sweepingGustHitSpark;
+    Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        Destroy(gameObject, .6f);
+    }
 
     // Damage
     // sweeping Gust Pull Force
-
-    private void Update()
-    {
-        //Debug.Log();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,10 +35,12 @@ public class SweepingGust : MonoBehaviour
             Instantiate(zephyrHitSpark, collision.transform.position, collision.transform.rotation);
             Instantiate(sweepingGustHitSpark, collision.transform.position, transform.rotation, collision.transform);
 
-            // Pull
-            Vector2 direction = (enemy.transform.position - transform.rotation.eulerAngles).normalized;
+            // Pull in the opposide direction the gameObject is facing
+            //Vector2 direction = (-transform.up).normalized;
+            //enemyRB.velocity = -transform.right * 4;
 
-            enemyRB.velocity = direction * 10;
+            var direction = rb.velocity.normalized;
+            collision.attachedRigidbody.velocity = -direction * 10;
         }
     }
 }

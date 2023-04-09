@@ -194,3 +194,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zephyrHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
   sweepingGustHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}
+  SweepingGust2: {fileID: 1189672801622665948}

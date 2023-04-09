@@ -206,7 +206,7 @@ public class Zephyr : Player
         {
             isSweepingGustActive = false;
 
-            GameObject gust = Instantiate(SweepingGustPrefab, transform.position, aimer.rotation);
+            GameObject gust = Instantiate(SweepingGustPrefab, transform.position, Quaternion.Inverse(aimer.rotation));
             Rigidbody2D gustRB = gust.GetComponent<Rigidbody2D>();
             gustRB.AddForce(angleToMouse.normalized * sweepingGustForce, ForceMode2D.Impulse);
         }
