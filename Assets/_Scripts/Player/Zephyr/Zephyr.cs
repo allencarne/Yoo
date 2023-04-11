@@ -266,6 +266,9 @@ public class Zephyr : Player
             animator.SetFloat("Horizontal", angleToMouse.x);
             animator.SetFloat("Vertical", angleToMouse.y);
 
+            // Dust
+            Instantiate(tempestChargePrefab, transform.position, aimer.rotation);
+
             StartCoroutine(TempestChargeDuration());
             StartCoroutine(TempestChargeCoolDown());
         }
