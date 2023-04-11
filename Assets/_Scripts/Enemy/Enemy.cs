@@ -170,6 +170,9 @@ public class Enemy : MonoBehaviour
 
     protected virtual void EnemyIdleState()
     {
+        // Enable Collider
+        this.GetComponent<CircleCollider2D>().enabled = true;
+
         // Animate
         enemyAnimator.Play("Idle");
 
@@ -357,9 +360,6 @@ public class Enemy : MonoBehaviour
     #region Animation Events
     public void AE_Spawn()
     {
-        // Enable Collider
-        this.GetComponent<CircleCollider2D>().enabled = true;
-
         // Set State
         state = EnemyState.idle;
     }

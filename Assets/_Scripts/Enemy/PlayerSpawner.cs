@@ -20,12 +20,12 @@ public class PlayerSpawner : MonoBehaviour
 
     private void Start()
     {
-        var player = Instantiate(playerPrefab);
-        virtualCam.Follow = player.transform;
+        SpawnPlayer();
     }
 
     void SpawnPlayer()
     {
+        Debug.Log("test");
         StartCoroutine(SpawnDelay());
     }
 

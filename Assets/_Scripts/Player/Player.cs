@@ -294,7 +294,7 @@ public class Player : MonoBehaviour
 
             OnPlayerDeath?.Invoke();
 
-            Destroy(gameObject, .7f);
+            Destroy(gameObject, .5f);
         }
     }
 

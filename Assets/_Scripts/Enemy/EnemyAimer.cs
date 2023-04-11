@@ -10,7 +10,7 @@ public class EnemyAimer : MonoBehaviour
 
     private void Awake()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
@@ -23,7 +23,7 @@ public class EnemyAimer : MonoBehaviour
 
     public void Rotate()
     {
-        if (target)
+        if (target != null)
         {
             transform.up = transform.position - target.transform.position;
         }
