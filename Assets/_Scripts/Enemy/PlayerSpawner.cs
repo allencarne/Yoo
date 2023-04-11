@@ -8,6 +8,8 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] GameObject playerPrefab;
     [SerializeField] CinemachineVirtualCamera virtualCam;
 
+    bool canSpawn = true;
+
     private void OnEnable()
     {
         Player.OnPlayerDeath += SpawnPlayer;
@@ -25,15 +27,19 @@ public class PlayerSpawner : MonoBehaviour
 
     void SpawnPlayer()
     {
-        Debug.Log("test");
-        StartCoroutine(SpawnDelay());
+        if (canSpawn)
+        {
+            canSpawn = false;
+            StartCoroutine(SpawnDelay());
+        }
     }
 
     IEnumerator SpawnDelay()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
 
         var player = Instantiate(playerPrefab);
         virtualCam.Follow = player.transform;
+        canSpawn = true;
     }
 }
