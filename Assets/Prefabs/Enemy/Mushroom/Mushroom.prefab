@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5855684535756951057}
   - component: {fileID: 133312510752565365}
-  - component: {fileID: 7069389591308624948}
   m_Layer: 0
   m_Name: AimIndicator
   m_TagString: Untagged
@@ -117,19 +116,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7069389591308624948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576190787761120542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66a453a2c55981469dee3e854f6ebdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 4171882770338719882}
 --- !u!1 &1524421711798262886
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +407,7 @@ MonoBehaviour:
   enemyMaxHealth: 5
   enemyMoveSpeed: 0
   enemyMaxMoveSpeed: 1.5
+  enemyUI: {fileID: 2606359743239137912}
   enemyHealthbar: {fileID: 6673610516282006809}
   enemyAnimator: {fileID: 4022038824452976924}
   enemyAimer: {fileID: 4171882770338719882}

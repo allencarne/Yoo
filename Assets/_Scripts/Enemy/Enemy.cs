@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float enemyMaxMoveSpeed;
 
     [Header("Components")]
+    [SerializeField] protected GameObject enemyUI;
     [SerializeField] EnemyHealthBar enemyHealthbar;
     [SerializeField] protected Animator enemyAnimator;
     [SerializeField] protected Transform enemyAimer;
@@ -62,6 +63,8 @@ public class Enemy : MonoBehaviour
 
         // Prevents enemy from being attacked while spawning
         this.GetComponent<CircleCollider2D>().enabled = false;
+
+        enemyUI.SetActive(false);
     }
 
     private void Update()
@@ -170,6 +173,8 @@ public class Enemy : MonoBehaviour
 
     protected virtual void EnemyIdleState()
     {
+        enemyUI.SetActive(true);
+
         // Enable Collider
         this.GetComponent<CircleCollider2D>().enabled = true;
 

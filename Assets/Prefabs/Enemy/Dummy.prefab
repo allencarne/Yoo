@@ -405,7 +405,7 @@ Transform:
   m_Children:
   - {fileID: 3018891651106033300}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8251720876454723262
 Rigidbody2D:
@@ -485,6 +485,7 @@ MonoBehaviour:
   enemyMaxHealth: 0
   enemyMoveSpeed: 0
   enemyMaxMoveSpeed: 0
+  enemyUI: {fileID: 2640851289222367414}
   enemyHealthbar: {fileID: 3057819728069037433}
   enemyAnimator: {fileID: 6516063958968661270}
   enemyAimer: {fileID: 0}

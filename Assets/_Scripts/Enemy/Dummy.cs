@@ -6,6 +6,11 @@ public class Dummy : Enemy
 {
     protected override void EnemyIdleState()
     {
+        enemyUI.SetActive(true);
+
+        // Enable Collider
+        this.GetComponent<CircleCollider2D>().enabled = true;
+
         // Animation
         enemyAnimator.Play("Idle");
 
