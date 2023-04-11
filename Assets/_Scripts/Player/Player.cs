@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     protected bool canBasicAttack2 = false;
     protected bool canBasicAttack3 = false;
     protected bool canAbility = true;
+    protected bool canMobility = true;
 
     public static event System.Action OnPlayerDeath;
 
@@ -228,6 +229,7 @@ public class Player : MonoBehaviour
         MoveKeyPressed();
         BasicAttackKeyPressed();
         AbilityKeyPressed();
+        MobilityKeyPressed();
     }
 
     public void PlayerRunState()
@@ -255,6 +257,7 @@ public class Player : MonoBehaviour
         NoMoveKeyPressed();
         BasicAttackKeyPressed();
         AbilityKeyPressed();
+        MobilityKeyPressed();
     }
 
     public void PlayerHurtState(float damage)
@@ -315,7 +318,7 @@ public class Player : MonoBehaviour
 
     }
 
-    public void PlayerMobilityState()
+    protected virtual void PlayerMobilityState()
     {
 
     }
@@ -471,6 +474,14 @@ public class Player : MonoBehaviour
         if (Input.GetKey(abilityKey) && canAbility)
         {
             state = PlayerState.Ability;
+        }
+    }
+
+    protected virtual void MobilityKeyPressed()
+    {
+        if (Input.GetKey(mobilityKey) && canMobility)
+        {
+            state = PlayerState.Mobility;
         }
     }
 }

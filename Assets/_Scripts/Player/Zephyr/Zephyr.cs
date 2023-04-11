@@ -14,12 +14,28 @@ public class Zephyr : Player
     bool isWindSlashActive = false;
 
     [Header("Sweeping Gust")]
-    [SerializeField] GameObject SweepingGustPrefab;
+    [SerializeField] GameObject sweepingGustPrefab;
     [SerializeField] float sweepingGustDamage;
     [SerializeField] float sweepingGustCoolDown;
     [SerializeField] float sweepingGustForce;
     [SerializeField] float sweepingGustPullForce;
     bool isSweepingGustActive = false;
+
+    [Header("Sweeping Gust")]
+    [SerializeField] GameObject tempestChargePrefab;
+    [SerializeField] float tempestChargeVelocity;
+    [SerializeField] float tempestChargeDuration;
+    [SerializeField] float tempestChargeCoolDown;
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+
+        if (!canMobility && state == PlayerState.Mobility)
+        {
+            rb.velocity = angleToMouse.normalized * tempestChargeVelocity;
+        }
+    }
 
     protected override void PlayerBasicAttackState()
     {
@@ -206,7 +222,7 @@ public class Zephyr : Player
         {
             isSweepingGustActive = false;
 
-            GameObject gust = Instantiate(SweepingGustPrefab, transform.position, Quaternion.Inverse(aimer.rotation));
+            GameObject gust = Instantiate(sweepingGustPrefab, transform.position, Quaternion.Inverse(aimer.rotation));
             Rigidbody2D gustRB = gust.GetComponent<Rigidbody2D>();
             gustRB.AddForce(angleToMouse.normalized * sweepingGustForce, ForceMode2D.Impulse);
         }
@@ -228,6 +244,47 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(sweepingGustCoolDown);
         canAbility = true;
+    }
+
+    protected override void PlayerMobilityState()
+    {
+        if (canMobility)
+        {
+            canMobility = false;
+
+            // Animation
+            animator.Play("Run");
+            animator.Play("Run", 1);
+
+            // Calculates angle from mouse position and player position
+            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+            // Set Attack Animation Depending on Mouse Position
+            animator.SetFloat("Aim Horizontal", angleToMouse.x);
+            animator.SetFloat("Aim Vertical", angleToMouse.y);
+            // Set Idle to last attack position
+            animator.SetFloat("Horizontal", angleToMouse.x);
+            animator.SetFloat("Vertical", angleToMouse.y);
+
+            StartCoroutine(TempestChargeDuration());
+            StartCoroutine(TempestChargeCoolDown());
+        }
+    }
+
+    IEnumerator TempestChargeDuration()
+    {
+        yield return new WaitForSeconds(tempestChargeDuration);
+
+        rb.velocity = Vector2.zero;
+
+        state = PlayerState.Idle;
+    }
+
+    IEnumerator TempestChargeCoolDown()
+    {
+        yield return new WaitForSeconds(tempestChargeCoolDown);
+
+        canMobility = true;
     }
 
     // Animation Events
