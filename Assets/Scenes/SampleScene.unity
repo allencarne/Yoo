@@ -42629,6 +42629,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7214031514169692731, guid: d6c6f716864dc2a4eaa3e989e7f92edc, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214031514169692731, guid: d6c6f716864dc2a4eaa3e989e7f92edc, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8251720876454723141, guid: d6c6f716864dc2a4eaa3e989e7f92edc, type: 3}
       propertyPath: m_Name
       value: Dummy

@@ -264,7 +264,7 @@ SpriteRenderer:
   m_SortingLayerID: -312675391
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1322200768, guid: 4e42f48482dc4c44ea3e2c5c10ddd72c, type: 3}
+  m_Sprite: {fileID: -1724481741, guid: 76e48512ab1f63b40ad30b96f03d9997, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -744,6 +744,8 @@ MonoBehaviour:
   tempestChargeVelocity: 15
   tempestChargeDuration: 0.2
   tempestChargeCoolDown: 1
+  parryStrikeShieldPrefab: {fileID: 1334164566803909805, guid: 0b69156d8e3effe4cb104906bf56f405, type: 3}
+  parryStrikeCoolDown: 1
 --- !u!114 &8233113973608920403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,7 +874,7 @@ SpriteRenderer:
   m_SortingLayerID: -312675391
   m_SortingLayer: 2
   m_SortingOrder: -1
-  m_Sprite: {fileID: 118170479, guid: dc3a1ce242fe30447901657604104126, type: 3}
+  m_Sprite: {fileID: 1011662556, guid: 36f7bb75b98ba68498bf1271912f2298, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -27,6 +27,10 @@ public class Zephyr : Player
     [SerializeField] float tempestChargeDuration;
     [SerializeField] float tempestChargeCoolDown;
 
+    [Header("Parry Strike")]
+    [SerializeField] GameObject parryStrikeShieldPrefab;
+    [SerializeField] float parryStrikeCoolDown;
+
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
@@ -36,6 +40,8 @@ public class Zephyr : Player
             rb.velocity = angleToMouse.normalized * tempestChargeVelocity;
         }
     }
+
+    #region Wind Slash
 
     protected override void PlayerBasicAttackState()
     {
@@ -100,6 +106,10 @@ public class Zephyr : Player
         canBasicAttack = true;
     }
 
+    #endregion
+
+    #region Wind Slash 2
+
     protected override void PlayerBasicAttack2State()
     {
         if (canBasicAttack2)
@@ -148,6 +158,10 @@ public class Zephyr : Player
         }
     }
 
+    #endregion
+
+    #region Wind Slash 3
+
     protected override void PlayerBasicAttack3State()
     {
         if (canBasicAttack3)
@@ -192,6 +206,10 @@ public class Zephyr : Player
             state = PlayerState.Idle;
         }
     }
+
+    #endregion
+
+    #region Sweeping Gust
 
     protected override void PlayerAbilityState()
     {
@@ -246,6 +264,10 @@ public class Zephyr : Player
         canAbility = true;
     }
 
+    #endregion
+
+    #region Tempest Charge
+
     protected override void PlayerMobilityState()
     {
         if (canMobility)
@@ -288,6 +310,39 @@ public class Zephyr : Player
         yield return new WaitForSeconds(tempestChargeCoolDown);
 
         canMobility = true;
+    }
+
+    #endregion
+
+    protected override void PlayerDefensiveState()
+    {
+        if (canDefensive)
+        {
+            canDefensive = false;
+
+            // Animate
+            animator.Play("Sword Prepared Stance");
+            animator.Play("Sword Prepared Stance", 1);
+
+            // Shield
+            Instantiate(parryStrikeShieldPrefab, transform.position, transform.rotation);
+
+            StartCoroutine(ParryStrikeShieldDuration());
+            StartCoroutine(ParryStrikeCoolDown());
+        }
+    }
+
+    IEnumerator ParryStrikeShieldDuration()
+    {
+        yield return new WaitForSeconds(1);
+
+        state = PlayerState.Idle;
+    }
+
+    IEnumerator ParryStrikeCoolDown()
+    {
+        yield return new WaitForSeconds(parryStrikeCoolDown);
+        canDefensive = true;
     }
 
     // Animation Events

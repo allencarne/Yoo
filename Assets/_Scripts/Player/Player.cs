@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     protected bool canBasicAttack3 = false;
     protected bool canAbility = true;
     protected bool canMobility = true;
+    protected bool canDefensive = true;
 
     public static event System.Action OnPlayerDeath;
 
@@ -230,6 +231,7 @@ public class Player : MonoBehaviour
         BasicAttackKeyPressed();
         AbilityKeyPressed();
         MobilityKeyPressed();
+        DefensiveKeyPressed();
     }
 
     public void PlayerRunState()
@@ -258,6 +260,7 @@ public class Player : MonoBehaviour
         BasicAttackKeyPressed();
         AbilityKeyPressed();
         MobilityKeyPressed();
+        DefensiveKeyPressed();
     }
 
     public void PlayerHurtState(float damage)
@@ -323,22 +326,22 @@ public class Player : MonoBehaviour
 
     }
 
-    public void PlayerDefensiveState()
+    protected virtual void PlayerDefensiveState()
     {
 
     }
 
-    public void PlayerUtilityState()
+    protected virtual void PlayerUtilityState()
     {
 
     }
 
-    public void PlayerUltimateState()
+    protected virtual void PlayerUltimateState()
     {
 
     }
 
-    // Animation Events
+    #region Animation Events
 
     public void AE_Spawn()
     {
@@ -350,7 +353,9 @@ public class Player : MonoBehaviour
         state = PlayerState.Idle;
     }
 
-    // Helper Methods
+    #endregion
+
+    #region Helper Methods
 
     protected virtual void SlideForward()
     {
@@ -425,7 +430,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Input
+    #endregion
+
+    #region Input
 
     public void MoveKeyPressed()
     {
@@ -484,4 +491,14 @@ public class Player : MonoBehaviour
             state = PlayerState.Mobility;
         }
     }
+
+    protected virtual void DefensiveKeyPressed()
+    {
+        if (Input.GetKey(defensiveKey) && canDefensive)
+        {
+            state = PlayerState.Defensive;
+        }
+    }
+
+    #endregion
 }
