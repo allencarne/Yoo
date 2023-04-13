@@ -29,7 +29,19 @@ public class Zephyr : Player
 
     [Header("Parry Strike")]
     [SerializeField] GameObject parryStrikeShieldPrefab;
+    [SerializeField] GameObject parryStrikePrefab;
     [SerializeField] float parryStrikeCoolDown;
+    bool isParryStrikeTriggered = false;
+
+    private void OnEnable()
+    {
+        EnemyHitBox.OnPlayerParry += PlayerParry;
+    }
+
+    private void OnDisable()
+    {
+        EnemyHitBox.OnPlayerParry -= PlayerParry;
+    }
 
     protected override void FixedUpdate()
     {
@@ -324,17 +336,55 @@ public class Zephyr : Player
             animator.Play("Sword Prepared Stance");
             animator.Play("Sword Prepared Stance", 1);
 
-            // Shield
-            Instantiate(parryStrikeShieldPrefab, transform.position, transform.rotation);
+            // Disable Player Collider
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+
+            // Instantiate Shield that has a collider
+            Instantiate(parryStrikeShieldPrefab, transform.position, transform.rotation, transform);
 
             StartCoroutine(ParryStrikeShieldDuration());
             StartCoroutine(ParryStrikeCoolDown());
         }
+
+        if (isParryStrikeTriggered)
+        {
+            isParryStrikeTriggered = false;
+
+            // Animation
+            animator.Play("Sword Swing Right");
+            animator.Play("Sword Swing Right", 1);
+
+            // Calculates angle from mouse position and player position
+            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+            // Set Attack Animation Depending on Mouse Position
+            animator.SetFloat("Aim Horizontal", angleToMouse.x);
+            animator.SetFloat("Aim Vertical", angleToMouse.y);
+            // Set Idle to last attack position
+            animator.SetFloat("Horizontal", angleToMouse.x);
+            animator.SetFloat("Vertical", angleToMouse.y);
+
+            StartCoroutine(ParryStrikeWindUpTime());
+        }
+    }
+
+    IEnumerator ParryStrikeWindUpTime()
+    {
+        yield return new WaitForSeconds(.3f);
+
+        Instantiate(parryStrikePrefab, transform.position, aimer.rotation);
+    }
+
+    void PlayerParry()
+    {
+        isParryStrikeTriggered = true;
     }
 
     IEnumerator ParryStrikeShieldDuration()
     {
         yield return new WaitForSeconds(1);
+
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
 
         state = PlayerState.Idle;
     }

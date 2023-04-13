@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Aim
+  - Parry
   layers:
   - Default
   - TransparentFX

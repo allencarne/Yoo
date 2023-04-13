@@ -192,6 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5565d5d0bb7e07a4ead9949f9b6e5756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sweepingGustPrefab: {fileID: 1189672801622665948}
   zephyrHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
   sweepingGustHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}
-  SweepingGust2: {fileID: 1189672801622665948}
