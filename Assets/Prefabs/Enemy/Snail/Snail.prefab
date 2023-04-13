@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 7724802461809699462}
   - component: {fileID: 7724802461809699463}
   - component: {fileID: 3740568828636727594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Snail
   m_TagString: Enemy
   m_Icon: {fileID: 0}

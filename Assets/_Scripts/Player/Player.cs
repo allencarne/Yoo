@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     protected bool canAbility = true;
     protected bool canMobility = true;
     protected bool canDefensive = true;
+    protected bool canUtility = true;
+    protected bool canUltimate = true;
 
     public static event System.Action OnPlayerDeath;
 
@@ -232,6 +234,8 @@ public class Player : MonoBehaviour
         AbilityKeyPressed();
         MobilityKeyPressed();
         DefensiveKeyPressed();
+        UtilityKeyPressed();
+        UltimateKeyPressed();
     }
 
     public void PlayerRunState()
@@ -261,6 +265,8 @@ public class Player : MonoBehaviour
         AbilityKeyPressed();
         MobilityKeyPressed();
         DefensiveKeyPressed();
+        UtilityKeyPressed();
+        UltimateKeyPressed();
     }
 
     public void PlayerHurtState(float damage)
@@ -497,6 +503,22 @@ public class Player : MonoBehaviour
         if (Input.GetKey(defensiveKey) && canDefensive)
         {
             state = PlayerState.Defensive;
+        }
+    }
+
+    protected virtual void UtilityKeyPressed()
+    {
+        if (Input.GetKey(utilityKey) && canUtility)
+        {
+            state = PlayerState.Utility;
+        }
+    }
+
+    protected virtual void UltimateKeyPressed()
+    {
+        if (Input.GetKey(ultimateKey) && canUltimate)
+        {
+            state = PlayerState.Ultimate;
         }
     }
 

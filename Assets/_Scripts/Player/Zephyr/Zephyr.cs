@@ -33,6 +33,12 @@ public class Zephyr : Player
     [SerializeField] float parryStrikeCoolDown;
     bool isParryStrikeTriggered = false;
 
+    [Header("Lunge Strike")]
+    [SerializeField] GameObject lungeStrikePrefab;
+    [SerializeField] float lungeStrikeVelocity;
+    [SerializeField] float lungeStrikeDuration;
+    [SerializeField] float lungeStrikeCoolDown;
+
     private void OnEnable()
     {
         EnemyHitBox.OnPlayerParry += PlayerParry;
@@ -50,6 +56,11 @@ public class Zephyr : Player
         if (!canMobility && state == PlayerState.Mobility)
         {
             rb.velocity = angleToMouse.normalized * tempestChargeVelocity;
+        }
+
+        if (!canUtility && state == PlayerState.Utility)
+        {
+            rb.velocity = angleToMouse.normalized * lungeStrikeVelocity;
         }
     }
 
@@ -326,6 +337,8 @@ public class Zephyr : Player
 
     #endregion
 
+    #region Parry Strike
+
     protected override void PlayerDefensiveState()
     {
         if (canDefensive)
@@ -375,11 +388,6 @@ public class Zephyr : Player
         Instantiate(parryStrikePrefab, transform.position, aimer.rotation);
     }
 
-    void PlayerParry()
-    {
-        isParryStrikeTriggered = true;
-    }
-
     IEnumerator ParryStrikeShieldDuration()
     {
         yield return new WaitForSeconds(1);
@@ -393,6 +401,64 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(parryStrikeCoolDown);
         canDefensive = true;
+    }
+
+    void PlayerParry()
+    {
+        isParryStrikeTriggered = true;
+    }
+
+    #endregion
+
+    protected override void PlayerUtilityState()
+    {
+        if (canUtility)
+        {
+            canUtility = false;
+
+            // Animation
+            animator.Play("Sword Swing Right");
+            animator.Play("Sword Swing Right", 1);
+
+            // Calculates angle from mouse position and player position
+            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+            // Set Attack Animation Depending on Mouse Position
+            animator.SetFloat("Aim Horizontal", angleToMouse.x);
+            animator.SetFloat("Aim Vertical", angleToMouse.y);
+            // Set Idle to last attack position
+            animator.SetFloat("Horizontal", angleToMouse.x);
+            animator.SetFloat("Vertical", angleToMouse.y);
+
+            // Ignores collision with Enemy
+            Physics2D.IgnoreLayerCollision(3, 6, true);
+
+            Instantiate(lungeStrikePrefab, transform.position, aimer.rotation);
+
+            StartCoroutine(LungeStrikeDuration());
+            StartCoroutine(LungeStrikeCoolDown());
+        }
+    }
+
+    IEnumerator LungeStrikeDuration()
+    {
+        yield return new WaitForSeconds(lungeStrikeDuration);
+
+        rb.velocity = Vector2.zero;
+
+        state = PlayerState.Idle;
+    }
+
+    IEnumerator LungeStrikeCoolDown()
+    {
+        yield return new WaitForSeconds(lungeStrikeCoolDown);
+
+        canUtility = true;
+    }
+
+    protected override void PlayerUltimateState()
+    {
+        
     }
 
     // Animation Events

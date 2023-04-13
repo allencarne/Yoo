@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 8233113973608920405}
   - component: {fileID: 8233113973608920404}
   - component: {fileID: 8233113973608920403}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -747,6 +747,10 @@ MonoBehaviour:
   parryStrikeShieldPrefab: {fileID: 1334164566803909805, guid: 0b69156d8e3effe4cb104906bf56f405, type: 3}
   parryStrikePrefab: {fileID: 7058784715532521358, guid: 2505cdb2d2bc3564991369b153205297, type: 3}
   parryStrikeCoolDown: 1
+  lungeStrikePrefab: {fileID: 1567245007562542808, guid: dfaf2d93e3531f346936430de011d4be, type: 3}
+  lungeStrikeVelocity: 15
+  lungeStrikeDuration: 0.3
+  lungeStrikeCoolDown: 1
 --- !u!114 &8233113973608920403
 MonoBehaviour:
   m_ObjectHideFlags: 0
