@@ -749,8 +749,12 @@ MonoBehaviour:
   parryStrikeCoolDown: 1
   lungeStrikePrefab: {fileID: 1567245007562542808, guid: dfaf2d93e3531f346936430de011d4be, type: 3}
   lungeStrikeVelocity: 15
-  lungeStrikeDuration: 0.3
+  lungeStrikeDuration: 0.6
   lungeStrikeCoolDown: 1
+  engulfPrefab: {fileID: 0}
+  engulfVelocity: 5
+  engulfAnimationDuration: 0.7
+  engulfCoolDown: 1
 --- !u!114 &8233113973608920403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,7 +883,7 @@ SpriteRenderer:
   m_SortingLayerID: -312675391
   m_SortingLayer: 2
   m_SortingOrder: -1
-  m_Sprite: {fileID: 1011662556, guid: 36f7bb75b98ba68498bf1271912f2298, type: 3}
+  m_Sprite: {fileID: 1425056335, guid: 42ebf9b5fc242fc43990557f88c1c3aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

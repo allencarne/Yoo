@@ -38,6 +38,13 @@ public class Zephyr : Player
     [SerializeField] float lungeStrikeVelocity;
     [SerializeField] float lungeStrikeDuration;
     [SerializeField] float lungeStrikeCoolDown;
+    bool canLungeStrike;
+
+    [Header("Engulf")]
+    [SerializeField] GameObject engulfPrefab;
+    [SerializeField] float engulfVelocity;
+    [SerializeField] float engulfAnimationDuration;
+    [SerializeField] float engulfCoolDown;
 
     private void OnEnable()
     {
@@ -57,8 +64,14 @@ public class Zephyr : Player
         {
             rb.velocity = angleToMouse.normalized * tempestChargeVelocity;
         }
-
+         /*
         if (!canUtility && state == PlayerState.Utility)
+        {
+            rb.velocity = angleToMouse.normalized * lungeStrikeVelocity;
+        }
+         */
+
+        if (canLungeStrike && state == PlayerState.Utility)
         {
             rb.velocity = angleToMouse.normalized * lungeStrikeVelocity;
         }
@@ -311,6 +324,9 @@ public class Zephyr : Player
             animator.SetFloat("Horizontal", angleToMouse.x);
             animator.SetFloat("Vertical", angleToMouse.y);
 
+            // Ignores collision with Enemy
+            Physics2D.IgnoreLayerCollision(3, 6, true);
+
             // Dust
             Instantiate(tempestChargePrefab, transform.position, aimer.rotation);
 
@@ -322,6 +338,9 @@ public class Zephyr : Player
     IEnumerator TempestChargeDuration()
     {
         yield return new WaitForSeconds(tempestChargeDuration);
+
+        // Ignores collision with Enemy
+        Physics2D.IgnoreLayerCollision(3, 6, false);
 
         rb.velocity = Vector2.zero;
 
@@ -410,6 +429,8 @@ public class Zephyr : Player
 
     #endregion
 
+    #region Lunge Strike
+
     protected override void PlayerUtilityState()
     {
         if (canUtility)
@@ -433,11 +454,19 @@ public class Zephyr : Player
             // Ignores collision with Enemy
             Physics2D.IgnoreLayerCollision(3, 6, true);
 
-            Instantiate(lungeStrikePrefab, transform.position, aimer.rotation);
-
+            StartCoroutine(LungeStrikeDelay());
             StartCoroutine(LungeStrikeDuration());
             StartCoroutine(LungeStrikeCoolDown());
         }
+    }
+
+    IEnumerator LungeStrikeDelay()
+    {
+        yield return new WaitForSeconds(.3f);
+
+        canLungeStrike = true;
+
+        Instantiate(lungeStrikePrefab, transform.position, aimer.rotation);
     }
 
     IEnumerator LungeStrikeDuration()
@@ -445,6 +474,8 @@ public class Zephyr : Player
         yield return new WaitForSeconds(lungeStrikeDuration);
 
         rb.velocity = Vector2.zero;
+
+        canLungeStrike = false;
 
         state = PlayerState.Idle;
     }
@@ -456,10 +487,39 @@ public class Zephyr : Player
         canUtility = true;
     }
 
+    #endregion
+
+    #region Engulf
+
     protected override void PlayerUltimateState()
     {
-        
+        if (canUltimate)
+        {
+            canUltimate = false;
+
+            animator.Play("Power-Up");
+            animator.Play("Power-Up", 1);
+
+            StartCoroutine(EngulfAnimationDuration());
+            StartCoroutine(EngulfCoolDown());
+        }
     }
+
+    IEnumerator EngulfAnimationDuration()
+    {
+        yield return new WaitForSeconds(engulfAnimationDuration);
+
+        state = PlayerState.Idle;
+    }
+
+    IEnumerator EngulfCoolDown()
+    {
+        yield return new WaitForSeconds(engulfCoolDown);
+
+        canUltimate = true;
+    }
+
+    #endregion
 
     // Animation Events
 
