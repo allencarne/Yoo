@@ -88,7 +88,7 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
-            StartCoroutine(WindSlashDelay());
+            StartCoroutine(WindSlashCastTime());
             StartCoroutine(BasicAttackAnimationDuration());
             StartCoroutine(BasicAttackCoolDown());
         }
@@ -106,7 +106,7 @@ public class Zephyr : Player
         BasicAttack2KeyPressed();
     }
 
-    IEnumerator WindSlashDelay()
+    IEnumerator WindSlashCastTime()
     {
         yield return new WaitForSeconds(.3f);
         isWindSlashActive = true;
@@ -148,7 +148,7 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
-            StartCoroutine(WindSlashDelay());
+            StartCoroutine(WindSlashCastTime());
             StartCoroutine(BasicAttack2AnimationDuration());
         }
 
@@ -194,7 +194,7 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
-            StartCoroutine(WindSlashDelay());
+            StartCoroutine(WindSlashCastTime());
             StartCoroutine(BasicAttack3AnimationDuration());
         }
 
@@ -237,7 +237,7 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
-            StartCoroutine(SweepingGustDelay());
+            StartCoroutine(SweepingGustCastTime());
             StartCoroutine(SweepingGustAnimationDuration());
             StartCoroutine(SweepingGustCoolDown());
         }
@@ -252,7 +252,7 @@ public class Zephyr : Player
         }
     }
 
-    IEnumerator SweepingGustDelay()
+    IEnumerator SweepingGustCastTime()
     {
         yield return new WaitForSeconds(.3f);
         isSweepingGustActive = true;
@@ -354,15 +354,8 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
-            StartCoroutine(ParryStrikeWindUpTime());
+            StartCoroutine(ParryStrikeCastTime());
         }
-    }
-
-    IEnumerator ParryStrikeWindUpTime()
-    {
-        yield return new WaitForSeconds(.3f);
-
-        Instantiate(parryStrikePrefab, transform.position, aimer.rotation);
     }
 
     IEnumerator ParryStrikeShieldDuration()
@@ -378,6 +371,13 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(parryStrikeCoolDown);
         canDefensive = true;
+    }
+
+    IEnumerator ParryStrikeCastTime()
+    {
+        yield return new WaitForSeconds(.3f);
+
+        Instantiate(parryStrikePrefab, transform.position, aimer.rotation);
     }
 
     void PlayerParry()
@@ -406,13 +406,13 @@ public class Zephyr : Player
             // Ignores collision with Enemy
             Physics2D.IgnoreLayerCollision(3, 6, true);
 
-            StartCoroutine(LungeStrikeDelay());
+            StartCoroutine(LungeStrikeCastTime());
             StartCoroutine(LungeStrikeDuration());
             StartCoroutine(LungeStrikeCoolDown());
         }
     }
 
-    IEnumerator LungeStrikeDelay()
+    IEnumerator LungeStrikeCastTime()
     {
         yield return new WaitForSeconds(.3f);
 
