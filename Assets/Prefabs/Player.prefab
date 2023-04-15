@@ -734,7 +734,7 @@ MonoBehaviour:
   windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
   windSlash3Prefab: {fileID: 4188387910762008136, guid: f037c164b38a4134b973d8600f5e9a1c, type: 3}
   windSlashDamage: 0
-  windSlashCoolDown: 1.6
+  windSlashCoolDown: 0.8
   windSlashKnockBackForce: 0
   sweepingGustPrefab: {fileID: 1189672801622665948, guid: b0c0d4150de69e640b4b159c39814c69, type: 3}
   sweepingGustDamage: 0

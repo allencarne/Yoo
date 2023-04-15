@@ -89,8 +89,9 @@ public class Zephyr : Player
             SetAnimationDirection();
 
             StartCoroutine(WindSlashCastTime());
-            StartCoroutine(BasicAttackAnimationDuration());
-            StartCoroutine(BasicAttackCoolDown());
+            StartCoroutine(TransitionToWinsSlash2());
+            StartCoroutine(WindSlashAnimationDuration());
+            StartCoroutine(WindSlashCoolDown());
         }
 
         // Instantiate WindSlash Prefab
@@ -112,7 +113,14 @@ public class Zephyr : Player
         isWindSlashActive = true;
     }
 
-    IEnumerator BasicAttackAnimationDuration()
+    IEnumerator TransitionToWinsSlash2()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        canBasicAttack2 = true;
+    }
+
+    IEnumerator WindSlashAnimationDuration()
     {
         yield return new WaitForSeconds(.7f);
 
@@ -123,7 +131,7 @@ public class Zephyr : Player
         }
     }
 
-    IEnumerator BasicAttackCoolDown()
+    IEnumerator WindSlashCoolDown()
     {
         yield return new WaitForSeconds(windSlashCoolDown);
 
@@ -149,7 +157,8 @@ public class Zephyr : Player
             SetAnimationDirection();
 
             StartCoroutine(WindSlashCastTime());
-            StartCoroutine(BasicAttack2AnimationDuration());
+            StartCoroutine(TransitionToWinsSlash3());
+            StartCoroutine(WindSlash2AnimationDuration());
         }
 
         // Instantiate WindSlash Prefab
@@ -165,7 +174,14 @@ public class Zephyr : Player
         BasicAttack3KeyPressed();
     }
 
-    IEnumerator BasicAttack2AnimationDuration()
+    IEnumerator TransitionToWinsSlash3()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        canBasicAttack3 = true;
+    }
+
+    IEnumerator WindSlash2AnimationDuration()
     {
         yield return new WaitForSeconds(.7f);
 
@@ -195,7 +211,7 @@ public class Zephyr : Player
             SetAnimationDirection();
 
             StartCoroutine(WindSlashCastTime());
-            StartCoroutine(BasicAttack3AnimationDuration());
+            StartCoroutine(WindSlash3AnimationDuration());
         }
 
         // Instantiate WindSlash Prefab
@@ -209,7 +225,7 @@ public class Zephyr : Player
         }
     }
 
-    IEnumerator BasicAttack3AnimationDuration()
+    IEnumerator WindSlash3AnimationDuration()
     {
         yield return new WaitForSeconds(.7f);
 
@@ -474,19 +490,4 @@ public class Zephyr : Player
     }
 
     #endregion
-
-    // Animation Events
-
-    public void AE_WindSlash2()
-    {
-        if (state == PlayerState.BasicAttack)
-        {
-            canBasicAttack2 = true;
-        }
-    }
-
-    public void AE_WindSlash3()
-    {
-        canBasicAttack3 = true;
-    }
 }
