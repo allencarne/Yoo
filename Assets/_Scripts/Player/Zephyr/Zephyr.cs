@@ -21,7 +21,7 @@ public class Zephyr : Player
     [SerializeField] float sweepingGustPullForce;
     bool isSweepingGustActive = false;
 
-    [Header("Sweeping Gust")]
+    [Header("Tempest Charge")]
     [SerializeField] GameObject tempestChargePrefab;
     [SerializeField] float tempestChargeVelocity;
     [SerializeField] float tempestChargeDuration;
