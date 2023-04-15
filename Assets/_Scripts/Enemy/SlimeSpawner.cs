@@ -24,7 +24,6 @@ public class SlimeSpawner : MonoBehaviour
     {
         if (enemyCount < maxEnemyCount)
         {
-            Debug.Log("HUH");
             SpawnEnemy();
         }
     }

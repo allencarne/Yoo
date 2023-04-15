@@ -64,12 +64,6 @@ public class Zephyr : Player
         {
             rb.velocity = angleToMouse.normalized * tempestChargeVelocity;
         }
-         /*
-        if (!canUtility && state == PlayerState.Utility)
-        {
-            rb.velocity = angleToMouse.normalized * lungeStrikeVelocity;
-        }
-         */
 
         if (canLungeStrike && state == PlayerState.Utility)
         {
@@ -90,15 +84,9 @@ public class Zephyr : Player
             animator.Play("Sword Swing Right");
             animator.Play("Sword Swing Right", 1);
 
-            // Calculates angle from mouse position and player position
-            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            AngleToMouse();
 
-            // Set Attack Animation Depending on Mouse Position
-            animator.SetFloat("Aim Horizontal", angleToMouse.x);
-            animator.SetFloat("Aim Vertical", angleToMouse.y);
-            // Set Idle to last attack position
-            animator.SetFloat("Horizontal", angleToMouse.x);
-            animator.SetFloat("Vertical", angleToMouse.y);
+            SetAnimationDirection();
 
             StartCoroutine(WindSlashDelay());
             StartCoroutine(BasicAttackAnimationDuration());
@@ -156,15 +144,9 @@ public class Zephyr : Player
             animator.Play("Sword Swing Left");
             animator.Play("Sword Swing Left", 1);
 
-            // Calculates angle from mouse position and player position
-            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            AngleToMouse();
 
-            // Set Attack Animation Depending on Mouse Position
-            animator.SetFloat("Aim Horizontal", angleToMouse.x);
-            animator.SetFloat("Aim Vertical", angleToMouse.y);
-            // Set Idle to last attack position
-            animator.SetFloat("Horizontal", angleToMouse.x);
-            animator.SetFloat("Vertical", angleToMouse.y);
+            SetAnimationDirection();
 
             StartCoroutine(WindSlashDelay());
             StartCoroutine(BasicAttack2AnimationDuration());
@@ -208,15 +190,9 @@ public class Zephyr : Player
             animator.Play("Sword Swing Right");
             animator.Play("Sword Swing Right", 1);
 
-            // Calculates angle from mouse position and player position
-            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            AngleToMouse();
 
-            // Set Attack Animation Depending on Mouse Position
-            animator.SetFloat("Aim Horizontal", angleToMouse.x);
-            animator.SetFloat("Aim Vertical", angleToMouse.y);
-            // Set Idle to last attack position
-            animator.SetFloat("Horizontal", angleToMouse.x);
-            animator.SetFloat("Vertical", angleToMouse.y);
+            SetAnimationDirection();
 
             StartCoroutine(WindSlashDelay());
             StartCoroutine(BasicAttack3AnimationDuration());
@@ -257,15 +233,9 @@ public class Zephyr : Player
             animator.Play("Sword Swing Right");
             animator.Play("Sword Swing Right", 1);
 
-            // Calculates angle from mouse position and player position
-            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            AngleToMouse();
 
-            // Set Attack Animation Depending on Mouse Position
-            animator.SetFloat("Aim Horizontal", angleToMouse.x);
-            animator.SetFloat("Aim Vertical", angleToMouse.y);
-            // Set Idle to last attack position
-            animator.SetFloat("Horizontal", angleToMouse.x);
-            animator.SetFloat("Vertical", angleToMouse.y);
+            SetAnimationDirection();
 
             StartCoroutine(SweepingGustDelay());
             StartCoroutine(SweepingGustAnimationDuration());
@@ -314,15 +284,9 @@ public class Zephyr : Player
             animator.Play("Run");
             animator.Play("Run", 1);
 
-            // Calculates angle from mouse position and player position
-            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            AngleToMouse();
 
-            // Set Attack Animation Depending on Mouse Position
-            animator.SetFloat("Aim Horizontal", angleToMouse.x);
-            animator.SetFloat("Aim Vertical", angleToMouse.y);
-            // Set Idle to last attack position
-            animator.SetFloat("Horizontal", angleToMouse.x);
-            animator.SetFloat("Vertical", angleToMouse.y);
+            SetAnimationDirection();
 
             // Ignores collision with Enemy
             Physics2D.IgnoreLayerCollision(3, 6, true);
@@ -386,15 +350,9 @@ public class Zephyr : Player
             animator.Play("Sword Swing Right");
             animator.Play("Sword Swing Right", 1);
 
-            // Calculates angle from mouse position and player position
-            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            AngleToMouse();
 
-            // Set Attack Animation Depending on Mouse Position
-            animator.SetFloat("Aim Horizontal", angleToMouse.x);
-            animator.SetFloat("Aim Vertical", angleToMouse.y);
-            // Set Idle to last attack position
-            animator.SetFloat("Horizontal", angleToMouse.x);
-            animator.SetFloat("Vertical", angleToMouse.y);
+            SetAnimationDirection();
 
             StartCoroutine(ParryStrikeWindUpTime());
         }
@@ -441,15 +399,9 @@ public class Zephyr : Player
             animator.Play("Sword Swing Right");
             animator.Play("Sword Swing Right", 1);
 
-            // Calculates angle from mouse position and player position
-            angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            AngleToMouse();
 
-            // Set Attack Animation Depending on Mouse Position
-            animator.SetFloat("Aim Horizontal", angleToMouse.x);
-            animator.SetFloat("Aim Vertical", angleToMouse.y);
-            // Set Idle to last attack position
-            animator.SetFloat("Horizontal", angleToMouse.x);
-            animator.SetFloat("Vertical", angleToMouse.y);
+            SetAnimationDirection();
 
             // Ignores collision with Enemy
             Physics2D.IgnoreLayerCollision(3, 6, true);

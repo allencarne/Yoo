@@ -363,10 +363,25 @@ public class Player : MonoBehaviour
 
     #region Helper Methods
 
+    protected virtual void AngleToMouse()
+    {
+        // Calculates angle from mouse position and player position
+        angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+    }
+
+    protected virtual void SetAnimationDirection()
+    {
+        // Set Attack Animation Depending on Mouse Position
+        animator.SetFloat("Aim Horizontal", angleToMouse.x);
+        animator.SetFloat("Aim Vertical", angleToMouse.y);
+        // Set Idle to last attack position
+        animator.SetFloat("Horizontal", angleToMouse.x);
+        animator.SetFloat("Vertical", angleToMouse.y);
+    }
+
     protected virtual void SlideForward()
     {
-        // Calculates the difference between the mouse position and player position
-        angleToMouse = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        AngleToMouse();
 
         // If Mouse is outside attack range - Slide
         if (Vector3.Distance(rb.position, cam.ScreenToWorldPoint(Input.mousePosition)) > basicAttackRange)
