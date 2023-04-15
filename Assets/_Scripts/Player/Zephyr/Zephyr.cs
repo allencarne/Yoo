@@ -13,13 +13,12 @@ public class Zephyr : Player
     [SerializeField] float windSlashKnockBackForce;
     bool isWindSlashActive = false;
 
-    [Header("Sweeping Gust")]
-    [SerializeField] GameObject sweepingGustPrefab;
-    [SerializeField] float sweepingGustDamage;
-    [SerializeField] float sweepingGustCoolDown;
-    [SerializeField] float sweepingGustForce;
-    [SerializeField] float sweepingGustPullForce;
-    bool isSweepingGustActive = false;
+    [Header("Slicing Winds")]
+    [SerializeField] GameObject slicingWindsPrefab;
+    [SerializeField] float slicingWindsCoolDown;
+    [SerializeField] float slicingWindsVelocity;
+    [SerializeField] float slicingWindsDuration;
+    bool canSlicingWinds = false;
 
     [Header("Tempest Charge")]
     [SerializeField] GameObject tempestChargePrefab;
@@ -59,6 +58,11 @@ public class Zephyr : Player
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
+
+        if (canSlicingWinds && state == PlayerState.Ability)
+        {
+            rb.velocity = angleToMouse.normalized * slicingWindsVelocity;
+        }
 
         if (!canMobility && state == PlayerState.Mobility)
         {
@@ -253,36 +257,42 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
-            StartCoroutine(SweepingGustCastTime());
-            StartCoroutine(SweepingGustAnimationDuration());
-            StartCoroutine(SweepingGustCoolDown());
-        }
+            canSlicingWinds = true;
 
-        if (isSweepingGustActive)
-        {
-            isSweepingGustActive = false;
-
-            GameObject gust = Instantiate(sweepingGustPrefab, transform.position, Quaternion.Inverse(aimer.rotation));
-            Rigidbody2D gustRB = gust.GetComponent<Rigidbody2D>();
-            gustRB.AddForce(angleToMouse.normalized * sweepingGustForce, ForceMode2D.Impulse);
+            StartCoroutine(SlicingWindsCastTime());
+            StartCoroutine(SlicingWindsDuration());
+            StartCoroutine(SlicingWindsAnimationDuration());
+            StartCoroutine(SlicingWindsCoolDown());
         }
     }
 
-    IEnumerator SweepingGustCastTime()
+    IEnumerator SlicingWindsCastTime()
     {
         yield return new WaitForSeconds(.3f);
-        isSweepingGustActive = true;
+
+        Instantiate(slicingWindsPrefab, transform.position, aimer.rotation);
     }
 
-    IEnumerator SweepingGustAnimationDuration()
+    IEnumerator SlicingWindsDuration()
+    {
+        yield return new WaitForSeconds(slicingWindsDuration);
+
+        rb.velocity = Vector2.zero;
+
+        canSlicingWinds = false;
+    }
+
+    IEnumerator SlicingWindsAnimationDuration()
     {
         yield return new WaitForSeconds(.7f);
+
         state = PlayerState.Idle;
     }
 
-    IEnumerator SweepingGustCoolDown()
+    IEnumerator SlicingWindsCoolDown()
     {
-        yield return new WaitForSeconds(sweepingGustCoolDown);
+        yield return new WaitForSeconds(slicingWindsCoolDown);
+
         canAbility = true;
     }
 

@@ -736,11 +736,10 @@ MonoBehaviour:
   windSlashDamage: 0
   windSlashCoolDown: 0.8
   windSlashKnockBackForce: 0
-  sweepingGustPrefab: {fileID: 1189672801622665948, guid: b0c0d4150de69e640b4b159c39814c69, type: 3}
-  sweepingGustDamage: 0
-  sweepingGustCoolDown: 1
-  sweepingGustForce: 10
-  sweepingGustPullForce: 0
+  slicingWindsPrefab: {fileID: 2950572099573583326, guid: 2e58626a1a5e1cd47b59b0bb8226bd1e, type: 3}
+  slicingWindsCoolDown: 1
+  slicingWindsVelocity: 10
+  slicingWindsDuration: 0.2
   tempestChargePrefab: {fileID: 3865635244848361968, guid: 929edcdcdfbced6409dfb2a440699a9f, type: 3}
   tempestChargeVelocity: 15
   tempestChargeDuration: 0.2
