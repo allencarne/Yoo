@@ -500,6 +500,8 @@ public class Zephyr : Player
             animator.Play("Power-Up");
             animator.Play("Power-Up", 1);
 
+            Instantiate(engulfPrefab, transform.position, transform.rotation);
+
             StartCoroutine(EngulfAnimationDuration());
             StartCoroutine(EngulfCoolDown());
         }

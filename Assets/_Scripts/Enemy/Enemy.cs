@@ -349,6 +349,8 @@ public class Enemy : MonoBehaviour
         if (enemyHealth <= 0)
         {
             state = EnemyState.death;
+
+            this.GetComponent<CircleCollider2D>().enabled = false;
         }
     }
 

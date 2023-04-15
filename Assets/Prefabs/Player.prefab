@@ -751,7 +751,7 @@ MonoBehaviour:
   lungeStrikeVelocity: 15
   lungeStrikeDuration: 0.6
   lungeStrikeCoolDown: 1
-  engulfPrefab: {fileID: 0}
+  engulfPrefab: {fileID: 888074877118327551, guid: f77c3e6626c5c5c4491be330fb055222, type: 3}
   engulfVelocity: 5
   engulfAnimationDuration: 0.7
   engulfCoolDown: 1
