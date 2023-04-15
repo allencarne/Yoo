@@ -717,6 +717,7 @@ MonoBehaviour:
   aimer: {fileID: 8233113972949139662}
   floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
   floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
+  sword: {fileID: 8233113973901384251}
   basicAttackSlideForce: 5
   basicAttackRange: 10.2
   upKey: 119

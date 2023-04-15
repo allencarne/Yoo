@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject floatingTextHeal;
     [HideInInspector] protected Camera cam;
 
+    [SerializeField] GameObject sword;
+
     [Header("Variables")]
     [SerializeField] protected float basicAttackSlideForce;
     [SerializeField] protected float basicAttackRange;
@@ -185,16 +187,10 @@ public class Player : MonoBehaviour
         // Sorting Order
         if (animator.GetFloat("Vertical") >= 5)
         {
-            GameObject.Find("Sword").GetComponent<SpriteRenderer>().sortingOrder = 1;
-            //GameObject.Find("Bow").GetComponent<SpriteRenderer>().sortingOrder = 1;
-            //GameObject.Find("Staff").GetComponent<SpriteRenderer>().sortingOrder = 1;
-            //GameObject.Find("Dagger").GetComponent<SpriteRenderer>().sortingOrder = 1;
+            sword.GetComponent<SpriteRenderer>().sortingOrder = 1;
         } else
         {
-            GameObject.Find("Sword").GetComponent<SpriteRenderer>().sortingOrder = -1;
-            //GameObject.Find("Bow").GetComponent<SpriteRenderer>().sortingOrder = -1;
-            //GameObject.Find("Staff").GetComponent<SpriteRenderer>().sortingOrder = -1;
-            //GameObject.Find("Dagger").GetComponent<SpriteRenderer>().sortingOrder = -1;
+            sword.GetComponent<SpriteRenderer>().sortingOrder = -1;
         }
     }
 
