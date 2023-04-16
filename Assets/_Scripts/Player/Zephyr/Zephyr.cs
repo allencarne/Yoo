@@ -92,6 +92,9 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
+            PauseAimer();
+
+            StartCoroutine(UnpauseAimer());
             StartCoroutine(WindSlashCastTime());
             StartCoroutine(TransitionToWinsSlash2());
             StartCoroutine(WindSlashAnimationDuration());
@@ -114,6 +117,7 @@ public class Zephyr : Player
     IEnumerator WindSlashCastTime()
     {
         yield return new WaitForSeconds(.3f);
+
         isWindSlashActive = true;
     }
 
@@ -160,6 +164,9 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
+            PauseAimer();
+
+            StartCoroutine(UnpauseAimer());
             StartCoroutine(WindSlashCastTime());
             StartCoroutine(TransitionToWinsSlash3());
             StartCoroutine(WindSlash2AnimationDuration());
@@ -214,6 +221,9 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
+            PauseAimer();
+
+            StartCoroutine(UnpauseAimer());
             StartCoroutine(WindSlashCastTime());
             StartCoroutine(WindSlash3AnimationDuration());
         }
@@ -257,8 +267,11 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
+            PauseAimer();
+
             canSlicingWinds = true;
 
+            StartCoroutine(UnpauseAimer());
             StartCoroutine(SlicingWindsCastTime());
             StartCoroutine(SlicingWindsDuration());
             StartCoroutine(SlicingWindsAnimationDuration());
@@ -314,12 +327,15 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
+            PauseAimer();
+
             // Ignores collision with Enemy
             Physics2D.IgnoreLayerCollision(3, 6, true);
 
             // Dust
             Instantiate(tempestChargePrefab, transform.position, aimer.rotation);
 
+            StartCoroutine(UnpauseAimer());
             StartCoroutine(TempestChargeDuration());
             StartCoroutine(TempestChargeCoolDown());
         }
@@ -429,9 +445,12 @@ public class Zephyr : Player
 
             SetAnimationDirection();
 
+            PauseAimer();
+
             // Ignores collision with Enemy
             Physics2D.IgnoreLayerCollision(3, 6, true);
 
+            StartCoroutine(UnpauseAimer());
             StartCoroutine(LungeStrikeCastTime());
             StartCoroutine(LungeStrikeDuration());
             StartCoroutine(LungeStrikeCoolDown());
@@ -500,4 +519,13 @@ public class Zephyr : Player
     }
 
     #endregion
+
+    //
+
+    IEnumerator UnpauseAimer()
+    {
+        yield return new WaitForSeconds(.3f);
+
+        AimIndicator.pauseDirection = false;
+    }
 }
