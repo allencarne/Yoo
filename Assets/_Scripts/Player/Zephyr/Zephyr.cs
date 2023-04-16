@@ -32,12 +32,9 @@ public class Zephyr : Player
     [SerializeField] float parryStrikeCoolDown;
     bool isParryStrikeTriggered = false;
 
-    [Header("Lunge Strike")]
-    [SerializeField] GameObject lungeStrikePrefab;
-    [SerializeField] float lungeStrikeVelocity;
-    [SerializeField] float lungeStrikeDuration;
-    [SerializeField] float lungeStrikeCoolDown;
-    bool canLungeStrike;
+    [Header("Heavy Blow")]
+    [SerializeField] GameObject heavyBlowPrefab;
+    [SerializeField] float heavyBlowCoolDown;
 
     [Header("Engulf")]
     [SerializeField] GameObject engulfPrefab;
@@ -67,11 +64,6 @@ public class Zephyr : Player
         if (!canMobility && state == PlayerState.Mobility)
         {
             rb.velocity = angleToMouse.normalized * tempestChargeVelocity;
-        }
-
-        if (canLungeStrike && state == PlayerState.Utility)
-        {
-            rb.velocity = angleToMouse.normalized * lungeStrikeVelocity;
         }
     }
 
@@ -438,48 +430,49 @@ public class Zephyr : Player
             canUtility = false;
 
             // Animation
-            animator.Play("Sword Swing Right");
-            animator.Play("Sword Swing Right", 1);
+            animator.Play("Sword Prepared Stance");
+            animator.Play("Sword Prepared Stance", 1);
 
-            AngleToMouse();
-
-            SetAnimationDirection();
-
-            PauseAimer();
-
-            // Ignores collision with Enemy
-            Physics2D.IgnoreLayerCollision(3, 6, true);
-
-            StartCoroutine(UnpauseAimer());
-            StartCoroutine(LungeStrikeCastTime());
-            StartCoroutine(LungeStrikeDuration());
-            StartCoroutine(LungeStrikeCoolDown());
+            StartCoroutine(HeavyBlowDelay());
         }
     }
 
-    IEnumerator LungeStrikeCastTime()
+    IEnumerator HeavyBlowDelay()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        animator.Play("Sword Swing Right");
+        animator.Play("Sword Swing Right", 1);
+
+        AngleToMouse();
+
+        SetAnimationDirection();
+
+        PauseAimer();
+
+        StartCoroutine(UnpauseAimer());
+        StartCoroutine(HeavyBlowCastTime());
+        StartCoroutine(HeavyBlowAnimationDuration());
+        StartCoroutine(HeavyBlowCoolDown());
+    }
+
+    IEnumerator HeavyBlowCastTime()
     {
         yield return new WaitForSeconds(.3f);
 
-        canLungeStrike = true;
-
-        Instantiate(lungeStrikePrefab, transform.position, aimer.rotation);
+        Instantiate(heavyBlowPrefab, transform.position, aimer.rotation);
     }
 
-    IEnumerator LungeStrikeDuration()
+    IEnumerator HeavyBlowAnimationDuration()
     {
-        yield return new WaitForSeconds(lungeStrikeDuration);
-
-        rb.velocity = Vector2.zero;
-
-        canLungeStrike = false;
+        yield return new WaitForSeconds(.7f);
 
         state = PlayerState.Idle;
     }
 
-    IEnumerator LungeStrikeCoolDown()
+    IEnumerator HeavyBlowCoolDown()
     {
-        yield return new WaitForSeconds(lungeStrikeCoolDown);
+        yield return new WaitForSeconds(heavyBlowCoolDown);
 
         canUtility = true;
     }
@@ -519,8 +512,6 @@ public class Zephyr : Player
     }
 
     #endregion
-
-    //
 
     IEnumerator UnpauseAimer()
     {
