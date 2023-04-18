@@ -7,11 +7,14 @@ public class Player : MonoBehaviour
     [Header("Stats")]
     public float health;
     public float maxHealth;
+    public float fury;
+    public float maxFury;
     [SerializeField] float moveSpeed;
     [SerializeField] float maxMoveSpeed;
 
     [Header("Components")]
     [SerializeField] HealthBar healthbar;
+    [SerializeField] FuryBar furybar;
     [SerializeField] protected Animator animator;
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Transform aimer;
@@ -78,7 +81,7 @@ public class Player : MonoBehaviour
         cam = Camera.main;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         health = maxHealth;
         moveSpeed = maxMoveSpeed;
@@ -131,58 +134,31 @@ public class Player : MonoBehaviour
                 break;
         }
 
-        // Testing - Hurt
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            isPlayerHurt = true;
-            state = PlayerState.Hurt;
-        }
-
-        // Testing - Death
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            isPlayerDead = true;
-            state = PlayerState.Death;
-        }
-
-        // Testing - Spawn
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            state = PlayerState.Spawn;
-        }
-
         // Testing - Damage
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             TakeDamage(1);
         }
 
         // Testing - Heal
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             RestoreHealth(1);
         }
 
-        // Testing 
-        if (Input.GetKeyDown(KeyCode.F1))
+        // Testing - Gain Fury
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            Time.timeScale = 1f;
+            GainFury(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.F2))
+        // Testing - Lose Fury
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            Time.timeScale = .7f;
+            LoseFury(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.F3))
-        {
-            Time.timeScale = .5f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F4))
-        {
-            Time.timeScale = .3f;
-        }
+        SlowMotionTesting();
 
         // Sorting Order
         if (animator.GetFloat("Vertical") >= 5)
@@ -444,6 +420,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void GainFury(float furyGainAmount)
+    {
+        fury += furyGainAmount;
+
+        furybar.lerpTimer = 0f;
+    }
+
+    public void LoseFury(float furyLoseAmount)
+    {
+        fury -= furyLoseAmount;
+
+        furybar.lerpTimer = 0f;
+    }
+
     #endregion
 
     #region Input
@@ -531,4 +521,30 @@ public class Player : MonoBehaviour
     }
 
     #endregion
+
+    // Testing
+
+    void SlowMotionTesting()
+    {
+        // Testing 
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Time.timeScale = 1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            Time.timeScale = .7f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            Time.timeScale = .5f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            Time.timeScale = .3f;
+        }
+    }
 }
