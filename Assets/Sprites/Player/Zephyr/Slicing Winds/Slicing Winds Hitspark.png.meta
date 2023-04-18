@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 50783180eaff7e1429745fc402f75db1
+guid: fc01d5650ff528341ad5cd7960f70597
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Engulf_0
+      name: Slicing Winds Hitspark_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3f64cec3ca34dc4490a1b800f0b2e7d
-      internalID: 1177206984
+      spriteID: 34d01261e15847f43a1c61521886aebb
+      internalID: 2125271375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Engulf_1
+      name: Slicing Winds Hitspark_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 32
         y: 0
-        width: 256
-        height: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45ec99dd4e4c9a04e9c46815fdd4f789
-      internalID: 308446073
+      spriteID: e0db7a888bf1ee544b5a2d126bae03ab
+      internalID: 819668140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Engulf_2
+      name: Slicing Winds Hitspark_2
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 0
-        width: 256
-        height: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7155629fe81af094bac082c6f16dcd03
-      internalID: -533180067
+      spriteID: 21a7575b54e7c3a4eb4b6fa21b1fa8ea
+      internalID: -290115320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Engulf_3
+      name: Slicing Winds Hitspark_3
       rect:
         serializedVersion: 2
-        x: 768
+        x: 96
         y: 0
-        width: 256
-        height: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f55c6a2519c855649905f23374e102d0
-      internalID: 205624736
+      spriteID: 651aada03d5f33841abd2244bfaf56be
+      internalID: 640293011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Engulf_4
+      name: Slicing Winds Hitspark_4
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 128
         y: 0
-        width: 256
-        height: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a81b1d783fc2524e816d20fd96702a5
-      internalID: 897730979
+      spriteID: b22fb8d8169f33a45a4b1ca510ca0e18
+      internalID: 1528158006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Engulf_5
+      name: Slicing Winds Hitspark_5
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 160
         y: 0
-        width: 256
-        height: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,29 +238,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5db8f7303b9ead54aa17847ce110e93a
-      internalID: 118977678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Engulf_6
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 985742c83170d4f4ca8eb0116202546f
-      internalID: 652130748
+      spriteID: 892a732312e8cfe4dbeedd685081535b
+      internalID: -2012622179
       vertices: []
       indices: 
       edges: []
@@ -276,13 +255,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Engulf_0: 1177206984
-      Engulf_2: -533180067
-      Engulf_4: 897730979
-      Engulf_3: 205624736
-      Engulf_5: 118977678
-      Engulf_6: 652130748
-      Engulf_1: 308446073
+      Slicing Winds Hitspark_5: -2012622179
+      Slicing Winds Hitspark_0: 2125271375
+      Slicing Winds Hitspark_2: -290115320
+      Slicing Winds Hitspark_1: 819668140
+      Slicing Winds Hitspark_3: 640293011
+      Slicing Winds Hitspark_4: 1528158006
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

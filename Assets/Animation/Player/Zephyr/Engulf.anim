@@ -71,6 +71,8 @@ AnimationClip:
       value: {fileID: 897730979, guid: 50783180eaff7e1429745fc402f75db1, type: 3}
     - time: 0.41666666
       value: {fileID: 118977678, guid: 50783180eaff7e1429745fc402f75db1, type: 3}
+    - time: 0.5
+      value: {fileID: 652130748, guid: 50783180eaff7e1429745fc402f75db1, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -108,12 +110,13 @@ AnimationClip:
     - {fileID: 205624736, guid: 50783180eaff7e1429745fc402f75db1, type: 3}
     - {fileID: 897730979, guid: 50783180eaff7e1429745fc402f75db1, type: 3}
     - {fileID: 118977678, guid: 50783180eaff7e1429745fc402f75db1, type: 3}
+    - {fileID: 652130748, guid: 50783180eaff7e1429745fc402f75db1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.5833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -172,7 +175,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.5
+  - time: 0.5833333
     functionName: AE_DestroyAfterAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
