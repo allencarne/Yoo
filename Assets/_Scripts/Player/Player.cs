@@ -5,12 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Stats")]
-    public float health;
-    public float maxHealth;
-    public float fury;
-    public float maxFury;
-    [SerializeField] float moveSpeed;
-    [SerializeField] float maxMoveSpeed;
+    [SerializeField] PlayerScriptableObject SO_Player;
 
     [Header("Components")]
     [SerializeField] HealthBar healthbar;
@@ -83,8 +78,8 @@ public class Player : MonoBehaviour
 
     protected virtual void Start()
     {
-        health = maxHealth;
-        moveSpeed = maxMoveSpeed;
+        SO_Player.health = SO_Player.maxHealth;
+        SO_Player.movementSpeed = SO_Player.maxMovementSpeed;
     }
 
     private void Update()
@@ -206,7 +201,7 @@ public class Player : MonoBehaviour
 
         // Input
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        movement = moveInput.normalized * moveSpeed;
+        movement = moveInput.normalized * SO_Player.movementSpeed;
 
         // Transitions
         NoMoveKeyPressed();
@@ -232,7 +227,7 @@ public class Player : MonoBehaviour
             animator.Play("Hurt", 4, 0f);
         }
 
-        if (health <= 0)
+        if (SO_Player.health <= 0)
         {
             isPlayerDead = true;
             state = PlayerState.Death;
@@ -334,14 +329,14 @@ public class Player : MonoBehaviour
         if (Vector3.Distance(rb.position, cam.ScreenToWorldPoint(Input.mousePosition)) > basicAttackRange)
         {
             // Slide in Attack Direction
-            rb.MovePosition(rb.position + angleToMouse * moveSpeed * Time.deltaTime);
+            rb.MovePosition(rb.position + angleToMouse * SO_Player.movementSpeed * Time.deltaTime);
         }
 
         // If Movement key is held while attacking - Slide
         if (Input.GetKey(upKey) || Input.GetKey(leftKey) || Input.GetKey(downKey) || Input.GetKey(rightKey))
         {
             // Slide in Attack Direction
-            rb.MovePosition(rb.position + angleToMouse * moveSpeed * Time.deltaTime);
+            rb.MovePosition(rb.position + angleToMouse * SO_Player.movementSpeed * Time.deltaTime);
         }
     }
 
@@ -362,7 +357,7 @@ public class Player : MonoBehaviour
         ShowDamage(damage.ToString());
 
         // Reduce Health
-        health -= damage;
+        SO_Player.health -= damage;
 
         // Healthbar Lerp
         healthbar.lerpTimer = 0f;
@@ -382,7 +377,7 @@ public class Player : MonoBehaviour
         ShowHeal(healAmount.ToString());
 
         // Restore Health
-        health += healAmount;
+        SO_Player.health += healAmount;
 
         // HealthBar Lerp
         healthbar.lerpTimer = 0f;
@@ -399,14 +394,14 @@ public class Player : MonoBehaviour
 
     public void GainFury(float furyGainAmount)
     {
-        fury += furyGainAmount;
+        SO_Player.fury += furyGainAmount;
 
         furybar.lerpTimer = 0f;
     }
 
     public void LoseFury(float furyLoseAmount)
     {
-        fury -= furyLoseAmount;
+        SO_Player.fury -= furyLoseAmount;
 
         furybar.lerpTimer = 0f;
     }

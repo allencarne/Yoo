@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScriptableObject : MonoBehaviour
+[CreateAssetMenu(fileName = "PlayerScriptableObject", menuName = "ScriptableObjects/Player")]
+public class PlayerScriptableObject : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] string playerName;
+    [SerializeField] int playerLevel;
+    [SerializeField] float currentExperience;
+    [SerializeField] float requiredExperience;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float health;
+    public float maxHealth;
+    public float movementSpeed;
+    public float maxMovementSpeed;
+    public float attackDamage;
+    public float attackSpeed;
+
+    // Rescources
+    public float fury;
+    public float maxFury;
 }

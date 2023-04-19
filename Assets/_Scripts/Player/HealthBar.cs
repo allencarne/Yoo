@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    Player player;
+    [SerializeField] PlayerScriptableObject SO_Player;
 
     [SerializeField] Image healthBarFront;
     [SerializeField] Image healthBarBack;
@@ -13,19 +13,9 @@ public class HealthBar : MonoBehaviour
     [HideInInspector] public float chipSpeed = 2f;
     [HideInInspector] public float lerpTimer;
 
-    public void Awake()
-    {
-        player = GetComponent<Player>();
-    }
-
-    public void Start()
-    {
-        player.health = player.maxHealth;
-    }
-
     public void Update()
     {
-        player.health = Mathf.Clamp(player.health, 0, player.maxHealth);
+        SO_Player.health = Mathf.Clamp(SO_Player.health, 0, SO_Player.maxHealth);
 
         UpdateHealthUI();
     }
@@ -34,7 +24,7 @@ public class HealthBar : MonoBehaviour
     {
         float fillFront = healthBarFront.fillAmount;
         float fillBack = healthBarBack.fillAmount;
-        float healthFraction = player.health / player.maxHealth;
+        float healthFraction = SO_Player.health / SO_Player.maxHealth;
 
         if (fillBack > healthFraction)
         {
