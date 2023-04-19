@@ -548,12 +548,12 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        var coin = collision.GetComponent<Coin>();
-        if (coin != null)
+        var item = collision.GetComponent<ItemPickup>();
+        if (item != null)
         {
             if (Input.GetKey(pickUpKey))
             {
-                coin.Collect();
+                item.PickUp();
             }
         }
     }
