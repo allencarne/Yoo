@@ -39,6 +39,13 @@ public class MushroomSpawner : MonoBehaviour
 
     void OnEnemyDeath()
     {
+        StartCoroutine(DeathDelay());
+    }
+
+    IEnumerator DeathDelay()
+    {
+        yield return new WaitForSeconds(Random.Range(1, 5));
+
         enemyCount--;
     }
 
