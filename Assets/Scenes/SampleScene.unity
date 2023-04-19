@@ -1324,8 +1324,6 @@ GameObject:
   m_Component:
   - component: {fileID: 376910496}
   - component: {fileID: 376910495}
-  - component: {fileID: 376910499}
-  - component: {fileID: 376910498}
   - component: {fileID: 376910497}
   m_Layer: 0
   m_Name: Sword
@@ -1436,30 +1434,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.375
---- !u!114 &376910498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376910494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf5261d97d59c24fb1875d62f3c0d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &376910499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376910494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2119b45fb61881344a13e4799b61043e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &386421067
 GameObject:
   m_ObjectHideFlags: 0
@@ -47069,17 +47043,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3309749085072429829, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
   m_PrefabInstance: {fileID: 581670874}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1957900233 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 267031261822664936, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
-  m_PrefabInstance: {fileID: 3309749084324967642}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844248a17d130874e936cec815b5b39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1985008225 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3309749085072429829, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
@@ -47864,34 +47827,6 @@ PrefabInstance:
     - target: {fileID: 3309749085072429829, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8951643068678177599, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8951643068678177599, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8951643068678177599, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1957900233}
-    - target: {fileID: 8951643068678177599, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8951643068678177599, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UseItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 8951643068678177599, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventorySlot, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8951643068678177599, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
