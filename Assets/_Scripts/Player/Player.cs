@@ -52,6 +52,8 @@ public class Player : MonoBehaviour
     [SerializeField] KeyCode utilityKey;
     [SerializeField] KeyCode ultimateKey;
 
+    [SerializeField] KeyCode pickUpKey;
+
     protected enum PlayerState
     {
         Spawn,
@@ -520,27 +522,39 @@ public class Player : MonoBehaviour
         }
 
         // Testing - Damage
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             TakeDamage(1);
         }
 
         // Testing - Heal
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             RestoreHealth(1);
         }
 
         // Testing - Gain Fury
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.U))
         {
             GainFury(1);
         }
 
         // Testing - Lose Fury
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             LoseFury(1);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        var coin = collision.GetComponent<Coin>();
+        if (coin != null)
+        {
+            if (Input.GetKey(pickUpKey))
+            {
+                coin.Collect();
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Aim
   - Parry
+  - Interactable
   layers:
   - Default
   - TransparentFX

@@ -97,25 +97,6 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
-        // Testing - Hurt
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            isEnemyHurt = true;
-            state = EnemyState.hurt;
-        }
-
-        // Testing - Take Damage
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            TakeDamage(1);
-        }
-
-        // Testing - Resetore Health
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            RestoreHealth(1);
-        }
-
         // If target is outside of reset range - Reset (Also drops target and incombat is false)
         if (target)
         {

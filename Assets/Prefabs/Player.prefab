@@ -805,6 +805,7 @@ MonoBehaviour:
   defensiveKey: 113
   utilityKey: 101
   ultimateKey: 114
+  pickUpKey: 9
   windSlashPrefab: {fileID: 4553433666271236552, guid: c400f6e4aad52334eab165d98d7f3da3, type: 3}
   windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
   windSlash3Prefab: {fileID: 4188387910762008136, guid: f037c164b38a4134b973d8600f5e9a1c, type: 3}
