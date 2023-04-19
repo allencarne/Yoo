@@ -134,40 +134,17 @@ public class Player : MonoBehaviour
                 break;
         }
 
-        // Testing - Damage
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            TakeDamage(1);
-        }
-
-        // Testing - Heal
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            RestoreHealth(1);
-        }
-
-        // Testing - Gain Fury
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            GainFury(1);
-        }
-
-        // Testing - Lose Fury
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            LoseFury(1);
-        }
-
-        SlowMotionTesting();
-
         // Sorting Order
         if (animator.GetFloat("Vertical") >= 5)
         {
             sword.GetComponent<SpriteRenderer>().sortingOrder = 1;
-        } else
+        }
+        else
         {
             sword.GetComponent<SpriteRenderer>().sortingOrder = -1;
         }
+
+        Testing();
     }
 
     protected virtual void FixedUpdate()
@@ -524,7 +501,7 @@ public class Player : MonoBehaviour
 
     // Testing
 
-    void SlowMotionTesting()
+    void Testing()
     {
         // Testing 
         if (Input.GetKeyDown(KeyCode.F1))
@@ -545,6 +522,30 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F4))
         {
             Time.timeScale = .3f;
+        }
+
+        // Testing - Damage
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            TakeDamage(1);
+        }
+
+        // Testing - Heal
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            RestoreHealth(1);
+        }
+
+        // Testing - Gain Fury
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            GainFury(1);
+        }
+
+        // Testing - Lose Fury
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            LoseFury(1);
         }
     }
 }
