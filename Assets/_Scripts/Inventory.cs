@@ -24,6 +24,7 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
+    [SerializeField] GameObject inventoryUI;
     public int inventorySlots;
 
     public List<Item> items = new List<Item>();
@@ -52,6 +53,14 @@ public class Inventory : MonoBehaviour
         if (onItemChangedCallback != null)
         {
             onItemChangedCallback.Invoke();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
     }
 }
