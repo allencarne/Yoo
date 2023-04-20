@@ -142,6 +142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 68522984}
+  - component: {fileID: 68522985}
   m_Layer: 5
   m_Name: Element Slot
   m_TagString: Untagged
@@ -170,6 +171,19 @@ RectTransform:
   m_AnchoredPosition: {x: 9.9, y: -21.26}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &68522985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68522983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa564155f935ca499988a94fbe88141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 980664700}
 --- !u!1 &80208737
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 221670863}
+  - component: {fileID: 221670864}
   m_Layer: 5
   m_Name: Necklace Slot
   m_TagString: Untagged
@@ -950,6 +965,19 @@ RectTransform:
   m_AnchoredPosition: {x: 38.9, y: 1.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &221670864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221670862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa564155f935ca499988a94fbe88141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 1352128137}
 --- !u!1 &231318761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,6 +2718,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 588889058}
+  - component: {fileID: 588889059}
   m_Layer: 5
   m_Name: Weapon Slot
   m_TagString: Untagged
@@ -2718,6 +2747,19 @@ RectTransform:
   m_AnchoredPosition: {x: -10.1, y: -21.26}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &588889059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588889057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa564155f935ca499988a94fbe88141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 121046951}
 --- !u!1 &600716409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2982,6 +3024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 667190911}
+  - component: {fileID: 667190912}
   m_Layer: 5
   m_Name: Amulet Slot
   m_TagString: Untagged
@@ -3010,6 +3053,19 @@ RectTransform:
   m_AnchoredPosition: {x: 38.9, y: -21.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &667190912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667190910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa564155f935ca499988a94fbe88141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 1050445660}
 --- !u!224 &700548858 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3309749085072429829, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
@@ -42686,6 +42742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 803731278}
+  - component: {fileID: 803731279}
   m_Layer: 5
   m_Name: Legs Slot
   m_TagString: Untagged
@@ -42714,6 +42771,19 @@ RectTransform:
   m_AnchoredPosition: {x: -39.15, y: -21.26}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &803731279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803731277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa564155f935ca499988a94fbe88141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 122017515}
 --- !u!1001 &811727570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44431,6 +44501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1198263278}
+  - component: {fileID: 1198263279}
   m_Layer: 5
   m_Name: Helmet Slot
   m_TagString: Untagged
@@ -44459,6 +44530,19 @@ RectTransform:
   m_AnchoredPosition: {x: -39.15, y: 24.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1198263279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198263277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa564155f935ca499988a94fbe88141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 1461834717}
 --- !u!1 &1218304919
 GameObject:
   m_ObjectHideFlags: 0
@@ -45540,6 +45624,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1421739653}
+  - component: {fileID: 1421739654}
   m_Layer: 5
   m_Name: Ring Slot
   m_TagString: Untagged
@@ -45568,6 +45653,19 @@ RectTransform:
   m_AnchoredPosition: {x: 38.9, y: 24.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1421739654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421739652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa564155f935ca499988a94fbe88141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 1464503655}
 --- !u!1 &1425120859
 GameObject:
   m_ObjectHideFlags: 0
@@ -48426,6 +48524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2130354292}
+  - component: {fileID: 2130354293}
   m_Layer: 5
   m_Name: Chest Slot
   m_TagString: Untagged
@@ -48454,6 +48553,19 @@ RectTransform:
   m_AnchoredPosition: {x: -39.15, y: 1.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2130354293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130354291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa564155f935ca499988a94fbe88141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 282253117}
 --- !u!1 &2133461398
 GameObject:
   m_ObjectHideFlags: 0
