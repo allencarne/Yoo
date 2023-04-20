@@ -6,12 +6,8 @@ using UnityEngine;
 public class EquipmentManager : MonoBehaviour
 {
     #region Singleton
+
     public static EquipmentManager instance;
-
-    public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
-    public OnEquipmentChanged onEquipmentChangedCallback;
-
-    Inventory inventory;
 
     private void Awake()
     {
@@ -19,6 +15,12 @@ public class EquipmentManager : MonoBehaviour
     }
 
     #endregion
+
+    public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
+    public OnEquipmentChanged onEquipmentChangedCallback;
+
+    Inventory inventory;
+
 
     Equipment[] currentEquipment;
 

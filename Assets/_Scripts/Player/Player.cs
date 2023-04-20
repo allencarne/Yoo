@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject floatingTextHeal;
     [HideInInspector] protected Camera cam;
 
-    [SerializeField] GameObject sword;
+    [SerializeField] protected GameObject sword;
 
     [Header("Variables")]
     [SerializeField] protected float basicAttackSlideForce;
