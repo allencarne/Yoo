@@ -52,8 +52,6 @@ public class Player : MonoBehaviour
     [SerializeField] KeyCode utilityKey;
     [SerializeField] KeyCode ultimateKey;
 
-    [SerializeField] KeyCode pickUpKey;
-
     protected enum PlayerState
     {
         Spawn,
@@ -543,18 +541,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             LoseFury(1);
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        var item = collision.GetComponent<ItemPickup>();
-        if (item != null)
-        {
-            if (Input.GetKey(pickUpKey))
-            {
-                item.PickUp();
-            }
         }
     }
 }

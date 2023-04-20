@@ -662,6 +662,7 @@ GameObject:
   - component: {fileID: 8233113973608920403}
   - component: {fileID: 6061929791622581797}
   - component: {fileID: 6700313451922725887}
+  - component: {fileID: 7779068306958005336}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -780,7 +781,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8233113973608920429}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12bf6cf3745f1244d948d16b5beed6f7, type: 3}
   m_Name: 
@@ -806,7 +807,6 @@ MonoBehaviour:
   defensiveKey: 113
   utilityKey: 101
   ultimateKey: 114
-  pickUpKey: 122
   windSlashPrefab: {fileID: 4553433666271236552, guid: c400f6e4aad52334eab165d98d7f3da3, type: 3}
   windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
   windSlash3Prefab: {fileID: 4188387910762008136, guid: f037c164b38a4134b973d8600f5e9a1c, type: 3}
@@ -873,7 +873,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8233113973608920429}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 998fa909ce4e4a346ad834240c99d3fb, type: 3}
   m_Name: 
@@ -899,6 +899,18 @@ MonoBehaviour:
   defensiveKey: 113
   utilityKey: 101
   ultimateKey: 114
+--- !u!114 &7779068306958005336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8233113973608920429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289649649ce1039469ff413ce40a9b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   pickUpKey: 122
 --- !u!1 &8233113973848941818
 GameObject:
