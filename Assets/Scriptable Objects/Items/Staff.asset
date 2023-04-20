@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Staff
   icon: {fileID: 21300000, guid: 39d99e1c6bf535746ac5d6d369df7d8a, type: 3}
+  equipmentSlot: 3
+  healthModifier: 0
+  damageModifier: 1

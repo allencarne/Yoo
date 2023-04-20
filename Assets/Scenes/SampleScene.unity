@@ -923,7 +923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 221670863}
   m_Layer: 5
-  m_Name: Second Ring Slot
+  m_Name: Necklace Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2983,7 +2983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 667190911}
   m_Layer: 5
-  m_Name: Necklace Slot
+  m_Name: Amulet Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3025,6 +3025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 770188564}
   - component: {fileID: 770188563}
+  - component: {fileID: 770188565}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3062,6 +3063,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &770188565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770188562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93434ce0fd79144abfdd6a7b4b60284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &772143732 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3309749085072429829, guid: fcf6f7068d0b87f489305a6f732f4b8e, type: 3}
