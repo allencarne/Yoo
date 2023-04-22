@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] PlayerScriptableObject SO_Player;
+    [SerializeField] protected PlayerScriptableObject SO_Player;
 
     [Header("Components")]
     [SerializeField] HealthBar healthbar;
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     [SerializeField] protected float basicAttackRange;
     [HideInInspector] protected Vector2 angleToMouse;
     [HideInInspector] protected bool canSlide = false;
-    [HideInInspector] Vector2 movement;
+    [HideInInspector] protected Vector2 movement;
     [HideInInspector] bool isPlayerHurt = false;
     [HideInInspector] bool isPlayerDead = false;
     [HideInInspector] float damage;
@@ -161,14 +161,14 @@ public class Player : MonoBehaviour
         animator.Play("Spawn");
     }
 
-    public void PlayerIdleState()
+    protected virtual void PlayerIdleState()
     {
         // Animation
         animator.Play("Idle");
-        animator.Play("Idle", 1);
-        animator.Play("Idle", 2);
-        animator.Play("Idle", 3);
-        animator.Play("Idle", 4);
+        //animator.Play("Idle", 1);
+        //animator.Play("Idle", 2);
+        //animator.Play("Idle", 3);
+        //animator.Play("Idle", 4);
 
         // Tranitions
         MoveKeyPressed();
@@ -180,14 +180,14 @@ public class Player : MonoBehaviour
         UltimateKeyPressed();
     }
 
-    public void PlayerRunState()
+    protected virtual void PlayerRunState()
     {
         // Animation
         animator.Play("Run");
-        animator.Play("Run", 1);
-        animator.Play("Run", 2);
-        animator.Play("Run", 3);
-        animator.Play("Run", 4);
+        //animator.Play("Run", 1);
+        //animator.Play("Run", 2);
+        //animator.Play("Run", 3);
+        //animator.Play("Run", 4);
 
         // Set idle Animation after move
         if (movement != Vector2.zero)
