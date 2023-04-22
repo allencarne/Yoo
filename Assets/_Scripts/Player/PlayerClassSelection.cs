@@ -26,7 +26,15 @@ public class PlayerClassSelection : MonoBehaviour
         Slayer,
         Incidiary,
         Pyromancer,
-        Scorch
+        Scorch,
+        IceSword,
+        IceBow,
+        IceStaff,
+        IceDagger,
+        ElectricitySword,
+        ElectricityBow,
+        ElectricityStaff,
+        ElectricityDagger
     }
 
     public PlayerClass playerClass = PlayerClass.Beginner;
@@ -37,18 +45,121 @@ public class PlayerClassSelection : MonoBehaviour
         EquipmentManager.instance.onEquipmentChangedCallback += OnEquipmentChanged;
     }
 
-    void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
+    private void Update()
     {
-        switch (playerClass)
+        #region Wind
+
+        // Wind Sword
+        if (swordEquipped && windEquipped)
         {
-            case PlayerClass.Beginner:
-                Beginner();
-                break;
-            case PlayerClass.Zephyr:
-                Zephyr(newItem, oldItem);
-                break;
+            playerClass = PlayerClass.Zephyr;
         }
 
+        // Wind Bow
+        if (bowEquipped && windEquipped)
+        {
+            playerClass = PlayerClass.WindWalker;
+        }
+
+        // Wind Staff
+        if (staffEquipped && windEquipped)
+        {
+            playerClass = PlayerClass.StormCaster;
+        }
+
+        // Wind Dagger
+        if (daggerEquipped && windEquipped)
+        {
+            playerClass = PlayerClass.DuskBlade;
+        }
+
+        #endregion
+
+        #region Fire
+        // Fire Sword
+        if (swordEquipped && fireEquipped)
+        {
+            playerClass = PlayerClass.Slayer;
+        }
+
+        // Fire Bow
+        if (bowEquipped && fireEquipped)
+        {
+            playerClass = PlayerClass.Incidiary;
+        }
+
+        // Fire Staff
+        if (staffEquipped && fireEquipped)
+        {
+            playerClass = PlayerClass.Pyromancer;
+        }
+
+        // Fire Dagger
+        if (daggerEquipped && fireEquipped)
+        {
+            playerClass = PlayerClass.Scorch;
+        }
+
+        #endregion
+
+        #region Ice
+
+        // Ice Sword
+        if (swordEquipped && iceEquipped)
+        {
+            playerClass = PlayerClass.IceSword;
+        }
+
+        // Ice Bow
+        if (bowEquipped && iceEquipped)
+        {
+            playerClass = PlayerClass.IceBow;
+        }
+
+        // Ice Staff
+        if (staffEquipped && iceEquipped)
+        {
+            playerClass = PlayerClass.IceStaff;
+        }
+
+        // Ice Dagger
+        if (daggerEquipped && iceEquipped)
+        {
+            playerClass = PlayerClass.IceDagger;
+        }
+
+        #endregion
+
+        #region Fire
+        // Electricity Sword
+        if (swordEquipped && electricityEquipped)
+        {
+            playerClass = PlayerClass.ElectricitySword;
+        }
+
+        // Electricity Bow
+        if (bowEquipped && electricityEquipped)
+        {
+            playerClass = PlayerClass.ElectricityBow;
+        }
+
+        // Electricity Staff
+        if (staffEquipped && electricityEquipped)
+        {
+            playerClass = PlayerClass.ElectricityStaff;
+        }
+
+        // Electricity Dagger
+        if (daggerEquipped && electricityEquipped)
+        {
+            playerClass = PlayerClass.ElectricityDagger;
+        }
+
+        #endregion
+    }
+
+    void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
+    {
         Weapon equippedWeapon = newItem as Weapon;
 
         if (equippedWeapon != null && equippedWeapon.weaponType == WeaponType.Sword)
@@ -124,40 +235,5 @@ public class PlayerClassSelection : MonoBehaviour
             fireEquipped = false;
             iceEquipped = false;
         }
-    }
-
-    void Beginner()
-    {
-        
-    }
-
-    void Zephyr(Equipment newItem, Equipment oldItem)
-    {
-        Weapon equippedWeapon = newItem as Weapon;
-
-        if (equippedWeapon != null && equippedWeapon.weaponType == WeaponType.Sword)
-        {
-            swordEquipped = true;
-        }
-        else
-        {
-            swordEquipped = false;
-        }
-
-        Element equippedElement = newItem as Element;
-
-        if (equippedElement != null && equippedElement.elementType == ElementType.Wind)
-        {
-            windEquipped = true;
-        }
-        else
-        {
-            windEquipped = false;
-        }
-    }
-
-    public void HUH(Equipment newItem, Equipment oldItem)
-    {
-
     }
 }
