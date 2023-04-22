@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject floatingTextHeal;
     [HideInInspector] protected Camera cam;
 
-    [SerializeField] protected GameObject sword;
-
     [Header("Variables")]
     [SerializeField] protected float basicAttackSlideForce;
     [SerializeField] protected float basicAttackRange;
@@ -128,7 +126,7 @@ public class Player : MonoBehaviour
                 PlayerUltimateState();
                 break;
         }
-
+         /*
         // Sorting Order
         if (animator.GetFloat("Vertical") >= 5)
         {
@@ -138,7 +136,7 @@ public class Player : MonoBehaviour
         {
             sword.GetComponent<SpriteRenderer>().sortingOrder = -1;
         }
-
+         */
         Testing();
     }
 

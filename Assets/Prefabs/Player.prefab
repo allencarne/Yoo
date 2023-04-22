@@ -837,8 +837,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0159da4ffb75a647ae4ca0457c928b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sword: {fileID: 8233113973901384251}
+  bow: {fileID: 8233113972554192689}
+  staff: {fileID: 8233113972998591176}
+  dagger: {fileID: 8233113974432671217}
   beginner: {fileID: 6700313451922725887}
-  zephyr: {fileID: 0}
+  zephyr: {fileID: 8233113973608920404}
+  stormCaster: {fileID: 5674361134903768034}
   playerClass: 0
 --- !u!114 &6700313451922725887
 MonoBehaviour:
@@ -847,7 +852,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8233113973608920429}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 998fa909ce4e4a346ad834240c99d3fb, type: 3}
   m_Name: 
@@ -860,7 +865,6 @@ MonoBehaviour:
   aimer: {fileID: 8233113972949139662}
   floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
   floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
-  sword: {fileID: 8233113973901384251}
   basicAttackSlideForce: 5
   basicAttackRange: 10.2
   upKey: 119
@@ -880,7 +884,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8233113973608920429}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12bf6cf3745f1244d948d16b5beed6f7, type: 3}
   m_Name: 
@@ -893,7 +897,6 @@ MonoBehaviour:
   aimer: {fileID: 8233113972949139662}
   floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
   floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
-  sword: {fileID: 8233113973901384251}
   basicAttackSlideForce: 5
   basicAttackRange: 10.2
   upKey: 119
@@ -936,7 +939,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8233113973608920429}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46f977c62c8e3b646acb8ba7beb83939, type: 3}
   m_Name: 
@@ -949,7 +952,6 @@ MonoBehaviour:
   aimer: {fileID: 8233113972949139662}
   floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
   floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
-  sword: {fileID: 8233113973901384251}
   basicAttackSlideForce: 5
   basicAttackRange: 10.2
   upKey: 119
@@ -1016,7 +1018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8233113973901384250
 Transform:
   m_ObjectHideFlags: 0

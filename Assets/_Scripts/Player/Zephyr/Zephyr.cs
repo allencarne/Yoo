@@ -52,6 +52,16 @@ public class Zephyr : Player
         EnemyHitBox.OnPlayerParry -= PlayerParry;
     }
 
+    protected override void Start()
+    {
+        base.Start();
+
+        //sword.SetActive(true);
+        //bow.SetActive(false);
+        //staff.SetActive(false);
+        //dagger.SetActive(false);
+    }
+
     protected override void FixedUpdate()
     {
         base.FixedUpdate();

@@ -8,6 +8,6 @@ public class Beginner : Player
     {
         base.Start();
 
-        sword.SetActive(false);
+        //sword.SetActive(false);
     }
 }

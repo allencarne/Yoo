@@ -16,8 +16,14 @@ public class PlayerClassSelection : MonoBehaviour
     bool iceEquipped;
     bool electricityEquipped;
 
+    [SerializeField] GameObject sword;
+    [SerializeField] GameObject bow;
+    [SerializeField] GameObject staff;
+    [SerializeField] GameObject dagger;
+
     [SerializeField] Beginner beginner;
     [SerializeField] Zephyr zephyr;
+    [SerializeField] StormCaster stormCaster;
 
     public enum PlayerClass
     {
@@ -50,7 +56,33 @@ public class PlayerClassSelection : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(playerClass);
+        if (playerClass == PlayerClass.Beginner)
+        {
+            beginner.enabled = true;
+        }
+        else
+        {
+            beginner.enabled = false;
+        }
+
+        if (playerClass == PlayerClass.Zephyr)
+        {
+            zephyr.enabled = true;
+        } else
+        {
+            zephyr.enabled = false;
+        }
+
+        if (playerClass == PlayerClass.StormCaster)
+        {
+            stormCaster.enabled = true;
+        }
+        else
+        {
+            stormCaster.enabled = false;
+        }
+
+
 
         #region Wind
 
