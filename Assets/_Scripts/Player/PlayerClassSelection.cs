@@ -56,6 +56,9 @@ public class PlayerClassSelection : MonoBehaviour
 
     private void Update()
     {
+
+        #region Class
+
         if (playerClass == PlayerClass.Beginner)
         {
             beginner.enabled = true;
@@ -82,7 +85,7 @@ public class PlayerClassSelection : MonoBehaviour
             stormCaster.enabled = false;
         }
 
-
+        #endregion
 
         #region Wind
 
@@ -208,6 +211,13 @@ public class PlayerClassSelection : MonoBehaviour
             bowEquipped = false;
             staffEquipped = false;
             daggerEquipped = false;
+
+
+            sword.SetActive(true);
+
+            bow.SetActive(false);
+            staff.SetActive(false);
+            dagger.SetActive(false);
         }
 
         if (equippedWeapon != null && equippedWeapon.weaponType == WeaponType.Bow)
@@ -217,6 +227,13 @@ public class PlayerClassSelection : MonoBehaviour
             swordEquipped = false;
             staffEquipped = false;
             daggerEquipped = false;
+
+
+            bow.SetActive(true);
+
+            sword.SetActive(false);
+            staff.SetActive(false);
+            dagger.SetActive(false);
         }
 
         if (equippedWeapon != null && equippedWeapon.weaponType == WeaponType.Staff)
@@ -226,6 +243,13 @@ public class PlayerClassSelection : MonoBehaviour
             swordEquipped = false;
             bowEquipped = false;
             daggerEquipped = false;
+
+
+            staff.SetActive(true);
+
+            sword.SetActive(false);
+            bow.SetActive(false);
+            dagger.SetActive(false);
         }
 
         if (equippedWeapon != null && equippedWeapon.weaponType == WeaponType.Dagger)
@@ -235,6 +259,12 @@ public class PlayerClassSelection : MonoBehaviour
             swordEquipped = false;
             bowEquipped = false;
             staffEquipped = false;
+
+            dagger.SetActive(true);
+
+            sword.SetActive(false);
+            bow.SetActive(false);
+            staff.SetActive(false);
         }
 
         #endregion
