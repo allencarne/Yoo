@@ -37,7 +37,7 @@ public class PlayerClassSelection : MonoBehaviour
         ElectricityDagger
     }
 
-    public PlayerClass playerClass = PlayerClass.Beginner;
+    public static PlayerClass playerClass = PlayerClass.Beginner;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +47,8 @@ public class PlayerClassSelection : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(playerClass);
+
         #region Wind
 
         // Wind Sword
@@ -130,7 +132,7 @@ public class PlayerClassSelection : MonoBehaviour
 
         #endregion
 
-        #region Fire
+        #region Electricity
         // Electricity Sword
         if (swordEquipped && electricityEquipped)
         {
@@ -160,6 +162,8 @@ public class PlayerClassSelection : MonoBehaviour
 
     void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
     {
+        #region Weapons
+
         Weapon equippedWeapon = newItem as Weapon;
 
         if (equippedWeapon != null && equippedWeapon.weaponType == WeaponType.Sword)
@@ -198,6 +202,10 @@ public class PlayerClassSelection : MonoBehaviour
             staffEquipped = false;
         }
 
+        #endregion
+
+        #region Elements
+
         Element equippedElement = newItem as Element;
 
         if (equippedElement != null && equippedElement.elementType == ElementType.Wind)
@@ -235,5 +243,7 @@ public class PlayerClassSelection : MonoBehaviour
             fireEquipped = false;
             iceEquipped = false;
         }
+
+        #endregion
     }
 }
