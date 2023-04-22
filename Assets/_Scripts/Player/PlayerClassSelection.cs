@@ -16,6 +16,9 @@ public class PlayerClassSelection : MonoBehaviour
     bool iceEquipped;
     bool electricityEquipped;
 
+    [SerializeField] Beginner beginner;
+    [SerializeField] Zephyr zephyr;
+
     public enum PlayerClass
     {
         Beginner,
@@ -37,7 +40,7 @@ public class PlayerClassSelection : MonoBehaviour
         ElectricityDagger
     }
 
-    public static PlayerClass playerClass = PlayerClass.Beginner;
+    public PlayerClass playerClass = PlayerClass.Beginner;
 
     // Start is called before the first frame update
     void Start()
