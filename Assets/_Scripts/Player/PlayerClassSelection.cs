@@ -92,21 +92,37 @@ public class PlayerClassSelection : MonoBehaviour
         if (equippedElement != null && equippedElement.elementType == ElementType.Wind)
         {
             windEquipped = true;
+
+            fireEquipped = false;
+            iceEquipped = false;
+            electricityEquipped = false;
         }
 
         if (equippedElement != null && equippedElement.elementType == ElementType.Fire)
         {
             fireEquipped = true;
+
+            windEquipped = false;
+            iceEquipped = false;
+            electricityEquipped = false;
         }
 
         if (equippedElement != null && equippedElement.elementType == ElementType.Ice)
         {
             iceEquipped = true;
+
+            windEquipped = false;
+            fireEquipped = false;
+            electricityEquipped = false;
         }
 
         if (equippedElement != null && equippedElement.elementType == ElementType.Electricity)
         {
             electricityEquipped = true;
+
+            windEquipped = false;
+            fireEquipped = false;
+            iceEquipped = false;
         }
     }
 
