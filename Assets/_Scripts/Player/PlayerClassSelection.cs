@@ -6,10 +6,10 @@ using static PlayerClassSelection;
 
 public class PlayerClassSelection : MonoBehaviour
 {
-    bool swordEquipped;
-    bool bowEquipped;
-    bool staffEquipped;
-    bool daggerEquipped;
+    public static bool swordEquipped;
+    public static bool bowEquipped;
+    public static bool staffEquipped;
+    public static bool daggerEquipped;
 
     bool windEquipped;
     bool fireEquipped;
