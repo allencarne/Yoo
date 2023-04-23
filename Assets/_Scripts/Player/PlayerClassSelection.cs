@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
-using static PlayerClassSelection;
 
 public class PlayerClassSelection : MonoBehaviour
 {
@@ -10,6 +9,7 @@ public class PlayerClassSelection : MonoBehaviour
     [SerializeField] Beginner beginner;
     [SerializeField] Zephyr zephyr;
     [SerializeField] StormCaster stormCaster;
+    [SerializeField] Slayer slayer;
 
     [Header("Weapons")]
     public static bool swordEquipped;
@@ -57,6 +57,7 @@ public class PlayerClassSelection : MonoBehaviour
 
         #region Class
 
+        // Beginner
         if (playerClass == PlayerClass.Beginner)
         {
             beginner.enabled = true;
@@ -66,6 +67,7 @@ public class PlayerClassSelection : MonoBehaviour
             beginner.enabled = false;
         }
 
+        // Wind - Sword
         if (playerClass == PlayerClass.Zephyr)
         {
             zephyr.enabled = true;
@@ -74,6 +76,7 @@ public class PlayerClassSelection : MonoBehaviour
             zephyr.enabled = false;
         }
 
+        // Wind - Staff
         if (playerClass == PlayerClass.StormCaster)
         {
             stormCaster.enabled = true;
@@ -81,6 +84,16 @@ public class PlayerClassSelection : MonoBehaviour
         else
         {
             stormCaster.enabled = false;
+        }
+
+        //  Fire - Sword
+        if (playerClass == PlayerClass.Slayer)
+        {
+            slayer.enabled = true;
+        }
+        else
+        {
+            slayer.enabled = false;
         }
 
         #endregion

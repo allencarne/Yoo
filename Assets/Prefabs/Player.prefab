@@ -666,6 +666,7 @@ GameObject:
   - component: {fileID: 6700313451922725887}
   - component: {fileID: 8233113973608920404}
   - component: {fileID: 5674361134903768034}
+  - component: {fileID: 976314983593472736}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -841,8 +842,7 @@ MonoBehaviour:
   beginner: {fileID: 6700313451922725887}
   zephyr: {fileID: 8233113973608920404}
   stormCaster: {fileID: 5674361134903768034}
-  zephyrAbilityBar: {fileID: 0}
-  playerClass: 0
+  slayer: {fileID: 976314983593472736}
 --- !u!114 &480369979257682555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,6 +978,41 @@ MonoBehaviour:
   defensiveKey: 113
   utilityKey: 101
   ultimateKey: 114
+--- !u!114 &976314983593472736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8233113973608920429}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd94671d17ed584ba8383f201d4d978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SO_Player: {fileID: 11400000, guid: fc34b7e230a2cbf4488c19562075fe12, type: 2}
+  healthbar: {fileID: 8233113973608920403}
+  furybar: {fileID: 6061929791622581797}
+  animator: {fileID: 8233113973608920405}
+  rb: {fileID: 8233113973608920424}
+  aimer: {fileID: 8233113972949139662}
+  floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
+  floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
+  basicAttackSlideForce: 5
+  basicAttackRange: 10.2
+  upKey: 119
+  downKey: 115
+  leftKey: 97
+  rightKey: 100
+  basicAttackKey: 323
+  abilityKey: 324
+  mobilityKey: 32
+  defensiveKey: 113
+  utilityKey: 101
+  ultimateKey: 114
+  fireSlashPrefab: {fileID: 4274496651058342060, guid: 3be5ed8b2731bc24c8f91b4e5006e991, type: 3}
+  fireSlashCoolDown: 1
+  isFireSlashActive: 0
 --- !u!1 &8233113973848941818
 GameObject:
   m_ObjectHideFlags: 0
