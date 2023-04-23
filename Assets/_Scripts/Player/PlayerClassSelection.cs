@@ -6,24 +6,22 @@ using static PlayerClassSelection;
 
 public class PlayerClassSelection : MonoBehaviour
 {
+    [Header("Classes")]
+    [SerializeField] Beginner beginner;
+    [SerializeField] Zephyr zephyr;
+    [SerializeField] StormCaster stormCaster;
+
+    [Header("Weapons")]
     public static bool swordEquipped;
     public static bool bowEquipped;
     public static bool staffEquipped;
     public static bool daggerEquipped;
 
+    [Header("Elements")]
     bool windEquipped;
     bool fireEquipped;
     bool iceEquipped;
     bool electricityEquipped;
-
-    [SerializeField] GameObject sword;
-    [SerializeField] GameObject bow;
-    [SerializeField] GameObject staff;
-    [SerializeField] GameObject dagger;
-
-    [SerializeField] Beginner beginner;
-    [SerializeField] Zephyr zephyr;
-    [SerializeField] StormCaster stormCaster;
 
     public enum PlayerClass
     {
@@ -46,7 +44,7 @@ public class PlayerClassSelection : MonoBehaviour
         ElectricityDagger
     }
 
-    public PlayerClass playerClass = PlayerClass.Beginner;
+    public static PlayerClass playerClass = PlayerClass.Beginner;
 
     // Start is called before the first frame update
     void Start()
@@ -211,13 +209,6 @@ public class PlayerClassSelection : MonoBehaviour
             bowEquipped = false;
             staffEquipped = false;
             daggerEquipped = false;
-
-
-            sword.SetActive(true);
-
-            bow.SetActive(false);
-            staff.SetActive(false);
-            dagger.SetActive(false);
         }
 
         if (equippedWeapon != null && equippedWeapon.weaponType == WeaponType.Bow)
@@ -227,13 +218,6 @@ public class PlayerClassSelection : MonoBehaviour
             swordEquipped = false;
             staffEquipped = false;
             daggerEquipped = false;
-
-
-            bow.SetActive(true);
-
-            sword.SetActive(false);
-            staff.SetActive(false);
-            dagger.SetActive(false);
         }
 
         if (equippedWeapon != null && equippedWeapon.weaponType == WeaponType.Staff)
@@ -243,13 +227,6 @@ public class PlayerClassSelection : MonoBehaviour
             swordEquipped = false;
             bowEquipped = false;
             daggerEquipped = false;
-
-
-            staff.SetActive(true);
-
-            sword.SetActive(false);
-            bow.SetActive(false);
-            dagger.SetActive(false);
         }
 
         if (equippedWeapon != null && equippedWeapon.weaponType == WeaponType.Dagger)
@@ -259,12 +236,6 @@ public class PlayerClassSelection : MonoBehaviour
             swordEquipped = false;
             bowEquipped = false;
             staffEquipped = false;
-
-            dagger.SetActive(true);
-
-            sword.SetActive(false);
-            bow.SetActive(false);
-            staff.SetActive(false);
         }
 
         #endregion
