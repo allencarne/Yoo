@@ -17,11 +17,6 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject floatingTextHeal;
     [HideInInspector] protected Camera cam;
 
-    [SerializeField] GameObject sword;
-    [SerializeField] GameObject bow;
-    [SerializeField] GameObject staff;
-    [SerializeField] GameObject dagger;
-
     [Header("Variables")]
     [SerializeField] protected float basicAttackSlideForce;
     [SerializeField] protected float basicAttackRange;
@@ -142,7 +137,6 @@ public class Player : MonoBehaviour
            sword.GetComponent<SpriteRenderer>().sortingOrder = -1;
        }
         */
-        UpdatePlayerWeapon();
 
         Testing();
     }
@@ -546,45 +540,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             LoseFury(1);
-        }
-    }
-
-    void UpdatePlayerWeapon()
-    {
-        if (PlayerClassSelection.swordEquipped)
-        {
-            sword.SetActive(true);
-        }
-        else
-        {
-            sword.SetActive(false);
-        }
-
-        if (PlayerClassSelection.bowEquipped)
-        {
-            bow.SetActive(true);
-        }
-        else
-        {
-            bow.SetActive(false);
-        }
-
-        if (PlayerClassSelection.staffEquipped)
-        {
-            staff.SetActive(true);
-        }
-        else
-        {
-            staff.SetActive(false);
-        }
-
-        if (PlayerClassSelection.daggerEquipped)
-        {
-            dagger.SetActive(true);
-        }
-        else
-        {
-            dagger.SetActive(false);
         }
     }
 }
