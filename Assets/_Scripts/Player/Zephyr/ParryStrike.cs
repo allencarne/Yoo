@@ -15,7 +15,7 @@ public class ParryStrike : MonoBehaviour
         if (enemy != null)
         {
             // Deal Damage
-            enemy.TakeDamage(1);
+            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage);
 
             // Hit Spark
             Instantiate(zephyrHitSpark, collision.transform.position, collision.transform.rotation);

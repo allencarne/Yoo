@@ -1,11 +1,30 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 
-public class PlayerSpawner : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] GameObject playerPrefab;
+    #region Singleton
+
+    public static PlayerManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than once instance of PlayerManager found!");
+            return;
+        }
+
+        instance = this;
+    }
+
+    #endregion
+
+    public GameObject playerPrefab;
+    public PlayerScriptableObject player_SO;
+
     [SerializeField] CinemachineVirtualCamera virtualCam;
 
     bool canSpawn = true;

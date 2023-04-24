@@ -17,7 +17,7 @@ public class Engulf : MonoBehaviour
         {
 
             // Deal Damage
-            enemy.TakeDamage(1);
+            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage);
 
             // Hit Spark
             Instantiate(zephyrHitSpark, collision.transform.position, collision.transform.rotation);
