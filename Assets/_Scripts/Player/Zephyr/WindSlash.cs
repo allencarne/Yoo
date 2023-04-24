@@ -6,6 +6,7 @@ public class WindSlash : MonoBehaviour
 {
     [SerializeField] GameObject zephyrHitSpark;
     [SerializeField] GameObject windSlashHitSpark;
+    [SerializeField] PlayerScriptableObject player_SO;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,7 +16,7 @@ public class WindSlash : MonoBehaviour
         if (enemy != null)
         {
             // Deal Damage
-            enemy.TakeDamage(1);
+            enemy.TakeDamage(player_SO.attackDamage);
 
             // Hit Spark
             Instantiate(zephyrHitSpark, collision.transform.position, collision.transform.rotation);

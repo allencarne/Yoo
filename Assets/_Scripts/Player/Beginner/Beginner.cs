@@ -45,7 +45,7 @@ public class Beginner : Player
 
         // Input
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        movement = moveInput.normalized * SO_Player.movementSpeed;
+        movement = moveInput.normalized * player_SO.movementSpeed;
 
         // Transitions
         NoMoveKeyPressed();

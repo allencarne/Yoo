@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zephyrHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
   windSlashHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}
+  player_SO: {fileID: 11400000, guid: fc34b7e230a2cbf4488c19562075fe12, type: 2}
 --- !u!70 &4178695143283681922
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
