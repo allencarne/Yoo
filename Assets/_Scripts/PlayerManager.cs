@@ -44,6 +44,30 @@ public class PlayerManager : MonoBehaviour
         SpawnPlayer();
     }
 
+    private void Update()
+    {
+        // Testing 
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Time.timeScale = 1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            Time.timeScale = .7f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            Time.timeScale = .5f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            Time.timeScale = .3f;
+        }
+    }
+
     void SpawnPlayer()
     {
         if (canSpawn)

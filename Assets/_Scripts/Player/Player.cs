@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
     [HideInInspector] bool isPlayerHurt = false;
     [HideInInspector] bool isPlayerDead = false;
     [HideInInspector] float damage;
+    bool doneSpawning;
 
     protected bool canBasicAttack = true;
     protected bool canBasicAttack2 = false;
@@ -83,7 +85,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(state);
+        Debug.Log(state);
 
         switch (state)
         {
@@ -161,6 +163,23 @@ public class Player : MonoBehaviour
     {
         // Animation
         animator.Play("Spawn");
+
+        if (doneSpawning)
+        {
+            doneSpawning = false;
+            state = PlayerState.Idle;
+        }
+
+        StartCoroutine(SpawnAnimationDruation());
+    }
+
+    IEnumerator SpawnAnimationDruation()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        doneSpawning = true;
+        //Debug.Log("test");
+        //state = PlayerState.Idle;
     }
 
     protected virtual void PlayerIdleState()
@@ -292,11 +311,6 @@ public class Player : MonoBehaviour
     }
 
     #region Animation Events
-
-    public void AE_Spawn()
-    {
-        state = PlayerState.Idle;
-    }
 
     public void AE_Hurt()
     {
@@ -498,27 +512,6 @@ public class Player : MonoBehaviour
 
     void Testing()
     {
-        // Testing 
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            Time.timeScale = 1f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            Time.timeScale = .7f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F3))
-        {
-            Time.timeScale = .5f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F4))
-        {
-            Time.timeScale = .3f;
-        }
-
         // Testing - Damage
         if (Input.GetKeyDown(KeyCode.T))
         {
