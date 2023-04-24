@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
@@ -321,6 +322,11 @@ public class Player : MonoBehaviour
 
     #region Helper Methods
 
+    bool isMouseOverUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
+    }
+
     protected virtual void AngleToMouse()
     {
         // Calculates angle from mouse position and player position
@@ -444,33 +450,45 @@ public class Player : MonoBehaviour
 
     public void BasicAttackKeyPressed()
     {
-        if (Input.GetKey(basicAttackKey) && canBasicAttack)
+        if (!isMouseOverUI())
         {
-            state = PlayerState.BasicAttack;
+            if (Input.GetKey(basicAttackKey) && canBasicAttack)
+            {
+                state = PlayerState.BasicAttack;
+            }
         }
     }
 
     protected virtual void BasicAttack2KeyPressed()
     {
-        if (Input.GetKey(basicAttackKey) && canBasicAttack2)
+        if (!isMouseOverUI())
         {
-            state = PlayerState.BasicAttack2;
+            if (Input.GetKey(basicAttackKey) && canBasicAttack2)
+            {
+                state = PlayerState.BasicAttack2;
+            }
         }
     }
 
     protected virtual void BasicAttack3KeyPressed()
     {
-        if (Input.GetKey(basicAttackKey) && canBasicAttack3)
+        if (!isMouseOverUI())
         {
-            state = PlayerState.BasicAttack3;
+            if (Input.GetKey(basicAttackKey) && canBasicAttack3)
+            {
+                state = PlayerState.BasicAttack3;
+            }
         }
     }
 
     protected virtual void AbilityKeyPressed()
     {
-        if (Input.GetKey(abilityKey) && canAbility)
+        if (!isMouseOverUI())
         {
-            state = PlayerState.Ability;
+            if (Input.GetKey(abilityKey) && canAbility)
+            {
+                state = PlayerState.Ability;
+            }
         }
     }
 
