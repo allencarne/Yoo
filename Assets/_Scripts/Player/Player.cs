@@ -258,7 +258,7 @@ public class Player : MonoBehaviour
 
     IEnumerator HurtAnimationDuration()
     {
-        yield return new WaitForSeconds(.8f);
+        yield return new WaitForSeconds(.6f);
 
         state = PlayerState.Idle;
     }

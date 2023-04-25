@@ -11,18 +11,15 @@ public class EnemyHitBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player[] player = collision.GetComponentsInChildren<Player>();
+        //Player player = collision.GetComponentInChildren<Player>();
+        Beginner beginner = collision.GetComponentInChildren<Beginner>();
+        Zephyr zephyr = collision.GetComponentInChildren<Zephyr>();
         Rigidbody2D playerRB = collision.GetComponent<Rigidbody2D>();
 
         if (collision.tag == "Player")
         {
-            for (int i = 0; i < player.Length; i++)
-            {
-                {
-                    // Deal Damage
-                    player[i].TakeDamage(1);
-                }
-            }
+            beginner.TakeDamage(1);
+            zephyr.TakeDamage(1);
 
             // Hit Spark
             Instantiate(enemyHitSpark, collision.transform.position, collision.transform.rotation);
