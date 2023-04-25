@@ -1,5 +1,345 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &12501243590014540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8943415456068763106}
+  m_Layer: 3
+  m_Name: Eyes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8943415456068763106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12501243590014540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8233113973608920427}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1872619922755237836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5033451341886192402}
+  m_Layer: 3
+  m_Name: Hair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5033451341886192402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872619922755237836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8233113973608920427}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2691382894625016404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7663703097265658813}
+  m_Layer: 3
+  m_Name: Weapons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7663703097265658813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691382894625016404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8233113973608920427}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3302193613994915653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8245100482594663206}
+  m_Layer: 0
+  m_Name: Classes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8245100482594663206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3302193613994915653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7561497293471626288}
+  - {fileID: 4552837553309029990}
+  - {fileID: 4768418825268193604}
+  - {fileID: 486523997755566764}
+  m_Father: {fileID: 8233113973608920427}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3931720047721781820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7561497293471626288}
+  - component: {fileID: 8087651517780084326}
+  m_Layer: 3
+  m_Name: Beginner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7561497293471626288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931720047721781820}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8245100482594663206}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8087651517780084326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931720047721781820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998fa909ce4e4a346ad834240c99d3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 8233113973608920403}
+  furybar: {fileID: 6061929791622581797}
+  animator: {fileID: 8233113973608920405}
+  rb: {fileID: 8233113973608920424}
+  aimer: {fileID: 8233113972949139662}
+  floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
+  floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
+  basicAttackSlideForce: 5
+  basicAttackRange: 10.2
+  upKey: 119
+  downKey: 115
+  leftKey: 97
+  rightKey: 100
+  basicAttackKey: 323
+  abilityKey: 324
+  mobilityKey: 32
+  defensiveKey: 113
+  utilityKey: 101
+  ultimateKey: 114
+--- !u!1 &4294986984758280918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4768418825268193604}
+  - component: {fileID: 1150768281937198886}
+  m_Layer: 3
+  m_Name: StormCaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4768418825268193604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294986984758280918}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8245100482594663206}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1150768281937198886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294986984758280918}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f977c62c8e3b646acb8ba7beb83939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 8233113973608920403}
+  furybar: {fileID: 6061929791622581797}
+  animator: {fileID: 8233113973608920405}
+  rb: {fileID: 8233113973608920424}
+  aimer: {fileID: 8233113972949139662}
+  floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
+  floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
+  basicAttackSlideForce: 5
+  basicAttackRange: 10.2
+  upKey: 119
+  downKey: 115
+  leftKey: 97
+  rightKey: 100
+  basicAttackKey: 323
+  abilityKey: 324
+  mobilityKey: 32
+  defensiveKey: 113
+  utilityKey: 101
+  ultimateKey: 114
+--- !u!1 &4995424040351914580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4552837553309029990}
+  - component: {fileID: 2623841306526838339}
+  m_Layer: 3
+  m_Name: Zephyr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4552837553309029990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4995424040351914580}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8245100482594663206}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2623841306526838339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4995424040351914580}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12bf6cf3745f1244d948d16b5beed6f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 8233113973608920403}
+  furybar: {fileID: 6061929791622581797}
+  animator: {fileID: 8233113973608920405}
+  rb: {fileID: 8233113973608920424}
+  aimer: {fileID: 8233113972949139662}
+  floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
+  floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
+  basicAttackSlideForce: 5
+  basicAttackRange: 10.2
+  upKey: 119
+  downKey: 115
+  leftKey: 97
+  rightKey: 100
+  basicAttackKey: 323
+  abilityKey: 324
+  mobilityKey: 32
+  defensiveKey: 113
+  utilityKey: 101
+  ultimateKey: 114
+  windSlashPrefab: {fileID: 4553433666271236552, guid: c400f6e4aad52334eab165d98d7f3da3, type: 3}
+  windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
+  windSlash3Prefab: {fileID: 4188387910762008136, guid: f037c164b38a4134b973d8600f5e9a1c, type: 3}
+  windSlashDamage: 0
+  windSlashCoolDown: 0.8
+  windSlashKnockBackForce: 0
+  slicingWindsPrefab: {fileID: 2950572099573583326, guid: 2e58626a1a5e1cd47b59b0bb8226bd1e, type: 3}
+  slicingWindsCoolDown: 1
+  slicingWindsVelocity: 10
+  slicingWindsDuration: 0.2
+  tempestChargePrefab: {fileID: 3865635244848361968, guid: 929edcdcdfbced6409dfb2a440699a9f, type: 3}
+  tempestChargeVelocity: 15
+  tempestChargeDuration: 0.2
+  tempestChargeCoolDown: 1
+  parryStrikeShieldPrefab: {fileID: 1334164566803909805, guid: 0b69156d8e3effe4cb104906bf56f405, type: 3}
+  parryStrikePrefab: {fileID: 7058784715532521358, guid: 2505cdb2d2bc3564991369b153205297, type: 3}
+  parryStrikeCoolDown: 1
+  heavyBlowPrefab: {fileID: 6731159717306367741, guid: e9da28aae9fafc34b892de29a50ba119, type: 3}
+  heavyBlowCoolDown: 1
+  engulfPrefab: {fileID: 888074877118327551, guid: f77c3e6626c5c5c4491be330fb055222, type: 3}
+  engulfVelocity: 5
+  engulfAnimationDuration: 0.7
+  engulfCoolDown: 1
 --- !u!1 &5633338786337415217
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +416,72 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7876170237509136379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 486523997755566764}
+  - component: {fileID: 3830842116362707319}
+  m_Layer: 3
+  m_Name: Slayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &486523997755566764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7876170237509136379}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8245100482594663206}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3830842116362707319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7876170237509136379}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd94671d17ed584ba8383f201d4d978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 8233113973608920403}
+  furybar: {fileID: 6061929791622581797}
+  animator: {fileID: 8233113973608920405}
+  rb: {fileID: 8233113973608920424}
+  aimer: {fileID: 8233113972949139662}
+  floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
+  floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
+  basicAttackSlideForce: 5
+  basicAttackRange: 10.2
+  upKey: 119
+  downKey: 115
+  leftKey: 97
+  rightKey: 100
+  basicAttackKey: 323
+  abilityKey: 324
+  mobilityKey: 32
+  defensiveKey: 113
+  utilityKey: 101
+  ultimateKey: 114
+  fireSlashPrefab: {fileID: 4274496651058342060, guid: 3be5ed8b2731bc24c8f91b4e5006e991, type: 3}
+  fireSlashCoolDown: 1
+  isFireSlashActive: 0
 --- !u!1 &8233113972554192689
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,10 +1069,6 @@ GameObject:
   - component: {fileID: 7779068306958005336}
   - component: {fileID: 7191153350117228966}
   - component: {fileID: 480369979257682555}
-  - component: {fileID: 6700313451922725887}
-  - component: {fileID: 8233113973608920404}
-  - component: {fileID: 5674361134903768034}
-  - component: {fileID: 976314983593472736}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -686,6 +1088,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5033451341886192402}
+  - {fileID: 8943415456068763106}
   - {fileID: 8233113972959511147}
   - {fileID: 8233113973901384250}
   - {fileID: 8233113972554192688}
@@ -693,6 +1097,8 @@ Transform:
   - {fileID: 8233113974432671216}
   - {fileID: 8233113974005649491}
   - {fileID: 8233113974517434077}
+  - {fileID: 7663703097265658813}
+  - {fileID: 8245100482594663206}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -839,10 +1245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0159da4ffb75a647ae4ca0457c928b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beginner: {fileID: 6700313451922725887}
-  zephyr: {fileID: 8233113973608920404}
-  stormCaster: {fileID: 5674361134903768034}
-  slayer: {fileID: 976314983593472736}
+  beginner: {fileID: 8087651517780084326}
+  zephyr: {fileID: 2623841306526838339}
+  stormCaster: {fileID: 1150768281937198886}
+  slayer: {fileID: 3830842116362707319}
 --- !u!114 &480369979257682555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,156 +1265,6 @@ MonoBehaviour:
   bow: {fileID: 8233113972554192689}
   staff: {fileID: 8233113972998591176}
   dagger: {fileID: 8233113974432671217}
---- !u!114 &6700313451922725887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8233113973608920429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 998fa909ce4e4a346ad834240c99d3fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthbar: {fileID: 8233113973608920403}
-  furybar: {fileID: 6061929791622581797}
-  animator: {fileID: 8233113973608920405}
-  rb: {fileID: 8233113973608920424}
-  aimer: {fileID: 8233113972949139662}
-  floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
-  floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
-  basicAttackSlideForce: 5
-  basicAttackRange: 10.2
-  upKey: 119
-  downKey: 115
-  leftKey: 97
-  rightKey: 100
-  basicAttackKey: 323
-  abilityKey: 324
-  mobilityKey: 32
-  defensiveKey: 113
-  utilityKey: 101
-  ultimateKey: 114
---- !u!114 &8233113973608920404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8233113973608920429}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12bf6cf3745f1244d948d16b5beed6f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthbar: {fileID: 8233113973608920403}
-  furybar: {fileID: 6061929791622581797}
-  animator: {fileID: 8233113973608920405}
-  rb: {fileID: 8233113973608920424}
-  aimer: {fileID: 8233113972949139662}
-  floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
-  floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
-  basicAttackSlideForce: 5
-  basicAttackRange: 10.2
-  upKey: 119
-  downKey: 115
-  leftKey: 97
-  rightKey: 100
-  basicAttackKey: 323
-  abilityKey: 324
-  mobilityKey: 32
-  defensiveKey: 113
-  utilityKey: 101
-  ultimateKey: 114
-  windSlashPrefab: {fileID: 4553433666271236552, guid: c400f6e4aad52334eab165d98d7f3da3, type: 3}
-  windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
-  windSlash3Prefab: {fileID: 4188387910762008136, guid: f037c164b38a4134b973d8600f5e9a1c, type: 3}
-  windSlashDamage: 0
-  windSlashCoolDown: 0.8
-  windSlashKnockBackForce: 0
-  slicingWindsPrefab: {fileID: 2950572099573583326, guid: 2e58626a1a5e1cd47b59b0bb8226bd1e, type: 3}
-  slicingWindsCoolDown: 1
-  slicingWindsVelocity: 10
-  slicingWindsDuration: 0.2
-  tempestChargePrefab: {fileID: 3865635244848361968, guid: 929edcdcdfbced6409dfb2a440699a9f, type: 3}
-  tempestChargeVelocity: 15
-  tempestChargeDuration: 0.2
-  tempestChargeCoolDown: 1
-  parryStrikeShieldPrefab: {fileID: 1334164566803909805, guid: 0b69156d8e3effe4cb104906bf56f405, type: 3}
-  parryStrikePrefab: {fileID: 7058784715532521358, guid: 2505cdb2d2bc3564991369b153205297, type: 3}
-  parryStrikeCoolDown: 1
-  heavyBlowPrefab: {fileID: 6731159717306367741, guid: e9da28aae9fafc34b892de29a50ba119, type: 3}
-  heavyBlowCoolDown: 1
-  engulfPrefab: {fileID: 888074877118327551, guid: f77c3e6626c5c5c4491be330fb055222, type: 3}
-  engulfVelocity: 5
-  engulfAnimationDuration: 0.7
-  engulfCoolDown: 1
---- !u!114 &5674361134903768034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8233113973608920429}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46f977c62c8e3b646acb8ba7beb83939, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthbar: {fileID: 8233113973608920403}
-  furybar: {fileID: 6061929791622581797}
-  animator: {fileID: 8233113973608920405}
-  rb: {fileID: 8233113973608920424}
-  aimer: {fileID: 8233113972949139662}
-  floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
-  floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
-  basicAttackSlideForce: 5
-  basicAttackRange: 10.2
-  upKey: 119
-  downKey: 115
-  leftKey: 97
-  rightKey: 100
-  basicAttackKey: 323
-  abilityKey: 324
-  mobilityKey: 32
-  defensiveKey: 113
-  utilityKey: 101
-  ultimateKey: 114
---- !u!114 &976314983593472736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8233113973608920429}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd94671d17ed584ba8383f201d4d978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthbar: {fileID: 8233113973608920403}
-  furybar: {fileID: 6061929791622581797}
-  animator: {fileID: 8233113973608920405}
-  rb: {fileID: 8233113973608920424}
-  aimer: {fileID: 8233113972949139662}
-  floatingTextDamage: {fileID: 3506151159445678707, guid: 3beb2e67da22e00489ce3fc1b4202c3f, type: 3}
-  floatingTextHeal: {fileID: 3506151159445678707, guid: 5e1e59b2571cd044e88ab0dd99001356, type: 3}
-  basicAttackSlideForce: 5
-  basicAttackRange: 10.2
-  upKey: 119
-  downKey: 115
-  leftKey: 97
-  rightKey: 100
-  basicAttackKey: 323
-  abilityKey: 324
-  mobilityKey: 32
-  defensiveKey: 113
-  utilityKey: 101
-  ultimateKey: 114
-  fireSlashPrefab: {fileID: 4274496651058342060, guid: 3be5ed8b2731bc24c8f91b4e5006e991, type: 3}
-  fireSlashCoolDown: 1
-  isFireSlashActive: 0
 --- !u!1 &8233113973848941818
 GameObject:
   m_ObjectHideFlags: 0
