@@ -367,7 +367,7 @@ public class Zephyr : Player
             animator.Play("Sword Prepared Stance", 1);
 
             // Disable Player Collider
-            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            gameObject.GetComponentInParent<CircleCollider2D>().enabled = false;
 
             // Instantiate Shield that has a collider
             Instantiate(parryStrikeShieldPrefab, transform.position, transform.rotation, transform);
@@ -396,7 +396,7 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(1);
 
-        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        gameObject.GetComponentInParent<CircleCollider2D>().enabled = true;
 
         state = PlayerState.Idle;
     }

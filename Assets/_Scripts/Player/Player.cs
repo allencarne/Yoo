@@ -245,6 +245,8 @@ public class Player : MonoBehaviour
             animator.Play("Hurt", 2, 0f);
             animator.Play("Hurt", 3, 0f);
             animator.Play("Hurt", 4, 0f);
+
+            StartCoroutine(HurtAnimationDuration());
         }
 
         if (playerManager.player_SO.health <= 0)
@@ -252,6 +254,13 @@ public class Player : MonoBehaviour
             isPlayerDead = true;
             state = PlayerState.Death;
         }
+    }
+
+    IEnumerator HurtAnimationDuration()
+    {
+        yield return new WaitForSeconds(.8f);
+
+        state = PlayerState.Idle;
     }
 
     public void PlayerDeathState()
@@ -267,7 +276,7 @@ public class Player : MonoBehaviour
 
             OnPlayerDeath?.Invoke();
 
-            Destroy(gameObject, .5f);
+            //Destroy(gameObject, .5f);
         }
     }
 
@@ -310,15 +319,6 @@ public class Player : MonoBehaviour
     {
 
     }
-
-    #region Animation Events
-
-    public void AE_Hurt()
-    {
-        state = PlayerState.Idle;
-    }
-
-    #endregion
 
     #region Helper Methods
 

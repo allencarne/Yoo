@@ -23,6 +23,7 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     public GameObject playerPrefab;
+    GameObject playerInstance;
     public PlayerScriptableObject player_SO;
 
     [SerializeField] CinemachineVirtualCamera virtualCam;
@@ -70,6 +71,10 @@ public class PlayerManager : MonoBehaviour
 
     void SpawnPlayer()
     {
+        if (playerInstance)
+        {
+            Destroy(playerInstance, .5f);
+        }
         if (canSpawn)
         {
             canSpawn = false;
@@ -81,8 +86,8 @@ public class PlayerManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
-        var player = Instantiate(playerPrefab);
-        virtualCam.Follow = player.transform;
+        playerInstance = Instantiate(playerPrefab);
+        virtualCam.Follow = playerInstance.transform;
         canSpawn = true;
     }
 }
