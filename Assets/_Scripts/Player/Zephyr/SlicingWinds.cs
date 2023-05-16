@@ -15,7 +15,7 @@ public class SlicingWinds : MonoBehaviour
         if (enemy != null)
         {
             // Deal Damage
-            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage);
+            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.slicingWindsDamage);
 
             // Hit Spark
             Instantiate(zephyrHitSpark, collision.transform.position, collision.transform.rotation);
@@ -23,7 +23,7 @@ public class SlicingWinds : MonoBehaviour
 
             // KnockBack
             Vector2 direction = (enemy.transform.position - transform.position).normalized;
-            enemyRB.velocity = direction * 4;
+            enemyRB.velocity = direction * PlayerManager.instance.player_SO.slicingWindsKnockBackForce;
         }
     }
 }

@@ -50,6 +50,12 @@ public class PlayerScriptableObject : ScriptableObject
     public float parryStrikeCoolDown;
     public float parryStrikeDamage;
 
+    [Header("Zephyr Heavy Blow")]
+    public float heavyBlowCastTime;
+    public float heavyBlowDuration;
+    public float heavyBlowCoolDown;
+    public float heavyBlowDamage;
+
     [Header("Zephyr Engulf")]
     public float engulfCastTime;
     public float engulfDuration;

@@ -20,18 +20,17 @@ public class Zephyr : Player
     [Header("Parry Strike")]
     [SerializeField] GameObject parryStrikeShieldPrefab;
     [SerializeField] GameObject parryStrikePrefab;
-    [SerializeField] float parryStrikeCoolDown;
     bool isParryStrikeTriggered = false;
 
     [Header("Heavy Blow")]
     [SerializeField] GameObject heavyBlowPrefab;
-    [SerializeField] float heavyBlowCoolDown;
+    //[SerializeField] float heavyBlowCoolDown;
 
     [Header("Engulf")]
     [SerializeField] GameObject engulfPrefab;
-    [SerializeField] float engulfVelocity;
-    [SerializeField] float engulfAnimationDuration;
-    [SerializeField] float engulfCoolDown;
+    //[SerializeField] float engulfVelocity;
+    //[SerializeField] float engulfAnimationDuration;
+    //[SerializeField] float engulfCoolDown;
 
     private void OnEnable()
     {
@@ -325,7 +324,7 @@ public class Zephyr : Player
             // Dust
             Instantiate(tempestChargePrefab, transform.position, aimer.rotation);
 
-            StartCoroutine(UnpauseAimer(.3f));
+            StartCoroutine(UnpauseAimer(playerManager.player_SO.tempestChargeDuration));
             StartCoroutine(TempestChargeDuration());
             StartCoroutine(TempestChargeCoolDown());
         }
@@ -392,7 +391,7 @@ public class Zephyr : Player
 
     IEnumerator ParryStrikeShieldDuration()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(playerManager.player_SO.parryStrikeDuration);
 
         gameObject.GetComponentInParent<CircleCollider2D>().enabled = true;
 
@@ -401,13 +400,13 @@ public class Zephyr : Player
 
     IEnumerator ParryStrikeCoolDown()
     {
-        yield return new WaitForSeconds(parryStrikeCoolDown);
+        yield return new WaitForSeconds(playerManager.player_SO.parryStrikeCoolDown);
         canDefensive = true;
     }
 
     IEnumerator ParryStrikeCastTime()
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(playerManager.player_SO.parryStrikeCastTime);
 
         Instantiate(parryStrikePrefab, transform.position, aimer.rotation);
     }
@@ -419,7 +418,7 @@ public class Zephyr : Player
 
     #endregion
 
-    #region Lunge Strike
+    #region Heavy Blow
 
     protected override void PlayerUtilityState()
     {
@@ -448,7 +447,7 @@ public class Zephyr : Player
 
         PauseAimer();
 
-        StartCoroutine(UnpauseAimer(.3f));
+        StartCoroutine(UnpauseAimer(playerManager.player_SO.heavyBlowDuration));
         StartCoroutine(HeavyBlowCastTime());
         StartCoroutine(HeavyBlowAnimationDuration());
         StartCoroutine(HeavyBlowCoolDown());
@@ -456,21 +455,21 @@ public class Zephyr : Player
 
     IEnumerator HeavyBlowCastTime()
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(playerManager.player_SO.heavyBlowCastTime);
 
         Instantiate(heavyBlowPrefab, transform.position, aimer.rotation);
     }
 
     IEnumerator HeavyBlowAnimationDuration()
     {
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(playerManager.player_SO.heavyBlowDuration);
 
         state = PlayerState.Idle;
     }
 
     IEnumerator HeavyBlowCoolDown()
     {
-        yield return new WaitForSeconds(heavyBlowCoolDown);
+        yield return new WaitForSeconds(playerManager.player_SO.heavyBlowCoolDown);
 
         canUtility = true;
     }
@@ -497,14 +496,14 @@ public class Zephyr : Player
 
     IEnumerator EngulfAnimationDuration()
     {
-        yield return new WaitForSeconds(engulfAnimationDuration);
+        yield return new WaitForSeconds(playerManager.player_SO.engulfDuration);
 
         state = PlayerState.Idle;
     }
 
     IEnumerator EngulfCoolDown()
     {
-        yield return new WaitForSeconds(engulfCoolDown);
+        yield return new WaitForSeconds(playerManager.player_SO.engulfCoolDown);
 
         canUltimate = true;
     }
