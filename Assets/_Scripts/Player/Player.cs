@@ -7,17 +7,18 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour
 {
     [Header("Stats")]
-    protected PlayerManager playerManager;
+    [HideInInspector] protected PlayerManager playerManager;
 
     [Header("Components")]
-    [SerializeField] HealthBar healthbar;
-    [SerializeField] FuryBar furybar;
-    [SerializeField] protected Animator animator;
-    [SerializeField] protected Rigidbody2D rb;
+    [HideInInspector] protected Rigidbody2D rb;
+    [HideInInspector] protected Animator animator;
+    [HideInInspector] protected Camera cam;
+    [HideInInspector] PlayerKeys keys;
+    [HideInInspector] HealthBar healthbar;
+    [HideInInspector] FuryBar furybar;
     [SerializeField] protected Transform aimer;
     [SerializeField] GameObject floatingTextDamage;
     [SerializeField] GameObject floatingTextHeal;
-    [HideInInspector] protected Camera cam;
 
     [Header("Variables")]
     [SerializeField] protected float basicAttackSlideForce;
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
     [HideInInspector] bool isPlayerHurt = false;
     [HideInInspector] bool isPlayerDead = false;
     [HideInInspector] float damage;
-    bool doneSpawning;
+    [HideInInspector] bool doneSpawning;
 
     protected bool canBasicAttack = true;
     protected bool canBasicAttack2 = false;
@@ -40,18 +41,6 @@ public class Player : MonoBehaviour
     protected bool canUltimate = true;
 
     public static event System.Action OnPlayerDeath;
-
-    [Header("Keys")]
-    [SerializeField] KeyCode upKey;
-    [SerializeField] KeyCode downKey;
-    [SerializeField] KeyCode leftKey;
-    [SerializeField] KeyCode rightKey;
-    [SerializeField] KeyCode basicAttackKey;
-    [SerializeField] KeyCode abilityKey;
-    [SerializeField] KeyCode mobilityKey;
-    [SerializeField] KeyCode defensiveKey;
-    [SerializeField] KeyCode utilityKey;
-    [SerializeField] KeyCode ultimateKey;
 
     protected enum PlayerState
     {
@@ -75,7 +64,13 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         playerManager = PlayerManager.instance;
+
+        rb = GetComponentInParent<Rigidbody2D>();
+        animator = GetComponentInParent<Animator>();
+        keys = GetComponentInParent<PlayerKeys>();
         cam = Camera.main;
+        healthbar = GetComponentInParent<HealthBar>();
+        furybar = GetComponentInParent<FuryBar>();
     }
 
     protected virtual void Start()
@@ -353,7 +348,7 @@ public class Player : MonoBehaviour
         }
 
         // If Movement key is held while attacking - Slide
-        if (Input.GetKey(upKey) || Input.GetKey(leftKey) || Input.GetKey(downKey) || Input.GetKey(rightKey))
+        if (Input.GetKey(keys.upKey) || Input.GetKey(keys.leftKey) || Input.GetKey(keys.downKey) || Input.GetKey(keys.rightKey))
         {
             // Slide in Attack Direction
             rb.MovePosition(rb.position + angleToMouse * playerManager.player_SO.movementSpeed * Time.deltaTime);
@@ -433,7 +428,7 @@ public class Player : MonoBehaviour
     public void MoveKeyPressed()
     {
         //  Movement Key Pressed
-        if (Input.GetKey(upKey) || Input.GetKey(leftKey) || Input.GetKey(downKey) || Input.GetKey(rightKey))
+        if (Input.GetKey(keys.upKey) || Input.GetKey(keys.leftKey) || Input.GetKey(keys.downKey) || Input.GetKey(keys.rightKey))
         {
             state = PlayerState.Run;
         }
@@ -442,7 +437,7 @@ public class Player : MonoBehaviour
     public void NoMoveKeyPressed()
     {
         // No Movement Key Pressed
-        if (!Input.GetKey(upKey) && !Input.GetKey(leftKey) && !Input.GetKey(downKey) && !Input.GetKey(rightKey))
+        if (!Input.GetKey(keys.upKey) && !Input.GetKey(keys.leftKey) && !Input.GetKey(keys.downKey) && !Input.GetKey(keys.rightKey))
         {
             state = PlayerState.Idle;
         }
@@ -452,7 +447,7 @@ public class Player : MonoBehaviour
     {
         if (!isMouseOverUI())
         {
-            if (Input.GetKey(basicAttackKey) && canBasicAttack)
+            if (Input.GetKey(keys.basicAttackKey) && canBasicAttack)
             {
                 state = PlayerState.BasicAttack;
             }
@@ -463,7 +458,7 @@ public class Player : MonoBehaviour
     {
         if (!isMouseOverUI())
         {
-            if (Input.GetKey(basicAttackKey) && canBasicAttack2)
+            if (Input.GetKey(keys.basicAttackKey) && canBasicAttack2)
             {
                 state = PlayerState.BasicAttack2;
             }
@@ -474,7 +469,7 @@ public class Player : MonoBehaviour
     {
         if (!isMouseOverUI())
         {
-            if (Input.GetKey(basicAttackKey) && canBasicAttack3)
+            if (Input.GetKey(keys.basicAttackKey) && canBasicAttack3)
             {
                 state = PlayerState.BasicAttack3;
             }
@@ -485,7 +480,7 @@ public class Player : MonoBehaviour
     {
         if (!isMouseOverUI())
         {
-            if (Input.GetKey(abilityKey) && canAbility)
+            if (Input.GetKey(keys.abilityKey) && canAbility)
             {
                 state = PlayerState.Ability;
             }
@@ -494,7 +489,7 @@ public class Player : MonoBehaviour
 
     protected virtual void MobilityKeyPressed()
     {
-        if (Input.GetKey(mobilityKey) && canMobility)
+        if (Input.GetKey(keys.mobilityKey) && canMobility)
         {
             state = PlayerState.Mobility;
         }
@@ -502,7 +497,7 @@ public class Player : MonoBehaviour
 
     protected virtual void DefensiveKeyPressed()
     {
-        if (Input.GetKey(defensiveKey) && canDefensive)
+        if (Input.GetKey(keys.defensiveKey) && canDefensive)
         {
             state = PlayerState.Defensive;
         }
@@ -510,7 +505,7 @@ public class Player : MonoBehaviour
 
     protected virtual void UtilityKeyPressed()
     {
-        if (Input.GetKey(utilityKey) && canUtility)
+        if (Input.GetKey(keys.utilityKey) && canUtility)
         {
             state = PlayerState.Utility;
         }
@@ -518,7 +513,7 @@ public class Player : MonoBehaviour
 
     protected virtual void UltimateKeyPressed()
     {
-        if (Input.GetKey(ultimateKey) && canUltimate)
+        if (Input.GetKey(keys.ultimateKey) && canUltimate)
         {
             state = PlayerState.Ultimate;
         }
