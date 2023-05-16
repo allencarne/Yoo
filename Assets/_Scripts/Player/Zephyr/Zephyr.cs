@@ -12,16 +12,10 @@ public class Zephyr : Player
 
     [Header("Slicing Winds")]
     [SerializeField] GameObject slicingWindsPrefab;
-    [SerializeField] float slicingWindsCoolDown;
-    [SerializeField] float slicingWindsVelocity;
-    [SerializeField] float slicingWindsDuration;
     bool canSlicingWinds = false;
 
     [Header("Tempest Charge")]
     [SerializeField] GameObject tempestChargePrefab;
-    [SerializeField] float tempestChargeVelocity;
-    [SerializeField] float tempestChargeDuration;
-    [SerializeField] float tempestChargeCoolDown;
 
     [Header("Parry Strike")]
     [SerializeField] GameObject parryStrikeShieldPrefab;
@@ -55,13 +49,12 @@ public class Zephyr : Player
 
         if (canSlicingWinds && state == PlayerState.Ability)
         {
-            //rb.velocity = angleToMouse.normalized * slicingWindsVelocity;
-            SlideForward(slicingWindsVelocity);
+            rb.velocity = angleToMouse.normalized * playerManager.player_SO.slicingWindsSlideForce;
         }
 
         if (!canMobility && state == PlayerState.Mobility)
         {
-            rb.velocity = angleToMouse.normalized * tempestChargeVelocity;
+            rb.velocity = angleToMouse.normalized * playerManager.player_SO.tempestChargeVelocity;
         }
 
         if (canSlide)
@@ -268,7 +261,7 @@ public class Zephyr : Player
 
             canSlicingWinds = true;
 
-            StartCoroutine(UnpauseAimer(.3f));
+            StartCoroutine(UnpauseAimer(playerManager.player_SO.slicingWindsDuration));
             StartCoroutine(SlicingWindsCastTime());
             StartCoroutine(SlicingWindsDuration());
             StartCoroutine(SlicingWindsAnimationDuration());
@@ -278,14 +271,14 @@ public class Zephyr : Player
 
     IEnumerator SlicingWindsCastTime()
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(playerManager.player_SO.slicingWindsCastTime);
 
         Instantiate(slicingWindsPrefab, transform.position, aimer.rotation);
     }
 
     IEnumerator SlicingWindsDuration()
     {
-        yield return new WaitForSeconds(slicingWindsDuration);
+        yield return new WaitForSeconds(playerManager.player_SO.slicingWindsSlideDuration);
 
         rb.velocity = Vector2.zero;
 
@@ -294,14 +287,14 @@ public class Zephyr : Player
 
     IEnumerator SlicingWindsAnimationDuration()
     {
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(playerManager.player_SO.slicingWindsDuration);
 
         state = PlayerState.Idle;
     }
 
     IEnumerator SlicingWindsCoolDown()
     {
-        yield return new WaitForSeconds(slicingWindsCoolDown);
+        yield return new WaitForSeconds(playerManager.player_SO.slicingWindsCoolDown);
 
         canAbility = true;
     }
@@ -340,9 +333,9 @@ public class Zephyr : Player
 
     IEnumerator TempestChargeDuration()
     {
-        yield return new WaitForSeconds(tempestChargeDuration);
+        yield return new WaitForSeconds(playerManager.player_SO.tempestChargeDuration);
 
-        // Ignores collision with Enemy
+        // No Longer Ignores collision with Enemy
         Physics2D.IgnoreLayerCollision(3, 6, false);
 
         rb.velocity = Vector2.zero;
@@ -352,7 +345,7 @@ public class Zephyr : Player
 
     IEnumerator TempestChargeCoolDown()
     {
-        yield return new WaitForSeconds(tempestChargeCoolDown);
+        yield return new WaitForSeconds(playerManager.player_SO.tempestChargeCoolDown);
 
         canMobility = true;
     }

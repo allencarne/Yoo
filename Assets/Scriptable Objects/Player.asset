@@ -28,5 +28,25 @@ MonoBehaviour:
   windSlashDuration: 0.7
   windSlashCoolDown: 0.8
   windSlashDamage: 1
-  windSlashKnockBackForce: 1.5
   windSlashSlideForce: 10
+  windSlashKnockBackForce: 1.5
+  slicingWindsCastTime: 0.3
+  slicingWindsDuration: 0.7
+  slicingWindsCoolDown: 1
+  slicingWindsDamage: 1
+  slicingWindsSlideForce: 20
+  slicingWindsKnockBackForce: 1.5
+  slicingWindsSlideDuration: 0.1
+  tempestChargeCastTime: 0
+  tempestChargeDuration: 0.2
+  tempestChargeCoolDown: 1
+  tempestChargeDamage: 0
+  tempestChargeVelocity: 15
+  parryStrikeCastTime: 0
+  parryStrikeDuration: 0
+  parryStrikeCoolDown: 0
+  parryStrikeDamage: 0
+  engulfCastTime: 0
+  engulfDuration: 0
+  engulfCoolDown: 0
+  engulfDamage: 0
