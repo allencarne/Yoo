@@ -345,6 +345,8 @@ public class Player : MonoBehaviour
         // If Mouse is outside attack range - Slide
         if (Vector3.Distance(rb.position, cam.ScreenToWorldPoint(Input.mousePosition)) > basicAttackRange)
         {
+            angleToMouse.Normalize();
+
             // Slide in Attack Direction
             rb.MovePosition(rb.position + angleToMouse * slideAmount * Time.deltaTime);
         }
@@ -352,6 +354,8 @@ public class Player : MonoBehaviour
         // If Movement key is held while attacking - Slide
         if (Input.GetKey(keys.upKey) || Input.GetKey(keys.leftKey) || Input.GetKey(keys.downKey) || Input.GetKey(keys.rightKey))
         {
+            angleToMouse.Normalize();
+
             // Slide in Attack Direction
             rb.MovePosition(rb.position + angleToMouse * slideAmount * Time.deltaTime);
         }

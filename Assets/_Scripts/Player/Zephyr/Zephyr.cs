@@ -55,7 +55,8 @@ public class Zephyr : Player
 
         if (canSlicingWinds && state == PlayerState.Ability)
         {
-            rb.velocity = angleToMouse.normalized * slicingWindsVelocity;
+            //rb.velocity = angleToMouse.normalized * slicingWindsVelocity;
+            SlideForward(slicingWindsVelocity);
         }
 
         if (!canMobility && state == PlayerState.Mobility)
@@ -90,7 +91,7 @@ public class Zephyr : Player
 
             PauseAimer();
 
-            StartCoroutine(UnpauseAimer());
+            StartCoroutine(UnpauseAimer(playerManager.player_SO.windSlashDuration));
             StartCoroutine(WindSlashCastTime());
             StartCoroutine(TransitionToWinsSlash2());
             StartCoroutine(WindSlashAnimationDuration());
@@ -162,7 +163,7 @@ public class Zephyr : Player
 
             PauseAimer();
 
-            StartCoroutine(UnpauseAimer());
+            StartCoroutine(UnpauseAimer(playerManager.player_SO.windSlashDuration));
             StartCoroutine(WindSlashCastTime());
             StartCoroutine(TransitionToWinsSlash3());
             StartCoroutine(WindSlash2AnimationDuration());
@@ -219,7 +220,7 @@ public class Zephyr : Player
 
             PauseAimer();
 
-            StartCoroutine(UnpauseAimer());
+            StartCoroutine(UnpauseAimer(playerManager.player_SO.windSlashDuration));
             StartCoroutine(WindSlashCastTime());
             StartCoroutine(WindSlash3AnimationDuration());
         }
@@ -267,7 +268,7 @@ public class Zephyr : Player
 
             canSlicingWinds = true;
 
-            StartCoroutine(UnpauseAimer());
+            StartCoroutine(UnpauseAimer(.3f));
             StartCoroutine(SlicingWindsCastTime());
             StartCoroutine(SlicingWindsDuration());
             StartCoroutine(SlicingWindsAnimationDuration());
@@ -331,7 +332,7 @@ public class Zephyr : Player
             // Dust
             Instantiate(tempestChargePrefab, transform.position, aimer.rotation);
 
-            StartCoroutine(UnpauseAimer());
+            StartCoroutine(UnpauseAimer(.3f));
             StartCoroutine(TempestChargeDuration());
             StartCoroutine(TempestChargeCoolDown());
         }
@@ -454,7 +455,7 @@ public class Zephyr : Player
 
         PauseAimer();
 
-        StartCoroutine(UnpauseAimer());
+        StartCoroutine(UnpauseAimer(.3f));
         StartCoroutine(HeavyBlowCastTime());
         StartCoroutine(HeavyBlowAnimationDuration());
         StartCoroutine(HeavyBlowCoolDown());
@@ -517,9 +518,9 @@ public class Zephyr : Player
 
     #endregion
 
-    IEnumerator UnpauseAimer()
+    IEnumerator UnpauseAimer(float time)
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(time);
 
         AimIndicator.pauseDirection = false;
     }
