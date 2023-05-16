@@ -15,7 +15,10 @@ public class WindSlash : MonoBehaviour
         if (enemy != null)
         {
             // Deal Damage
-            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage);
+            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.windSlashDamage);
+
+            // Gain Fury
+            //PlayerManager.instance.player_SO.fury += 1;
 
             // Hit Spark
             Instantiate(zephyrHitSpark, collision.transform.position, collision.transform.rotation);
@@ -23,7 +26,7 @@ public class WindSlash : MonoBehaviour
 
             // KnockBack
             Vector2 direction = (enemy.transform.position - transform.position).normalized;
-            enemyRB.velocity = direction * 3;
+            enemyRB.velocity = direction * PlayerManager.instance.player_SO.windSlashKnockBackForce;
         }
     }
 }

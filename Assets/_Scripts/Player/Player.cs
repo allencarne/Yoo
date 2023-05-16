@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject floatingTextHeal;
 
     [Header("Variables")]
-    [SerializeField] protected float basicAttackSlideForce;
-    [SerializeField] protected float basicAttackRange;
+    //[SerializeField] protected float basicAttackSlideForce;
+    [HideInInspector] protected float basicAttackRange = 10.2f;
     [HideInInspector] protected Vector2 angleToMouse;
     [HideInInspector] protected bool canSlide = false;
     [HideInInspector] protected Vector2 movement;
@@ -148,11 +148,13 @@ public class Player : MonoBehaviour
             rb.MovePosition(rb.position + movement * Time.deltaTime);
         }
 
+        /*
         if (canSlide)
         {
             canSlide = false;
             SlideForward();
         }
+        */
     }
 
     public void PlayerSpawnState()
@@ -338,20 +340,20 @@ public class Player : MonoBehaviour
         animator.SetFloat("Vertical", angleToMouse.y);
     }
 
-    protected virtual void SlideForward()
+    protected virtual void SlideForward(float slideAmount)
     {
         // If Mouse is outside attack range - Slide
         if (Vector3.Distance(rb.position, cam.ScreenToWorldPoint(Input.mousePosition)) > basicAttackRange)
         {
             // Slide in Attack Direction
-            rb.MovePosition(rb.position + angleToMouse * playerManager.player_SO.movementSpeed * Time.deltaTime);
+            rb.MovePosition(rb.position + angleToMouse * slideAmount * Time.deltaTime);
         }
 
         // If Movement key is held while attacking - Slide
         if (Input.GetKey(keys.upKey) || Input.GetKey(keys.leftKey) || Input.GetKey(keys.downKey) || Input.GetKey(keys.rightKey))
         {
             // Slide in Attack Direction
-            rb.MovePosition(rb.position + angleToMouse * playerManager.player_SO.movementSpeed * Time.deltaTime);
+            rb.MovePosition(rb.position + angleToMouse * slideAmount * Time.deltaTime);
         }
     }
 

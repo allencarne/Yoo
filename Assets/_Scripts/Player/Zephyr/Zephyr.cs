@@ -8,9 +8,6 @@ public class Zephyr : Player
     [SerializeField] GameObject windSlashPrefab;
     [SerializeField] GameObject windSlash2Prefab;
     [SerializeField] GameObject windSlash3Prefab;
-    [SerializeField] float windSlashDamage;
-    [SerializeField] float windSlashCoolDown;
-    [SerializeField] float windSlashKnockBackForce;
     bool isWindSlashActive = false;
 
     [Header("Slicing Winds")]
@@ -65,6 +62,13 @@ public class Zephyr : Player
         {
             rb.velocity = angleToMouse.normalized * tempestChargeVelocity;
         }
+
+        if (canSlide)
+        {
+            canSlide = false;
+
+            SlideForward(playerManager.player_SO.windSlashSlideForce);
+        }
     }
 
     #region Wind Slash
@@ -108,7 +112,7 @@ public class Zephyr : Player
 
     IEnumerator WindSlashCastTime()
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(playerManager.player_SO.windSlashCastTime);
 
         isWindSlashActive = true;
     }
@@ -122,7 +126,7 @@ public class Zephyr : Player
 
     IEnumerator WindSlashAnimationDuration()
     {
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(playerManager.player_SO.windSlashDuration);
 
         if (state == PlayerState.BasicAttack)
         {
@@ -133,7 +137,7 @@ public class Zephyr : Player
 
     IEnumerator WindSlashCoolDown()
     {
-        yield return new WaitForSeconds(windSlashCoolDown);
+        yield return new WaitForSeconds(playerManager.player_SO.windSlashCoolDown);
 
         canBasicAttack = true;
     }
@@ -186,7 +190,7 @@ public class Zephyr : Player
 
     IEnumerator WindSlash2AnimationDuration()
     {
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(playerManager.player_SO.windSlashDuration);
 
         if (state == PlayerState.BasicAttack2)
         {
@@ -233,7 +237,7 @@ public class Zephyr : Player
 
     IEnumerator WindSlash3AnimationDuration()
     {
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(playerManager.player_SO.windSlashDuration);
 
         if (state == PlayerState.BasicAttack3)
         {
@@ -243,7 +247,7 @@ public class Zephyr : Player
 
     #endregion
 
-    #region Sweeping Gust
+    #region Slicing Winds
 
     protected override void PlayerAbilityState()
     {
