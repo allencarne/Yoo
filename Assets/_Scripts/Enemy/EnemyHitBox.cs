@@ -18,8 +18,15 @@ public class EnemyHitBox : MonoBehaviour
 
         if (collision.tag == "Player")
         {
-            beginner.TakeDamage(1);
-            zephyr.TakeDamage(1);
+            if (beginner.enabled == true)
+            {
+                beginner.TakeDamage(1);
+            }
+            
+            if (zephyr.enabled == true)
+            {
+                zephyr.TakeDamage(1);
+            }
 
             // Hit Spark
             Instantiate(enemyHitSpark, collision.transform.position, collision.transform.rotation);
