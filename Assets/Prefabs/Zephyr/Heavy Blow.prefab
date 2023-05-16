@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6731159717306367680}
   - component: {fileID: 6731159717306367742}
   - component: {fileID: 6731159717306367743}
-  - component: {fileID: 6731159717306367740}
   - component: {fileID: 7911860216181972054}
+  - component: {fileID: 7313549998044115392}
   m_Layer: 0
   m_Name: Heavy Blow
   m_TagString: Untagged
@@ -120,20 +120,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &6731159717306367740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6731159717306367741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2367a295c4a81c408224dcda2d74029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zephyrHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
-  windSlashHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!70 &7911860216181972054
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,28 +131,23 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.41650894}
   m_Size: {x: 1.073528, y: 2.2659626}
   m_Direction: 0
+--- !u!114 &7313549998044115392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731159717306367741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc745e24fb6878b49ba44f57b640c5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zephyrHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
+  windSlashHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}

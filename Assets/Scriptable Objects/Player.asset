@@ -16,7 +16,7 @@ MonoBehaviour:
   playerLevel: 1
   currentExperience: 0
   requiredExperience: 3
-  health: 10
+  health: 6
   maxHealth: 10
   movementSpeed: 5
   maxMovementSpeed: 5
@@ -46,6 +46,7 @@ MonoBehaviour:
   parryStrikeDuration: 1
   parryStrikeCoolDown: 2
   parryStrikeDamage: 1
+  parryStrikeKnockBackForce: 4
   heavyBlowCastTime: 0.3
   heavyBlowDuration: 0.7
   heavyBlowCoolDown: 1
@@ -54,3 +55,4 @@ MonoBehaviour:
   engulfDuration: 0.7
   engulfCoolDown: 1
   engulfDamage: 1
+  engulfPullForce: 10
