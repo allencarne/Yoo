@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -549,28 +547,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Snail_Spawn_12: -377287647
-      Snail_Spawn_1: -563505493
-      Snail_Spawn_4: 952447009
-      Snail_Spawn_13: -1870004572
-      Snail_Spawn_17: 1928963639
-      Snail_Spawn_7: 229306477
-      Snail_Spawn_9: -1699719351
-      Snail_Spawn_11: 792534043
       Snail_Spawn_0: 958067978
-      Snail_Spawn_16: -684570270
-      Snail_Spawn_18: 765995640
+      Snail_Spawn_1: -563505493
       Snail_Spawn_10: 70064729
-      Snail_Spawn_15: -847653198
+      Snail_Spawn_11: 792534043
+      Snail_Spawn_12: -377287647
+      Snail_Spawn_13: -1870004572
       Snail_Spawn_14: 330430514
-      Snail_Spawn_5: -1076389556
-      Snail_Spawn_3: 1919355377
-      Snail_Spawn_2: -2018106133
+      Snail_Spawn_15: -847653198
+      Snail_Spawn_16: -684570270
+      Snail_Spawn_17: 1928963639
+      Snail_Spawn_18: 765995640
       Snail_Spawn_19: -711662417
+      Snail_Spawn_2: -2018106133
+      Snail_Spawn_3: 1919355377
+      Snail_Spawn_4: 952447009
+      Snail_Spawn_5: -1076389556
       Snail_Spawn_6: 727124377
+      Snail_Spawn_7: 229306477
       Snail_Spawn_8: -192827659
-  mipmapLimitGroupName: 
+      Snail_Spawn_9: -1699719351
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

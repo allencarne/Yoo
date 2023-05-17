@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Run_Up_Body_Light_7: -1713096855
-      Player_Run_Up_Body_Light_4: 1828034489
       Player_Run_Up_Body_Light_0: 649866711
-      Player_Run_Up_Body_Light_2: 263840374
-      Player_Run_Up_Body_Light_5: -1118857893
-      Player_Run_Up_Body_Light_3: -49427157
-      Player_Run_Up_Body_Light_6: 1896714582
       Player_Run_Up_Body_Light_1: -1394379305
-  mipmapLimitGroupName: 
+      Player_Run_Up_Body_Light_2: 263840374
+      Player_Run_Up_Body_Light_3: -49427157
+      Player_Run_Up_Body_Light_4: 1828034489
+      Player_Run_Up_Body_Light_5: -1118857893
+      Player_Run_Up_Body_Light_6: 1896714582
+      Player_Run_Up_Body_Light_7: -1713096855
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

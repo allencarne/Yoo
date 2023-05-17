@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Slime_Chase_Right_7: -1159871168
-      Slime_Chase_Right_4: -1849971198
-      Slime_Chase_Right_2: 398393144
       Slime_Chase_Right_0: 1512340616
-      Slime_Chase_Right_5: 557484154
-      Slime_Chase_Right_3: 2136083849
       Slime_Chase_Right_1: -1524917002
+      Slime_Chase_Right_2: 398393144
+      Slime_Chase_Right_3: 2136083849
+      Slime_Chase_Right_4: -1849971198
+      Slime_Chase_Right_5: 557484154
       Slime_Chase_Right_6: 1043548583
-  mipmapLimitGroupName: 
+      Slime_Chase_Right_7: -1159871168
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

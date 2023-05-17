@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -549,28 +547,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mushroom_Spawn_12: 777398974
       Mushroom_Spawn_0: 951916085
-      Mushroom_Spawn_19: 1702112880
+      Mushroom_Spawn_1: 1649104144
       Mushroom_Spawn_10: -1191746667
-      Mushroom_Spawn_2: 369018166
-      Mushroom_Spawn_9: -345750432
-      Mushroom_Spawn_16: 1634694961
-      Mushroom_Spawn_4: -704998964
-      Mushroom_Spawn_6: 46717893
-      Mushroom_Spawn_15: 1647765139
-      Mushroom_Spawn_18: 637968880
+      Mushroom_Spawn_11: -1156866035
+      Mushroom_Spawn_12: 777398974
       Mushroom_Spawn_13: -1649540463
       Mushroom_Spawn_14: -1894590660
+      Mushroom_Spawn_15: 1647765139
+      Mushroom_Spawn_16: 1634694961
+      Mushroom_Spawn_17: 1508261500
+      Mushroom_Spawn_18: 637968880
+      Mushroom_Spawn_19: 1702112880
+      Mushroom_Spawn_2: 369018166
+      Mushroom_Spawn_3: -709446652
+      Mushroom_Spawn_4: -704998964
+      Mushroom_Spawn_5: -1668276917
+      Mushroom_Spawn_6: 46717893
       Mushroom_Spawn_7: -1515349570
       Mushroom_Spawn_8: -1604716186
-      Mushroom_Spawn_17: 1508261500
-      Mushroom_Spawn_5: -1668276917
-      Mushroom_Spawn_11: -1156866035
-      Mushroom_Spawn_3: -709446652
-      Mushroom_Spawn_1: 1649104144
-  mipmapLimitGroupName: 
+      Mushroom_Spawn_9: -345750432
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

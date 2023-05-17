@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mushroom_Idle_Up_5: -1351557861
-      Mushroom_Idle_Up_1: -1868779712
       Mushroom_Idle_Up_0: 757851423
-      Mushroom_Idle_Up_3: 1705444269
+      Mushroom_Idle_Up_1: -1868779712
       Mushroom_Idle_Up_2: -228441195
-      Mushroom_Idle_Up_7: -417907188
-      Mushroom_Idle_Up_6: -1187725280
+      Mushroom_Idle_Up_3: 1705444269
       Mushroom_Idle_Up_4: 1549443110
-  mipmapLimitGroupName: 
+      Mushroom_Idle_Up_5: -1351557861
+      Mushroom_Idle_Up_6: -1187725280
+      Mushroom_Idle_Up_7: -417907188
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

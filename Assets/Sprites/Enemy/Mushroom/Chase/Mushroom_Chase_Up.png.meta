@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mushroom_Chase_Up_7: -1469717651
-      Mushroom_Chase_Up_2: 307573037
       Mushroom_Chase_Up_0: 530254362
-      Mushroom_Chase_Up_3: 927709784
-      Mushroom_Chase_Up_5: -5039669
       Mushroom_Chase_Up_1: -853285824
-      Mushroom_Chase_Up_6: -132182790
+      Mushroom_Chase_Up_2: 307573037
+      Mushroom_Chase_Up_3: 927709784
       Mushroom_Chase_Up_4: -1228904241
-  mipmapLimitGroupName: 
+      Mushroom_Chase_Up_5: -5039669
+      Mushroom_Chase_Up_6: -132182790
+      Mushroom_Chase_Up_7: -1469717651
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

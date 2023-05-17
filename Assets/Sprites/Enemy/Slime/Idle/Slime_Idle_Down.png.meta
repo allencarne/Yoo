@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Slime_Idle_Down_4: -1271829428
-      Slime_Idle_Down_6: 761069868
-      Slime_Idle_Down_5: -578548608
-      Slime_Idle_Down_2: -1899660820
-      Slime_Idle_Down_7: 2057870906
-      Slime_Idle_Down_1: 45256830
       Slime_Idle_Down_0: -1568144932
+      Slime_Idle_Down_1: 45256830
+      Slime_Idle_Down_2: -1899660820
       Slime_Idle_Down_3: 1674398812
-  mipmapLimitGroupName: 
+      Slime_Idle_Down_4: -1271829428
+      Slime_Idle_Down_5: -578548608
+      Slime_Idle_Down_6: 761069868
+      Slime_Idle_Down_7: 2057870906
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

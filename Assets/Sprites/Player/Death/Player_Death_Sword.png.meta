@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Death_Sword_6: 249424525
-      Player_Death_Sword_5: 804753473
       Player_Death_Sword_0: -490018177
-      Player_Death_Sword_2: -596133555
-      Player_Death_Sword_4: -1661474554
       Player_Death_Sword_1: -2024902091
-      Player_Death_Sword_7: 21746330
+      Player_Death_Sword_2: -596133555
       Player_Death_Sword_3: 665538839
-  mipmapLimitGroupName: 
+      Player_Death_Sword_4: -1661474554
+      Player_Death_Sword_5: 804753473
+      Player_Death_Sword_6: 249424525
+      Player_Death_Sword_7: 21746330
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

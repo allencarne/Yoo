@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Sword_SwingRight_Right_Body_Brown_4: 1277605821
-      Player_Sword_SwingRight_Right_Body_Brown_6: -1050735960
-      Player_Sword_SwingRight_Right_Body_Brown_5: -1406619258
-      Player_Sword_SwingRight_Right_Body_Brown_7: -2066625157
-      Player_Sword_SwingRight_Right_Body_Brown_3: 252656388
-      Player_Sword_SwingRight_Right_Body_Brown_2: 1485158903
       Player_Sword_SwingRight_Right_Body_Brown_0: 1013006849
       Player_Sword_SwingRight_Right_Body_Brown_1: -472209300
-  mipmapLimitGroupName: 
+      Player_Sword_SwingRight_Right_Body_Brown_2: 1485158903
+      Player_Sword_SwingRight_Right_Body_Brown_3: 252656388
+      Player_Sword_SwingRight_Right_Body_Brown_4: 1277605821
+      Player_Sword_SwingRight_Right_Body_Brown_5: -1406619258
+      Player_Sword_SwingRight_Right_Body_Brown_6: -1050735960
+      Player_Sword_SwingRight_Right_Body_Brown_7: -2066625157
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

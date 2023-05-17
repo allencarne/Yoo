@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -444,23 +442,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Snail_Shmack_Left_0: -675628482
       Snail_Shmack_Left_1: -972439586
-      Snail_Shmack_Left_13: -514611267
-      Snail_Shmack_Left_2: -1257049978
-      Snail_Shmack_Left_5: -361605432
-      Snail_Shmack_Left_9: 749517711
+      Snail_Shmack_Left_10: 1022146156
       Snail_Shmack_Left_11: -871275564
+      Snail_Shmack_Left_12: 1681390559
+      Snail_Shmack_Left_13: -514611267
+      Snail_Shmack_Left_14: -354505202
+      Snail_Shmack_Left_2: -1257049978
+      Snail_Shmack_Left_3: 1940031191
+      Snail_Shmack_Left_4: 1370630830
+      Snail_Shmack_Left_5: -361605432
       Snail_Shmack_Left_6: -1915708310
       Snail_Shmack_Left_7: -1010065828
-      Snail_Shmack_Left_0: -675628482
-      Snail_Shmack_Left_3: 1940031191
       Snail_Shmack_Left_8: -1524775071
-      Snail_Shmack_Left_14: -354505202
-      Snail_Shmack_Left_4: 1370630830
-      Snail_Shmack_Left_12: 1681390559
-      Snail_Shmack_Left_10: 1022146156
-  mipmapLimitGroupName: 
+      Snail_Shmack_Left_9: 749517711
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

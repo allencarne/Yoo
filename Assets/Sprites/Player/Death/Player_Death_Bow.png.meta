@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Death_Bow_4: 406584199
-      Player_Death_Bow_6: 538790035
       Player_Death_Bow_0: 1318578645
-      Player_Death_Bow_5: -1923199891
-      Player_Death_Bow_3: -464276855
-      Player_Death_Bow_7: 959164121
-      Player_Death_Bow_2: -1401644515
       Player_Death_Bow_1: 741378019
-  mipmapLimitGroupName: 
+      Player_Death_Bow_2: -1401644515
+      Player_Death_Bow_3: -464276855
+      Player_Death_Bow_4: 406584199
+      Player_Death_Bow_5: -1923199891
+      Player_Death_Bow_6: 538790035
+      Player_Death_Bow_7: 959164121
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

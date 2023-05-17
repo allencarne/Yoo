@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -444,23 +442,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mushroom_Slam_Left_4: -1088150057
-      Mushroom_Slam_Left_8: 1692753158
-      Mushroom_Slam_Left_10: 1397174187
+      Mushroom_Slam_Left_0: 1662753848
       Mushroom_Slam_Left_1: 842430035
-      Mushroom_Slam_Left_6: -1526333228
+      Mushroom_Slam_Left_10: 1397174187
       Mushroom_Slam_Left_11: -1158922820
-      Mushroom_Slam_Left_9: 52978156
-      Mushroom_Slam_Left_3: -1681228467
-      Mushroom_Slam_Left_5: 1712604860
+      Mushroom_Slam_Left_12: 1390067727
+      Mushroom_Slam_Left_13: -315525446
       Mushroom_Slam_Left_14: -1103164471
       Mushroom_Slam_Left_2: 1901057648
-      Mushroom_Slam_Left_13: -315525446
-      Mushroom_Slam_Left_12: 1390067727
-      Mushroom_Slam_Left_0: 1662753848
+      Mushroom_Slam_Left_3: -1681228467
+      Mushroom_Slam_Left_4: -1088150057
+      Mushroom_Slam_Left_5: 1712604860
+      Mushroom_Slam_Left_6: -1526333228
       Mushroom_Slam_Left_7: 2080215844
-  mipmapLimitGroupName: 
+      Mushroom_Slam_Left_8: 1692753158
+      Mushroom_Slam_Left_9: 52978156
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

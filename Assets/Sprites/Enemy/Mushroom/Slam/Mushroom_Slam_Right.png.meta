@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -444,23 +442,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mushroom_Slam_Right_9: -244238810
-      Mushroom_Slam_Right_10: 872598423
-      Mushroom_Slam_Right_1: -148225115
       Mushroom_Slam_Right_0: 1370511379
-      Mushroom_Slam_Right_12: 1229902494
-      Mushroom_Slam_Right_14: 1511901967
-      Mushroom_Slam_Right_13: 241639198
+      Mushroom_Slam_Right_1: -148225115
+      Mushroom_Slam_Right_10: 872598423
       Mushroom_Slam_Right_11: -1170525016
-      Mushroom_Slam_Right_5: 447406917
-      Mushroom_Slam_Right_6: 108431742
-      Mushroom_Slam_Right_4: -478467589
-      Mushroom_Slam_Right_8: -1413909126
-      Mushroom_Slam_Right_7: 1906479946
+      Mushroom_Slam_Right_12: 1229902494
+      Mushroom_Slam_Right_13: 241639198
+      Mushroom_Slam_Right_14: 1511901967
       Mushroom_Slam_Right_2: -1370521302
       Mushroom_Slam_Right_3: -1726352313
-  mipmapLimitGroupName: 
+      Mushroom_Slam_Right_4: -478467589
+      Mushroom_Slam_Right_5: 447406917
+      Mushroom_Slam_Right_6: 108431742
+      Mushroom_Slam_Right_7: 1906479946
+      Mushroom_Slam_Right_8: -1413909126
+      Mushroom_Slam_Right_9: -244238810
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

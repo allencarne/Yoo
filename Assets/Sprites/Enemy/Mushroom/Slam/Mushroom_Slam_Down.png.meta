@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -444,23 +442,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mushroom_Slam_Down_14: -961352194
       Mushroom_Slam_Down_0: 491178250
-      Mushroom_Slam_Down_7: -534241208
-      Mushroom_Slam_Down_10: -702833048
-      Mushroom_Slam_Down_13: 2018125290
-      Mushroom_Slam_Down_12: 1896572086
-      Mushroom_Slam_Down_3: 225227341
-      Mushroom_Slam_Down_6: -1173999614
-      Mushroom_Slam_Down_9: -1676708924
-      Mushroom_Slam_Down_5: -845147052
-      Mushroom_Slam_Down_4: 627850143
-      Mushroom_Slam_Down_11: -79209333
       Mushroom_Slam_Down_1: -112903737
+      Mushroom_Slam_Down_10: -702833048
+      Mushroom_Slam_Down_11: -79209333
+      Mushroom_Slam_Down_12: 1896572086
+      Mushroom_Slam_Down_13: 2018125290
+      Mushroom_Slam_Down_14: -961352194
       Mushroom_Slam_Down_2: 187764835
+      Mushroom_Slam_Down_3: 225227341
+      Mushroom_Slam_Down_4: 627850143
+      Mushroom_Slam_Down_5: -845147052
+      Mushroom_Slam_Down_6: -1173999614
+      Mushroom_Slam_Down_7: -534241208
       Mushroom_Slam_Down_8: -1624663522
-  mipmapLimitGroupName: 
+      Mushroom_Slam_Down_9: -1676708924
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

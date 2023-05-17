@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -423,22 +421,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Slime_Bite_Down_9: 1902466624
-      Slime_Bite_Down_7: -2023598418
-      Slime_Bite_Down_13: -402545169
-      Slime_Bite_Down_10: -2023596504
-      Slime_Bite_Down_1: 1136625165
-      Slime_Bite_Down_2: 1662169599
-      Slime_Bite_Down_4: -465970223
-      Slime_Bite_Down_6: 1604890461
-      Slime_Bite_Down_8: 739515241
-      Slime_Bite_Down_3: 508628399
-      Slime_Bite_Down_12: 1435817042
       Slime_Bite_Down_0: -309826070
-      Slime_Bite_Down_5: 1164041322
+      Slime_Bite_Down_1: 1136625165
+      Slime_Bite_Down_10: -2023596504
       Slime_Bite_Down_11: 965056944
-  mipmapLimitGroupName: 
+      Slime_Bite_Down_12: 1435817042
+      Slime_Bite_Down_13: -402545169
+      Slime_Bite_Down_2: 1662169599
+      Slime_Bite_Down_3: 508628399
+      Slime_Bite_Down_4: -465970223
+      Slime_Bite_Down_5: 1164041322
+      Slime_Bite_Down_6: 1604890461
+      Slime_Bite_Down_7: -2023598418
+      Slime_Bite_Down_8: 739515241
+      Slime_Bite_Down_9: 1902466624
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

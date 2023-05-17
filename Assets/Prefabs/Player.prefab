@@ -2191,7 +2191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8233113972959511147}
   - component: {fileID: 8233113972959511146}
-  - component: {fileID: 7246255636988256026}
+  - component: {fileID: 4724488860592329914}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -2266,7 +2266,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &7246255636988256026
+--- !u!114 &4724488860592329914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2283,8 +2283,8 @@ MonoBehaviour:
   shadowType: 4
   maskType: 0
   shadowEffect: 0
-  shadowDistance: 1
-  shadowThickness: 0.25
+  shadowDistance: 1.5
+  shadowThickness: 1
   shadowSoftness: 0
   shadowTranslucency: 0
   maskLit: 0
@@ -2295,8 +2295,8 @@ MonoBehaviour:
     shadowType: 4
     maskType: 0
     transform: {fileID: 8233113972959511147}
-    height: 1
-    thickness: 0.25
+    height: 1.5
+    thickness: 1
     isStatic: 0
   normalMapMode:
     textureType: 0
@@ -2888,7 +2888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8233113973901384250}
   - component: {fileID: 8233113973901384249}
-  - component: {fileID: 8805483774424628911}
+  - component: {fileID: 7932969097476148648}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -2963,7 +2963,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &8805483774424628911
+--- !u!114 &7932969097476148648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2981,7 +2981,7 @@ MonoBehaviour:
   maskType: 0
   shadowEffect: 0
   shadowDistance: 1
-  shadowThickness: 0.25
+  shadowThickness: 0.5
   shadowSoftness: 0
   shadowTranslucency: 0
   maskLit: 0
@@ -2993,7 +2993,7 @@ MonoBehaviour:
     maskType: 0
     transform: {fileID: 8233113973901384250}
     height: 1
-    thickness: 0.25
+    thickness: 0.5
     isStatic: 0
   normalMapMode:
     textureType: 0

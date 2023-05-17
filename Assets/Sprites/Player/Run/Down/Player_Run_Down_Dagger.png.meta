@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Player_Run_Down_Dagger_0: 1771273856
+      Player_Run_Down_Dagger_1: 161065651
+      Player_Run_Down_Dagger_2: 1995421070
+      Player_Run_Down_Dagger_3: 1822766533
+      Player_Run_Down_Dagger_4: 1007266610
       Player_Run_Down_Dagger_5: -1730547044
       Player_Run_Down_Dagger_6: -1997488325
       Player_Run_Down_Dagger_7: 875365570
-      Player_Run_Down_Dagger_0: 1771273856
-      Player_Run_Down_Dagger_1: 161065651
-      Player_Run_Down_Dagger_4: 1007266610
-      Player_Run_Down_Dagger_3: 1822766533
-      Player_Run_Down_Dagger_2: 1995421070
-  mipmapLimitGroupName: 
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

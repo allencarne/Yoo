@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -444,23 +442,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Snail_Shmack_Right_9: -335492687
-      Snail_Shmack_Right_13: -561811309
-      Snail_Shmack_Right_7: 1037433415
-      Snail_Shmack_Right_14: -849949147
-      Snail_Shmack_Right_4: -1002060028
-      Snail_Shmack_Right_6: -2087801902
-      Snail_Shmack_Right_5: 54547782
+      Snail_Shmack_Right_0: 144041882
+      Snail_Shmack_Right_1: 438587136
       Snail_Shmack_Right_10: -1322948357
       Snail_Shmack_Right_11: -1514593002
       Snail_Shmack_Right_12: 1037461644
-      Snail_Shmack_Right_3: 1707916748
-      Snail_Shmack_Right_8: 1048199817
+      Snail_Shmack_Right_13: -561811309
+      Snail_Shmack_Right_14: -849949147
       Snail_Shmack_Right_2: -1945878351
-      Snail_Shmack_Right_0: 144041882
-      Snail_Shmack_Right_1: 438587136
-  mipmapLimitGroupName: 
+      Snail_Shmack_Right_3: 1707916748
+      Snail_Shmack_Right_4: -1002060028
+      Snail_Shmack_Right_5: 54547782
+      Snail_Shmack_Right_6: -2087801902
+      Snail_Shmack_Right_7: 1037433415
+      Snail_Shmack_Right_8: 1048199817
+      Snail_Shmack_Right_9: -335492687
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

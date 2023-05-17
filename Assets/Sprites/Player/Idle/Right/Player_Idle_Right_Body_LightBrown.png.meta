@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Idle_Right_Body_LightBrown_1: -1439131813
       Player_Idle_Right_Body_LightBrown_0: 164242517
-      Player_Idle_Right_Body_LightBrown_5: -2023889870
-      Player_Idle_Right_Body_LightBrown_7: 843475708
+      Player_Idle_Right_Body_LightBrown_1: -1439131813
       Player_Idle_Right_Body_LightBrown_2: 124101557
       Player_Idle_Right_Body_LightBrown_3: -1269855495
-      Player_Idle_Right_Body_LightBrown_6: 1741925469
       Player_Idle_Right_Body_LightBrown_4: -20199102
-  mipmapLimitGroupName: 
+      Player_Idle_Right_Body_LightBrown_5: -2023889870
+      Player_Idle_Right_Body_LightBrown_6: 1741925469
+      Player_Idle_Right_Body_LightBrown_7: 843475708
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

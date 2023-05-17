@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -549,28 +547,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Slime_Spawn_4: -1039650129
-      Slime_Spawn_12: -1087279641
-      Slime_Spawn_3: -608744984
-      Slime_Spawn_18: -2087136353
-      Slime_Spawn_7: -954483608
-      Slime_Spawn_2: 1368993487
-      Slime_Spawn_16: -1125867551
       Slime_Spawn_0: 707634306
-      Slime_Spawn_11: -1520477798
-      Slime_Spawn_19: 1750100496
-      Slime_Spawn_5: 147245992
-      Slime_Spawn_10: 162209259
       Slime_Spawn_1: 772953753
-      Slime_Spawn_17: 1479055887
-      Slime_Spawn_6: -1989322670
+      Slime_Spawn_10: 162209259
+      Slime_Spawn_11: -1520477798
+      Slime_Spawn_12: -1087279641
+      Slime_Spawn_13: 2053564852
       Slime_Spawn_14: 1675328257
       Slime_Spawn_15: -457164541
-      Slime_Spawn_13: 2053564852
-      Slime_Spawn_9: 1470724357
+      Slime_Spawn_16: -1125867551
+      Slime_Spawn_17: 1479055887
+      Slime_Spawn_18: -2087136353
+      Slime_Spawn_19: 1750100496
+      Slime_Spawn_2: 1368993487
+      Slime_Spawn_3: -608744984
+      Slime_Spawn_4: -1039650129
+      Slime_Spawn_5: 147245992
+      Slime_Spawn_6: -1989322670
+      Slime_Spawn_7: -954483608
       Slime_Spawn_8: 1560974174
-  mipmapLimitGroupName: 
+      Slime_Spawn_9: 1470724357
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

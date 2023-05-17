@@ -662,7 +662,7 @@ MonoBehaviour:
   maskType: 0
   shadowEffect: 0
   shadowDistance: 1
-  shadowThickness: 0.25
+  shadowThickness: 0.5
   shadowSoftness: 0.2
   shadowTranslucency: 0
   maskLit: 0
@@ -672,9 +672,9 @@ MonoBehaviour:
   mainShape:
     shadowType: 4
     maskType: 0
-    transform: {fileID: 0}
+    transform: {fileID: 7724802461809699467}
     height: 1
-    thickness: 0.25
+    thickness: 0.5
     isStatic: 0
   normalMapMode:
     textureType: 0

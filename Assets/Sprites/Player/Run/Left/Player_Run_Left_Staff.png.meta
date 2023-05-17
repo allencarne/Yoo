@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Run_Left_Staff_4: 1366526674
-      Player_Run_Left_Staff_2: 1146271823
-      Player_Run_Left_Staff_1: -69172558
-      Player_Run_Left_Staff_3: -140108484
-      Player_Run_Left_Staff_7: -1915361409
       Player_Run_Left_Staff_0: 502095045
+      Player_Run_Left_Staff_1: -69172558
+      Player_Run_Left_Staff_2: 1146271823
+      Player_Run_Left_Staff_3: -140108484
+      Player_Run_Left_Staff_4: 1366526674
       Player_Run_Left_Staff_5: -1534406016
       Player_Run_Left_Staff_6: 1627457973
-  mipmapLimitGroupName: 
+      Player_Run_Left_Staff_7: -1915361409
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

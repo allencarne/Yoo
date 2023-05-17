@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -297,16 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Snail_Wander_Left_1: 1843756368
       Snail_Wander_Left_0: 408653670
-      Snail_Wander_Left_4: 101586373
-      Snail_Wander_Left_6: -882496042
-      Snail_Wander_Left_5: -1390861243
+      Snail_Wander_Left_1: 1843756368
       Snail_Wander_Left_2: 55173059
-      Snail_Wander_Left_7: -1089552270
       Snail_Wander_Left_3: 1047546137
-  mipmapLimitGroupName: 
+      Snail_Wander_Left_4: 101586373
+      Snail_Wander_Left_5: -1390861243
+      Snail_Wander_Left_6: -882496042
+      Snail_Wander_Left_7: -1089552270
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

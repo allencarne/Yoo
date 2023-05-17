@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -298,15 +296,16 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Slime_Wander_Right_0: 218540538
+      Slime_Wander_Right_1: -71894126
       Slime_Wander_Right_2: -1966159135
-      Slime_Wander_Right_6: 1248454292
+      Slime_Wander_Right_3: 1304902091
       Slime_Wander_Right_4: -745102246
       Slime_Wander_Right_5: 537792533
+      Slime_Wander_Right_6: 1248454292
       Slime_Wander_Right_7: -688009342
-      Slime_Wander_Right_1: -71894126
-      Slime_Wander_Right_3: 1304902091
-  mipmapLimitGroupName: 
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
