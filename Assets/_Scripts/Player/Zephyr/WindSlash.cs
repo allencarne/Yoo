@@ -27,7 +27,7 @@ public class WindSlash : MonoBehaviour
             Instantiate(windSlashHitSpark, collision.transform.position, transform.rotation, collision.transform);
 
             // KnockBack
-            enemy.GetComponent<Enemy>().KnockBack(enemy.transform.position, transform.position, enemyRB, PlayerManager.instance.player_SO.windSlashKnockBackForce);
+            enemy.KnockBack(enemy.transform.position, transform.position, enemyRB, PlayerManager.instance.player_SO.windSlashKnockBackForce);
 
             //player.GetComponentInChildren<Zephyr>().KnockBack(enemy.transform.position, transform.position, enemyRB, PlayerManager.instance.player_SO.windSlashKnockBackForce);
             //Vector2 direction = (enemy.transform.position - transform.position).normalized;
