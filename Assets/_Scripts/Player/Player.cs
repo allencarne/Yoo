@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject floatingTextHeal;
 
     [Header("Variables")]
-    //[SerializeField] protected float basicAttackSlideForce;
     [HideInInspector] protected float basicAttackRange = 10.2f;
     [HideInInspector] protected Vector2 angleToMouse;
     [HideInInspector] protected bool canSlide = false;
@@ -125,17 +124,6 @@ public class Player : MonoBehaviour
                 PlayerUltimateState();
                 break;
         }
-        /*
-       // Sorting Order
-       if (animator.GetFloat("Vertical") >= 5)
-       {
-           sword.GetComponent<SpriteRenderer>().sortingOrder = 1;
-       }
-       else
-       {
-           sword.GetComponent<SpriteRenderer>().sortingOrder = -1;
-       }
-        */
 
         Testing();
     }
@@ -147,14 +135,6 @@ public class Player : MonoBehaviour
             // Move in direction of movement keys
             rb.MovePosition(rb.position + movement * Time.deltaTime);
         }
-
-        /*
-        if (canSlide)
-        {
-            canSlide = false;
-            SlideForward();
-        }
-        */
     }
 
     public void PlayerSpawnState()
@@ -176,8 +156,6 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(.5f);
 
         doneSpawning = true;
-        //Debug.Log("test");
-        //state = PlayerState.Idle;
     }
 
     protected virtual void PlayerIdleState()
@@ -272,8 +250,6 @@ public class Player : MonoBehaviour
             animator.Play("Death", 4, 0f);
 
             OnPlayerDeath?.Invoke();
-
-            //Destroy(gameObject, .5f);
         }
     }
 
