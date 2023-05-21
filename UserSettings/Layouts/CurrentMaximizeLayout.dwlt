@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 14236
+  controlID: 4961
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 14237
+  controlID: 4962
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 14238
+  controlID: 4963
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,9 +227,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0a760000
-      m_LastClickedID: 30218
-      m_ExpandedIDs: 0cfbffff4a77000088780000
+      m_SelectedIDs: 78770000
+      m_LastClickedID: 30584
+      m_ExpandedIDs: 0cfbffff88780000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -572,9 +572,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.9917772, y: -0.60726696, z: -0.101936124}
+    m_Target: {x: -0.14412898, y: -0.18735442, z: 125.57632}
     speed: 2
-    m_Value: {x: 0.9917772, y: -0.60726696, z: -0.101936124}
+    m_Value: {x: -0.14412898, y: -0.18735442, z: 125.57632}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -625,9 +625,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.6225
+    m_Target: 9.336045
     speed: 2
-    m_Value: 8.6225
+    m_Value: 9.336045
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -906,7 +906,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 14333
+  controlID: 4905
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -976,22 +976,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Environment/Mushroom/Juice
+    - Assets/Sprites/Environment/Mushroom
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Sprites/Environment/Mushroom/Juice
+  - Assets/Sprites/Environment/Mushroom
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\allen\Desktop\Unity Projects\Yoo\Yoo
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 710}
-    m_SelectedIDs: 56090100
-    m_LastClickedID: 67926
-    m_ExpandedIDs: 00000000988b00009a8b00009c8b00009e8b0000a08b0000a28b0000a48b0000a68b0000a88b0000aa8b0000ac8b0000ae8b0000b08b0000b28b0000b48b0000b68b00002a8c00001e92000000ca9a3b
+    m_SelectedIDs: 7c8b0000
+    m_LastClickedID: 35708
+    m_ExpandedIDs: 00000000b48a0000b68a0000b88a0000ba8a0000bc8a0000be8a0000c08a0000c28a0000c48a0000c68a0000c88a0000ca8a0000cc8a0000ce8a0000d08a0000d28a00003c8b00007c8b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1019,7 +1019,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000988b00009a8b00009c8b00009e8b0000a08b0000a28b0000a48b0000a68b0000a88b0000aa8b0000ac8b0000ae8b0000b08b0000b28b0000b48b0000b68b000000ca9a3b
+    m_ExpandedIDs: 00000000b48a0000b68a0000b88a0000ba8a0000bc8a0000be8a0000c08a0000c28a0000c48a0000c68a0000c88a0000ca8a0000cc8a0000ce8a0000d08a0000d28a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1044,9 +1044,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 0a760000
-    m_LastClickedInstanceID: 30218
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 78770000
+    m_LastClickedInstanceID: 30584
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000563b00003245000050a90000eea500004a8c0000288000008480000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1339,7 +1339,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 30218
+  m_LastSelectedObjectID: 30584
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1359,8 +1359,8 @@ MonoBehaviour:
     y: 0
     width: 539
     height: 946
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
