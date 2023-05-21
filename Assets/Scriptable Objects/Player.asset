@@ -16,14 +16,14 @@ MonoBehaviour:
   playerLevel: 1
   currentExperience: 0
   requiredExperience: 3
-  health: 6
+  health: 10
   maxHealth: 10
   movementSpeed: 5
   maxMovementSpeed: 5
   attackDamage: 1
   attackSpeed: 1
   fury: 0
-  maxFury: 10
+  maxFury: 100
   windSlashCastTime: 0.3
   windSlashDuration: 0.7
   windSlashCoolDown: 0.8

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FuryBar : MonoBehaviour
 {
-    [SerializeField] PlayerScriptableObject SO_Player;
+    //[SerializeField] PlayerScriptableObject SO_Player;
 
     [SerializeField] Image furyBarFront;
     [SerializeField] Image furyBarBack;
@@ -15,7 +15,7 @@ public class FuryBar : MonoBehaviour
 
     public void Update()
     {
-        SO_Player.fury = Mathf.Clamp(SO_Player.fury, 0, SO_Player.maxFury);
+        PlayerManager.instance.player_SO.fury = Mathf.Clamp(PlayerManager.instance.player_SO.fury, 0, PlayerManager.instance.player_SO.maxFury);
 
         UpdateFuryUI();
     }
@@ -24,7 +24,7 @@ public class FuryBar : MonoBehaviour
     {
         float fillFront = furyBarFront.fillAmount;
         float fillBack = furyBarBack.fillAmount;
-        float furyFraction = SO_Player.fury / SO_Player.maxFury;
+        float furyFraction = PlayerManager.instance.player_SO.fury / PlayerManager.instance.player_SO.maxFury;
 
         if (fillBack > furyFraction)
         {

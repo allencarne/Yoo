@@ -23,6 +23,9 @@ public class PlayerClassSelection : MonoBehaviour
     bool iceEquipped;
     bool electricityEquipped;
 
+    // Resource Bars
+    [SerializeField] GameObject furyBar;
+
     public enum PlayerClass
     {
         Beginner,
@@ -70,9 +73,11 @@ public class PlayerClassSelection : MonoBehaviour
         // Wind - Sword
         if (playerClass == PlayerClass.Zephyr)
         {
+            furyBar.SetActive(true);
             zephyr.enabled = true;
         } else
         {
+            furyBar.SetActive(false);
             zephyr.enabled = false;
         }
 

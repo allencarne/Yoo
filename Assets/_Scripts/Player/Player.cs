@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     [HideInInspector] protected Rigidbody2D rb;
     [HideInInspector] protected Animator animator;
     [HideInInspector] protected Camera cam;
-    [HideInInspector] PlayerKeys keys;
+    [HideInInspector] protected PlayerKeys keys;
     [HideInInspector] HealthBar healthbar;
     [HideInInspector] FuryBar furybar;
     [SerializeField] protected Transform aimer;
@@ -75,12 +75,13 @@ public class Player : MonoBehaviour
     protected virtual void Start()
     {
         playerManager.player_SO.health = playerManager.player_SO.maxHealth;
+        playerManager.player_SO.fury = 0;
         playerManager.player_SO.movementSpeed = playerManager.player_SO.maxMovementSpeed;
     }
 
     private void Update()
     {
-        Debug.Log(state);
+        //Debug.Log(state);
 
         switch (state)
         {
@@ -291,6 +292,14 @@ public class Player : MonoBehaviour
     protected virtual void PlayerUltimateState()
     {
 
+    }
+
+    // Status Effects
+
+    public void KnockBack(Vector3 aPosition, Vector3 bPosition, Rigidbody2D opponentRB, float knockBackAmount)
+    {
+        Vector2 direction = (aPosition - bPosition).normalized;
+        opponentRB.velocity = direction * knockBackAmount;
     }
 
     #region Helper Methods

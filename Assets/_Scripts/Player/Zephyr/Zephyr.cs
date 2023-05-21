@@ -510,6 +510,19 @@ public class Zephyr : Player
 
     #endregion
 
+    protected override void UltimateKeyPressed()
+    {
+        if (Input.GetKey(keys.ultimateKey) && canUltimate)
+        {
+            if (playerManager.player_SO.fury >= 100)
+            {
+                Debug.Log("test");
+                state = PlayerState.Ultimate;
+                LoseFury(100);
+            }
+        }
+    }
+
     IEnumerator UnpauseAimer(float time)
     {
         yield return new WaitForSeconds(time);

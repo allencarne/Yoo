@@ -23,7 +23,7 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     public GameObject playerPrefab;
-    GameObject playerInstance;
+    public GameObject playerInstance;
     public PlayerScriptableObject player_SO;
 
     [SerializeField] CinemachineVirtualCamera virtualCam;
