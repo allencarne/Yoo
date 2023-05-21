@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float enemyMaxMoveSpeed;
 
     [Header("Components")]
+    StatusEffects statusEffects;
     [SerializeField] protected GameObject enemyUI;
     [SerializeField] EnemyHealthBar enemyHealthbar;
     [SerializeField] protected Animator enemyAnimator;
@@ -51,6 +52,11 @@ public class Enemy : MonoBehaviour
     }
 
     protected EnemyState state = EnemyState.spawn;
+
+    private void Awake()
+    {
+        statusEffects = GetComponent<StatusEffects>();
+    }
 
     private void Start()
     {
@@ -343,6 +349,27 @@ public class Enemy : MonoBehaviour
         // Destroy after delay
         Destroy(gameObject, .7f);
     }
+    #endregion
+
+    #region Status Effects
+
+    public void KnockBack(Vector3 aPosition, Vector3 bPosition, Rigidbody2D opponentRB, float knockBackAmount)
+    {
+        statusEffects.knockBackIcon.SetActive(true);
+
+        Vector2 direction = (aPosition - bPosition).normalized;
+        opponentRB.velocity = direction * knockBackAmount;
+
+        StartCoroutine(KnockBackDuration());
+    }
+
+    IEnumerator KnockBackDuration()
+    {
+        yield return new WaitForSeconds(.3f);
+
+        statusEffects.knockBackIcon.SetActive(false);
+    }
+
     #endregion
 
     #region Animation Events
