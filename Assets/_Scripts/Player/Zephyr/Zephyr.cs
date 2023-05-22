@@ -514,11 +514,11 @@ public class Zephyr : Player
     {
         if (Input.GetKey(keys.ultimateKey) && canUltimate)
         {
-            if (playerManager.player_SO.fury >= 100)
+            if (playerManager.player_SO.fury >= playerManager.player_SO.maxFury)
             {
                 Debug.Log("test");
                 state = PlayerState.Ultimate;
-                LoseFury(100);
+                LoseFury(playerManager.player_SO.maxFury);
             }
         }
     }

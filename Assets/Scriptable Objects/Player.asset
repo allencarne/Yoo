@@ -22,8 +22,8 @@ MonoBehaviour:
   maxMovementSpeed: 5
   attackDamage: 1
   attackSpeed: 1
-  fury: 0
-  maxFury: 100
+  fury: 12
+  maxFury: 20
   windSlashCastTime: 0.3
   windSlashDuration: 0.7
   windSlashCoolDown: 0.8
