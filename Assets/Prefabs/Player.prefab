@@ -1148,7 +1148,7 @@ MonoBehaviour:
   parryStrikeShieldPrefab: {fileID: 1334164566803909805, guid: 0b69156d8e3effe4cb104906bf56f405, type: 3}
   parryStrikePrefab: {fileID: 7058784715532521358, guid: 2505cdb2d2bc3564991369b153205297, type: 3}
   heavyBlowPrefab: {fileID: 6731159717306367741, guid: e9da28aae9fafc34b892de29a50ba119, type: 3}
-  engulfPrefab: {fileID: 888074877118327551, guid: f77c3e6626c5c5c4491be330fb055222, type: 3}
+  engulfPrefab: {fileID: 7862783153083293874, guid: 214bca012aac78c44948e01b3b06923f, type: 3}
 --- !u!1 &5300669628514090674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2737,7 +2737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69818e43e0ef44146be11aafa8d01761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SO_Player: {fileID: 11400000, guid: fc34b7e230a2cbf4488c19562075fe12, type: 2}
   furyBarFront: {fileID: 8239880347772320893}
   furyBarBack: {fileID: 4993984318626472646}
   playerUI: {fileID: 8233113974517434074}

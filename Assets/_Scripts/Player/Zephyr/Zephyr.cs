@@ -16,6 +16,7 @@ public class Zephyr : Player
 
     [Header("Tempest Charge")]
     [SerializeField] GameObject tempestChargePrefab;
+    //[SerializeField] GameObject inhalePrefab;
 
     [Header("Parry Strike")]
     [SerializeField] GameObject parryStrikeShieldPrefab;
@@ -487,7 +488,7 @@ public class Zephyr : Player
             animator.Play("Power-Up");
             animator.Play("Power-Up", 1);
 
-            Instantiate(engulfPrefab, transform.position, transform.rotation);
+            Instantiate(engulfPrefab, transform.position, transform.rotation, transform);
 
             StartCoroutine(EngulfAnimationDuration());
             StartCoroutine(EngulfCoolDown());
