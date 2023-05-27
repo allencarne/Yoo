@@ -517,7 +517,6 @@ public class Zephyr : Player
         {
             if (playerManager.player_SO.fury >= playerManager.player_SO.maxFury)
             {
-                Debug.Log("test");
                 state = PlayerState.Ultimate;
                 LoseFury(playerManager.player_SO.maxFury);
             }

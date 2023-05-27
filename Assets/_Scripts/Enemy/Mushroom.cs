@@ -22,7 +22,7 @@ public class Mushroom : Enemy
             enemyAnimator.Play("Slam");
 
             // Prevents enemy from being moved while casting
-            enemyRB.isKinematic = true;
+            //enemyRB.isKinematic = true;
 
             // Attack Prefab
             Instantiate(slamTelegraph, transform.position, enemyAimer.rotation);

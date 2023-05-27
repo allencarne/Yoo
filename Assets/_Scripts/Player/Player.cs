@@ -300,6 +300,15 @@ public class Player : MonoBehaviour
     {
         Vector2 direction = (aPosition - bPosition).normalized;
         opponentRB.velocity = direction * knockBackAmount;
+
+        StartCoroutine(KnockBackDuration(opponentRB));
+    }
+
+    IEnumerator KnockBackDuration(Rigidbody2D opponentRB)
+    {
+        yield return new WaitForSeconds(.3f);
+
+        opponentRB.velocity = Vector2.zero;
     }
 
     #region Helper Methods

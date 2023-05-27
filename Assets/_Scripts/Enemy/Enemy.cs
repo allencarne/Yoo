@@ -314,7 +314,7 @@ public class Enemy : MonoBehaviour
     protected virtual void EnemyHurtState(float damage)
     {
         // Allows enemy to be pushed around
-        enemyRB.isKinematic = false;
+        //enemyRB.isKinematic = false;
 
         // Animate and If enemy telegraph is spawned, Destroy it
         if (isEnemyHurt)
@@ -388,7 +388,7 @@ public class Enemy : MonoBehaviour
     public void AE_Attack()
     {
         // Allows enemy to pushed around
-        enemyRB.isKinematic = false;
+        //enemyRB.isKinematic = false;
 
         // Set State
         state = EnemyState.idle;

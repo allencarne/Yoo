@@ -22,7 +22,7 @@ public class Snail : Enemy
             enemyAnimator.Play("Shmack");
 
             // Prevents enemy from being moved while casting
-            enemyRB.isKinematic = true;
+            //enemyRB.isKinematic = true;
 
             // Attack Prefab
             Instantiate(shmackTelegraph, transform.position, enemyAimer.rotation);
