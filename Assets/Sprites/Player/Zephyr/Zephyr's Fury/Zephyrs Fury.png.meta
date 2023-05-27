@@ -122,8 +122,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 256
+        width: 272
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: Zephyrs Fury_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 272
         y: 0
-        width: 256
-        height: 256
+        width: 272
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Zephyrs Fury_2
       rect:
         serializedVersion: 2
-        x: 512
+        x: 544
         y: 0
-        width: 256
-        height: 256
+        width: 272
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: Zephyrs Fury_3
       rect:
         serializedVersion: 2
-        x: 768
+        x: 816
         y: 0
-        width: 256
-        height: 256
+        width: 272
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: Zephyrs Fury_4
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 1088
         y: 0
-        width: 256
-        height: 256
+        width: 272
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: Zephyrs Fury_5
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1360
         y: 0
-        width: 256
-        height: 256
+        width: 272
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
