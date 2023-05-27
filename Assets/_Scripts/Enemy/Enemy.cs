@@ -169,7 +169,7 @@ public class Enemy : MonoBehaviour
         enemyAnimator.Play("Idle");
 
         // Prevents enemy from sliding after being attacked
-        enemyRB.velocity = Vector2.zero;
+        //enemyRB.velocity = Vector2.zero;
 
         // Increase idle time every second while in idle state
         idleTime += 1 * Time.deltaTime;

@@ -753,7 +753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7506617169241989650}
-  - component: {fileID: 3688827286856944015}
+  - component: {fileID: 2079653779006430625}
   m_Layer: 0
   m_Name: AggroRange
   m_TagString: Untagged
@@ -776,7 +776,7 @@ Transform:
   m_Father: {fileID: 3249285051763240967}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &3688827286856944015
+--- !u!58 &2079653779006430625
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

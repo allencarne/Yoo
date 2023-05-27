@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7862783153083293877}
   - component: {fileID: 7862783153083293876}
-  - component: {fileID: 7862783153083293875}
   - component: {fileID: 3859305829900327381}
   - component: {fileID: 764891308569352060}
+  - component: {fileID: 2290464037733158440}
+  - component: {fileID: 1372797546314991738}
+  - component: {fileID: 3989016668044372986}
   m_Layer: 0
   m_Name: Zephyr's Fury
   m_TagString: Untagged
@@ -87,20 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7862783153083293875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7862783153083293874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b5075e96077fa547bed732934a35250, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitSpark: {fileID: 1257035211360671276, guid: 5fe2782372b01334c884e92f5e2facad, type: 3}
-  hitSpark2: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
 --- !u!58 &3859305829900327381
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -112,7 +100,7 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -138,3 +126,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &2290464037733158440
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7862783153083293874}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!250 &1372797546314991738
+PointEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7862783153083293874}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ForceMagnitude: -400
+  m_ForceVariation: 0
+  m_DistanceScale: 1
+  m_ForceSource: 0
+  m_ForceTarget: 0
+  m_ForceMode: 0
+  m_Drag: 0
+  m_AngularDrag: 0
+--- !u!114 &3989016668044372986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7862783153083293874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ae2e0ee953464479b8c307840a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
