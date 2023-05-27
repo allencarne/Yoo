@@ -488,7 +488,8 @@ public class Zephyr : Player
             animator.Play("Power-Up");
             animator.Play("Power-Up", 1);
 
-            Instantiate(engulfPrefab, transform.position, transform.rotation, transform);
+            var ult = Instantiate(engulfPrefab, transform.position, transform.rotation, transform);
+            Destroy(ult, 10f);
 
             StartCoroutine(EngulfAnimationDuration());
             StartCoroutine(EngulfCoolDown());
