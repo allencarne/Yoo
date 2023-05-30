@@ -1144,7 +1144,7 @@ MonoBehaviour:
   windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
   windSlash3Prefab: {fileID: 4188387910762008136, guid: f037c164b38a4134b973d8600f5e9a1c, type: 3}
   slicingWindsPrefab: {fileID: 2950572099573583326, guid: 2e58626a1a5e1cd47b59b0bb8226bd1e, type: 3}
-  tempestChargePrefab: {fileID: 3865635244848361968, guid: 929edcdcdfbced6409dfb2a440699a9f, type: 3}
+  gustChargePrefab: {fileID: 3865635244848361968, guid: 929edcdcdfbced6409dfb2a440699a9f, type: 3}
   parryStrikeShieldPrefab: {fileID: 1334164566803909805, guid: 0b69156d8e3effe4cb104906bf56f405, type: 3}
   parryStrikePrefab: {fileID: 7058784715532521358, guid: 2505cdb2d2bc3564991369b153205297, type: 3}
   heavyBlowPrefab: {fileID: 6731159717306367741, guid: e9da28aae9fafc34b892de29a50ba119, type: 3}

@@ -24,6 +24,9 @@ MonoBehaviour:
   attackSpeed: 1
   fury: 20
   maxFury: 20
+  windSlashPrefab: {fileID: 4553433666271236552, guid: c400f6e4aad52334eab165d98d7f3da3, type: 3}
+  windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
+  windSlash3Prefab: {fileID: 4188387910762008136, guid: f037c164b38a4134b973d8600f5e9a1c, type: 3}
   windSlashCastTime: 0.3
   windSlashDuration: 0.7
   windSlashCoolDown: 0.8
@@ -32,6 +35,7 @@ MonoBehaviour:
   windSlashKnockBackForce: 1.5
   windSlash3Damage: 2
   windSlash3KnockBackForce: 1.7
+  slicingWindsPrefab: {fileID: 2950572099573583326, guid: 2e58626a1a5e1cd47b59b0bb8226bd1e, type: 3}
   slicingWindsCastTime: 0.3
   slicingWindsDuration: 0.7
   slicingWindsCoolDown: 5
@@ -39,20 +43,25 @@ MonoBehaviour:
   slicingWindsSlideForce: 20
   slicingWindsKnockBackForce: 5
   slicingWindsSlideDuration: 0.1
-  tempestChargeCastTime: 0
-  tempestChargeDuration: 0.2
-  tempestChargeCoolDown: 1
-  tempestChargeDamage: 0
-  tempestChargeVelocity: 15
+  gustChargePrefab: {fileID: 3865635244848361968, guid: 929edcdcdfbced6409dfb2a440699a9f, type: 3}
+  gustChargeCastTime: 0
+  gustChargeDuration: 0.2
+  gustChargeCoolDown: 1
+  gustChargeDamage: 0
+  gustChargeVelocity: 15
+  parryStrikeShieldPrefab: {fileID: 1334164566803909805, guid: 0b69156d8e3effe4cb104906bf56f405, type: 3}
+  parryStrikePrefab: {fileID: 7058784715532521358, guid: 2505cdb2d2bc3564991369b153205297, type: 3}
   parryStrikeCastTime: 0.3
   parryStrikeDuration: 1
   parryStrikeCoolDown: 2
   parryStrikeDamage: 1
   parryStrikeKnockBackForce: 4
+  heavyBlowPrefab: {fileID: 6731159717306367741, guid: e9da28aae9fafc34b892de29a50ba119, type: 3}
   heavyBlowCastTime: 0.3
   heavyBlowDuration: 0.7
   heavyBlowCoolDown: 1
   heavyBlowDamage: 1
+  engulfPrefab: {fileID: 888074877118327551, guid: f77c3e6626c5c5c4491be330fb055222, type: 3}
   engulfCastTime: 0
   engulfDuration: 0.7
   engulfCoolDown: 1

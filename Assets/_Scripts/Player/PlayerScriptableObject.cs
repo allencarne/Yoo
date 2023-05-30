@@ -21,6 +21,9 @@ public class PlayerScriptableObject : ScriptableObject
     public float maxFury;
 
     [Header("Zephyr Wind Slash")]
+    public GameObject windSlashPrefab;
+    public GameObject windSlash2Prefab;
+    public GameObject windSlash3Prefab;
     public float windSlashCastTime;
     public float windSlashDuration;
     public float windSlashCoolDown;
@@ -31,6 +34,7 @@ public class PlayerScriptableObject : ScriptableObject
     public float windSlash3KnockBackForce;
 
     [Header("Zephyr Slicing Winds")]
+    public GameObject slicingWindsPrefab;
     public float slicingWindsCastTime;
     public float slicingWindsDuration;
     public float slicingWindsCoolDown;
@@ -39,14 +43,17 @@ public class PlayerScriptableObject : ScriptableObject
     public float slicingWindsKnockBackForce;
     public float slicingWindsSlideDuration;
 
-    [Header("Zephyr Tempest Charge")]
-    public float tempestChargeCastTime;
-    public float tempestChargeDuration;
-    public float tempestChargeCoolDown;
-    public float tempestChargeDamage;
-    public float tempestChargeVelocity;
+    [Header("Zephyr Gust Charge")]
+    public GameObject gustChargePrefab;
+    public float gustChargeCastTime;
+    public float gustChargeDuration;
+    public float gustChargeCoolDown;
+    public float gustChargeDamage;
+    public float gustChargeVelocity;
 
     [Header("Zephyr Parry Strike")]
+    public GameObject parryStrikeShieldPrefab;
+    public GameObject parryStrikePrefab;
     public float parryStrikeCastTime;
     public float parryStrikeDuration;
     public float parryStrikeCoolDown;
@@ -54,12 +61,14 @@ public class PlayerScriptableObject : ScriptableObject
     public float parryStrikeKnockBackForce;
 
     [Header("Zephyr Heavy Blow")]
+    public GameObject heavyBlowPrefab;
     public float heavyBlowCastTime;
     public float heavyBlowDuration;
     public float heavyBlowCoolDown;
     public float heavyBlowDamage;
 
     [Header("Zephyr Engulf")]
+    public GameObject engulfPrefab;
     public float engulfCastTime;
     public float engulfDuration;
     public float engulfCoolDown;

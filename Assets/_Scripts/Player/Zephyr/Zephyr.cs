@@ -5,33 +5,19 @@ using UnityEngine;
 public class Zephyr : Player
 {
     [Header("WindSlash")]
-    [SerializeField] GameObject windSlashPrefab;
-    [SerializeField] GameObject windSlash2Prefab;
-    [SerializeField] GameObject windSlash3Prefab;
     bool isWindSlashActive = false;
 
     [Header("Slicing Winds")]
-    [SerializeField] GameObject slicingWindsPrefab;
     bool canSlicingWinds = false;
 
-    [Header("Tempest Charge")]
-    [SerializeField] GameObject tempestChargePrefab;
-    //[SerializeField] GameObject inhalePrefab;
+    //[Header("Gust Charge")]
 
     [Header("Parry Strike")]
-    [SerializeField] GameObject parryStrikeShieldPrefab;
-    [SerializeField] GameObject parryStrikePrefab;
     bool isParryStrikeTriggered = false;
 
-    [Header("Heavy Blow")]
-    [SerializeField] GameObject heavyBlowPrefab;
-    //[SerializeField] float heavyBlowCoolDown;
+    //[Header("Heavy Blow")]
 
-    [Header("Engulf")]
-    [SerializeField] GameObject engulfPrefab;
-    //[SerializeField] float engulfVelocity;
-    //[SerializeField] float engulfAnimationDuration;
-    //[SerializeField] float engulfCoolDown;
+    //[Header("Engulf")]
 
     private void OnEnable()
     {
@@ -54,7 +40,7 @@ public class Zephyr : Player
 
         if (!canMobility && state == PlayerState.Mobility)
         {
-            rb.velocity = angleToMouse.normalized * playerManager.player_SO.tempestChargeVelocity;
+            rb.velocity = angleToMouse.normalized * playerManager.player_SO.gustChargeVelocity;
         }
 
         if (canSlide)
@@ -98,7 +84,7 @@ public class Zephyr : Player
 
             canSlide = true;
 
-            Instantiate(windSlashPrefab, transform.position, aimer.rotation);
+            Instantiate(playerManager.player_SO.windSlashPrefab, transform.position, aimer.rotation);
         }
 
         BasicAttack2KeyPressed();
@@ -169,7 +155,7 @@ public class Zephyr : Player
 
             canSlide = true;
 
-            Instantiate(windSlash2Prefab, transform.position, aimer.rotation);
+            Instantiate(playerManager.player_SO.windSlash2Prefab, transform.position, aimer.rotation);
         }
 
         BasicAttack3KeyPressed();
@@ -225,7 +211,7 @@ public class Zephyr : Player
 
             canSlide = true;
 
-            Instantiate(windSlash3Prefab, transform.position, aimer.rotation);
+            Instantiate(playerManager.player_SO.windSlash3Prefab, transform.position, aimer.rotation);
         }
     }
 
@@ -273,7 +259,7 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(playerManager.player_SO.slicingWindsCastTime);
 
-        Instantiate(slicingWindsPrefab, transform.position, aimer.rotation);
+        Instantiate(playerManager.player_SO.slicingWindsPrefab, transform.position, aimer.rotation);
     }
 
     IEnumerator SlicingWindsDuration()
@@ -301,7 +287,7 @@ public class Zephyr : Player
 
     #endregion
 
-    #region Tempest Charge
+    #region Gust Charge
 
     protected override void PlayerMobilityState()
     {
@@ -323,17 +309,17 @@ public class Zephyr : Player
             Physics2D.IgnoreLayerCollision(3, 6, true);
 
             // Dust
-            Instantiate(tempestChargePrefab, transform.position, aimer.rotation);
+            Instantiate(playerManager.player_SO.gustChargePrefab, transform.position, aimer.rotation);
 
-            StartCoroutine(UnpauseAimer(playerManager.player_SO.tempestChargeDuration));
-            StartCoroutine(TempestChargeDuration());
-            StartCoroutine(TempestChargeCoolDown());
+            StartCoroutine(UnpauseAimer(playerManager.player_SO.gustChargeDuration));
+            StartCoroutine(GustChargeDuration());
+            StartCoroutine(GustChargeCoolDown());
         }
     }
 
-    IEnumerator TempestChargeDuration()
+    IEnumerator GustChargeDuration()
     {
-        yield return new WaitForSeconds(playerManager.player_SO.tempestChargeDuration);
+        yield return new WaitForSeconds(playerManager.player_SO.gustChargeDuration);
 
         // No Longer Ignores collision with Enemy
         Physics2D.IgnoreLayerCollision(3, 6, false);
@@ -343,9 +329,9 @@ public class Zephyr : Player
         state = PlayerState.Idle;
     }
 
-    IEnumerator TempestChargeCoolDown()
+    IEnumerator GustChargeCoolDown()
     {
-        yield return new WaitForSeconds(playerManager.player_SO.tempestChargeCoolDown);
+        yield return new WaitForSeconds(playerManager.player_SO.gustChargeCoolDown);
 
         canMobility = true;
     }
@@ -368,7 +354,7 @@ public class Zephyr : Player
             gameObject.GetComponentInParent<CircleCollider2D>().enabled = false;
 
             // Instantiate Shield that has a collider
-            Instantiate(parryStrikeShieldPrefab, transform.position, transform.rotation, transform);
+            Instantiate(playerManager.player_SO.parryStrikeShieldPrefab, transform.position, transform.rotation, transform);
 
             StartCoroutine(ParryStrikeShieldDuration());
             StartCoroutine(ParryStrikeCoolDown());
@@ -409,7 +395,7 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(playerManager.player_SO.parryStrikeCastTime);
 
-        Instantiate(parryStrikePrefab, transform.position, aimer.rotation);
+        Instantiate(playerManager.player_SO.parryStrikePrefab, transform.position, aimer.rotation);
     }
 
     void PlayerParry()
@@ -458,7 +444,7 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(playerManager.player_SO.heavyBlowCastTime);
 
-        Instantiate(heavyBlowPrefab, transform.position, aimer.rotation);
+        Instantiate(playerManager.player_SO.heavyBlowPrefab, transform.position, aimer.rotation);
     }
 
     IEnumerator HeavyBlowAnimationDuration()
@@ -488,7 +474,7 @@ public class Zephyr : Player
             animator.Play("Power-Up");
             animator.Play("Power-Up", 1);
 
-            var ult = Instantiate(engulfPrefab, transform.position, transform.rotation, transform);
+            var ult = Instantiate(playerManager.player_SO.engulfPrefab, transform.position, transform.rotation, transform);
             Destroy(ult, 10f);
 
             StartCoroutine(EngulfAnimationDuration());
