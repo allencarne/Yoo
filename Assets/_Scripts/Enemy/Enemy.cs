@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Enemy : MonoBehaviour
 {
@@ -294,7 +295,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void EnemyAttackState()
     {
-        
+        enemyRB.velocity = Vector2.zero;
     }
 
     protected virtual void EnemyResetState()
@@ -368,6 +369,28 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(.3f);
 
         statusEffects.knockBackIcon.SetActive(false);
+    }
+
+    public void Vulnerability()
+    {
+        statusEffects.vulnerabilityIcon.SetActive(true);
+
+        // Reduce Max Health by a percentage
+        float value = (int)(enemyMaxHealth * 20 / 100);
+
+        enemyMaxHealth -= value;
+
+        StartCoroutine(VulnerabilityDuration(value));
+    }
+
+    IEnumerator VulnerabilityDuration(float value)
+    {
+        yield return new WaitForSeconds(3f);
+
+        // Set Max Health back to Original Percentage
+        enemyMaxHealth += value;
+
+        statusEffects.vulnerabilityIcon.SetActive(false);
     }
 
     #endregion

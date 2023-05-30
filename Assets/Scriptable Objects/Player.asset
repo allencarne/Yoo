@@ -22,7 +22,7 @@ MonoBehaviour:
   maxMovementSpeed: 5
   attackDamage: 1
   attackSpeed: 1
-  fury: 12
+  fury: 20
   maxFury: 20
   windSlashCastTime: 0.3
   windSlashDuration: 0.7
@@ -30,9 +30,11 @@ MonoBehaviour:
   windSlashDamage: 1
   windSlashSlideForce: 10
   windSlashKnockBackForce: 1.5
+  windSlash3Damage: 2
+  windSlash3KnockBackForce: 1.7
   slicingWindsCastTime: 0.3
   slicingWindsDuration: 0.7
-  slicingWindsCoolDown: 1
+  slicingWindsCoolDown: 5
   slicingWindsDamage: 1
   slicingWindsSlideForce: 20
   slicingWindsKnockBackForce: 5

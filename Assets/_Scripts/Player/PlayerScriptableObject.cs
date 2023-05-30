@@ -27,6 +27,8 @@ public class PlayerScriptableObject : ScriptableObject
     public float windSlashDamage;
     public float windSlashSlideForce;
     public float windSlashKnockBackForce;
+    public float windSlash3Damage;
+    public float windSlash3KnockBackForce;
 
     [Header("Zephyr Slicing Winds")]
     public float slicingWindsCastTime;

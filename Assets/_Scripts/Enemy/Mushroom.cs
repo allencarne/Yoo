@@ -25,7 +25,7 @@ public class Mushroom : Enemy
             //enemyRB.isKinematic = true;
 
             // Attack Prefab
-            Instantiate(slamTelegraph, transform.position, enemyAimer.rotation);
+            Instantiate(slamTelegraph, transform.position, enemyAimer.rotation, transform);
 
             // CoolDown
             StartCoroutine(SlamCoolDown());

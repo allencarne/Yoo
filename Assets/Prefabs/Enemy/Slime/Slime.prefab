@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 0
-  enemyMaxHealth: 5
+  enemyMaxHealth: 50
   enemyMoveSpeed: 0
   enemyMaxMoveSpeed: 1.5
   enemyUI: {fileID: 3865682828661104281}

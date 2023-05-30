@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6235061792528226300}
   - component: {fileID: 8345388837593453023}
   - component: {fileID: 498156764585195642}
-  - component: {fileID: 8556894613244336045}
   - component: {fileID: 4178695143283681922}
+  - component: {fileID: 7773349641894538292}
   m_Layer: 0
   m_Name: WindSlash3
   m_TagString: Untagged
@@ -108,6 +108,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &498156764585195642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,21 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9009b28a3c0d524584f5eb0b4737dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8556894613244336045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4188387910762008136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2367a295c4a81c408224dcda2d74029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zephyrHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
-  windSlashHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}
-  player_SO: {fileID: 11400000, guid: fc34b7e230a2cbf4488c19562075fe12, type: 2}
 --- !u!70 &4178695143283681922
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -145,28 +131,23 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00000010488745, y: -0.8798598}
   m_Size: {x: 3.2372992, y: 1.8124611}
   m_Direction: 1
+--- !u!114 &7773349641894538292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188387910762008136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8facd58b022284da9b4770be62492a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}
+  collisionHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}

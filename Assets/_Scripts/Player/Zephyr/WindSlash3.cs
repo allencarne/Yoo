@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindSlash : MonoBehaviour
+public class WindSlash3 : MonoBehaviour
 {
     [SerializeField] GameObject contactHitSpark;
     [SerializeField] GameObject collisionHitSpark;
@@ -17,7 +17,7 @@ public class WindSlash : MonoBehaviour
         if (enemy && player)
         {
             // Deal Damage
-            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.windSlashDamage);
+            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.windSlash3Damage);
 
             // Gain Fury
             player.GetComponentInChildren<Zephyr>().GainFury(1);
@@ -27,7 +27,7 @@ public class WindSlash : MonoBehaviour
             Instantiate(collisionHitSpark, collision.transform.position, transform.rotation, collision.transform);
 
             // KnockBack
-            enemy.KnockBack(enemy.transform.position, transform.position, enemyRB, PlayerManager.instance.player_SO.windSlashKnockBackForce);
+            enemy.KnockBack(enemy.transform.position, transform.position, enemyRB, PlayerManager.instance.player_SO.windSlash3KnockBackForce);
         }
     }
 }

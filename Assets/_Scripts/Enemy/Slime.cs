@@ -25,7 +25,7 @@ public class Slime : Enemy
             //enemyRB.isKinematic = true;
 
             // Attack Prefab
-            Instantiate(biteTelegraph, transform.position, enemyAimer.rotation);
+            Instantiate(biteTelegraph, transform.position, enemyAimer.rotation, transform);
 
             // CoolDown
             StartCoroutine(BiteCoolDown());

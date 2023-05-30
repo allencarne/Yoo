@@ -25,7 +25,7 @@ public class Snail : Enemy
             //enemyRB.isKinematic = true;
 
             // Attack Prefab
-            Instantiate(shmackTelegraph, transform.position, enemyAimer.rotation);
+            Instantiate(shmackTelegraph, transform.position, enemyAimer.rotation, transform);
 
             // CoolDown
             StartCoroutine(ShmackCoolDown());
