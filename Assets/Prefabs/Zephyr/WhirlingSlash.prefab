@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1190332297140430198}
   - component: {fileID: 7453748218045981417}
   - component: {fileID: 6583600606831480604}
+  - component: {fileID: 6779660615495731464}
   m_Layer: 0
   m_Name: WhirlingSlash
   m_TagString: Untagged
@@ -136,3 +137,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9009b28a3c0d524584f5eb0b4737dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6779660615495731464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190332297140430199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2367a295c4a81c408224dcda2d74029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
+  collisionHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}
