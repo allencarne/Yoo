@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [HideInInspector] protected PlayerManager playerManager;
 
     [Header("Components")]
+    [HideInInspector] StatusEffects statusEffects;
     [HideInInspector] protected Rigidbody2D rb;
     [HideInInspector] protected Animator animator;
     [HideInInspector] protected Camera cam;
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         playerManager = PlayerManager.instance;
-
+        statusEffects = GetComponentInParent<StatusEffects>();
         rb = GetComponentInParent<Rigidbody2D>();
         animator = GetComponentInParent<Animator>();
         keys = GetComponentInParent<PlayerKeys>();
@@ -311,6 +312,24 @@ public class Player : MonoBehaviour
         opponentRB.velocity = Vector2.zero;
     }
 
+    protected virtual void Agility()
+    {
+        statusEffects.agilityIcon.SetActive(true);
+
+        animator.speed = 1.5f;
+
+        StartCoroutine(AgiligyDuration());
+    }
+
+    IEnumerator AgiligyDuration()
+    {
+        yield return new WaitForSeconds(3);
+
+        animator.speed = 1f;
+
+        statusEffects.agilityIcon.SetActive(false);
+    }
+
     #region Helper Methods
 
     bool isMouseOverUI()
@@ -387,7 +406,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void RestoreHealth(float healAmount)
+    protected virtual void RestoreHealth(float healAmount)
     {
         ShowHeal(healAmount.ToString());
 

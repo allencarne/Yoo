@@ -311,6 +311,9 @@ public class Zephyr : Player
             // Dust
             Instantiate(playerManager.player_SO.gustChargePrefab, transform.position, aimer.rotation);
 
+            // Agility
+            Agility();
+
             StartCoroutine(UnpauseAimer(playerManager.player_SO.gustChargeDuration));
             StartCoroutine(GustChargeDuration());
             StartCoroutine(GustChargeCoolDown());
@@ -368,6 +371,12 @@ public class Zephyr : Player
             animator.Play("Sword Swing Right");
             animator.Play("Sword Swing Right", 1);
 
+            // Heal
+            // Reduce Max Health by a percentage
+            float value = (int)(playerManager.player_SO.maxHealth * 25 / 100);
+
+            RestoreHealth(value);
+
             AngleToMouse();
 
             SetAnimationDirection();
@@ -405,7 +414,7 @@ public class Zephyr : Player
 
     #endregion
 
-    #region Heavy Blow
+    #region Whirling Slash
 
     protected override void PlayerUtilityState()
     {
@@ -417,11 +426,11 @@ public class Zephyr : Player
             animator.Play("Sword Prepared Stance");
             animator.Play("Sword Prepared Stance", 1);
 
-            StartCoroutine(HeavyBlowDelay());
+            StartCoroutine(whirlingSlashDelay());
         }
     }
 
-    IEnumerator HeavyBlowDelay()
+    IEnumerator whirlingSlashDelay()
     {
         yield return new WaitForSeconds(.5f);
 
@@ -434,29 +443,30 @@ public class Zephyr : Player
 
         PauseAimer();
 
-        StartCoroutine(UnpauseAimer(playerManager.player_SO.heavyBlowDuration));
-        StartCoroutine(HeavyBlowCastTime());
-        StartCoroutine(HeavyBlowAnimationDuration());
-        StartCoroutine(HeavyBlowCoolDown());
+        StartCoroutine(UnpauseAimer(playerManager.player_SO.whirlingSlashDuration));
+        StartCoroutine(WhirlingSlashCastTime());
+        StartCoroutine(WhirlingSlashAnimationDuration());
+        StartCoroutine(WhirlingSlashCoolDown());
     }
 
-    IEnumerator HeavyBlowCastTime()
+    IEnumerator WhirlingSlashCastTime()
     {
-        yield return new WaitForSeconds(playerManager.player_SO.heavyBlowCastTime);
+        yield return new WaitForSeconds(playerManager.player_SO.whirlingSlashCastTime);
 
-        Instantiate(playerManager.player_SO.heavyBlowPrefab, transform.position, aimer.rotation);
+        Instantiate(playerManager.player_SO.whirlingSlashPrefab, transform.position, aimer.rotation);
+        //Instantiate(playerManager.player_SO.heavyBlowPrefab, transform.position, aimer.rotation);
     }
 
-    IEnumerator HeavyBlowAnimationDuration()
+    IEnumerator WhirlingSlashAnimationDuration()
     {
-        yield return new WaitForSeconds(playerManager.player_SO.heavyBlowDuration);
+        yield return new WaitForSeconds(playerManager.player_SO.whirlingSlashDuration);
 
         state = PlayerState.Idle;
     }
 
-    IEnumerator HeavyBlowCoolDown()
+    IEnumerator WhirlingSlashCoolDown()
     {
-        yield return new WaitForSeconds(playerManager.player_SO.heavyBlowCoolDown);
+        yield return new WaitForSeconds(playerManager.player_SO.whirlingSlashCoolDown);
 
         canUtility = true;
     }
