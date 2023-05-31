@@ -484,7 +484,7 @@ public class Zephyr : Player
             animator.Play("Power-Up");
             animator.Play("Power-Up", 1);
 
-            var ult = Instantiate(playerManager.player_SO.engulfPrefab, transform.position, transform.rotation, transform);
+            var ult = Instantiate(playerManager.player_SO.zephyrsFuryPrefab, transform.position, transform.rotation, transform);
             Destroy(ult, 10f);
 
             StartCoroutine(EngulfAnimationDuration());
@@ -494,14 +494,14 @@ public class Zephyr : Player
 
     IEnumerator EngulfAnimationDuration()
     {
-        yield return new WaitForSeconds(playerManager.player_SO.engulfDuration);
+        yield return new WaitForSeconds(playerManager.player_SO.zephyrsFuryDuration);
 
         state = PlayerState.Idle;
     }
 
     IEnumerator EngulfCoolDown()
     {
-        yield return new WaitForSeconds(playerManager.player_SO.engulfCoolDown);
+        yield return new WaitForSeconds(playerManager.player_SO.zephyrsFuryCoolDown);
 
         canUltimate = true;
     }

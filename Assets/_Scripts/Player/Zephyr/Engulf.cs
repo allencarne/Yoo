@@ -16,7 +16,7 @@ public class Engulf : MonoBehaviour
         if (enemy != null)
         {
             // Deal Damage
-            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.engulfDamage);
+            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.zephyrsFuryDamage);
 
             // Hit Spark
             Instantiate(zephyrHitSpark, collision.transform.position, collision.transform.rotation);
@@ -24,7 +24,7 @@ public class Engulf : MonoBehaviour
 
             // KnockBack
             Vector2 direction = (center.position - enemy.transform.position).normalized;
-            enemyRB.velocity = direction * PlayerManager.instance.player_SO.engulfPullForce;
+            enemyRB.velocity = direction * PlayerManager.instance.player_SO.zephyrsFuryPullForce;
         }
     }
 }

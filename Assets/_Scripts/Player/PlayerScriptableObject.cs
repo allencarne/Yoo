@@ -67,11 +67,11 @@ public class PlayerScriptableObject : ScriptableObject
     public float whirlingSlashCoolDown;
     public float whirlingSlashDamage;
 
-    [Header("Zephyr Engulf")]
-    public GameObject engulfPrefab;
-    public float engulfCastTime;
-    public float engulfDuration;
-    public float engulfCoolDown;
-    public float engulfDamage;
-    public float engulfPullForce;
+    [Header("Zephyr Zephyr's Fury")]
+    public GameObject zephyrsFuryPrefab;
+    public float zephyrsFuryCastTime;
+    public float zephyrsFuryDuration;
+    public float zephyrsFuryCoolDown;
+    public float zephyrsFuryDamage;
+    public float zephyrsFuryPullForce;
 }
