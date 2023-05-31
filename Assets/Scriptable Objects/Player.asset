@@ -16,7 +16,7 @@ MonoBehaviour:
   playerLevel: 1
   currentExperience: 0
   requiredExperience: 3
-  health: 10
+  health: 9
   maxHealth: 10
   movementSpeed: 5
   maxMovementSpeed: 5
@@ -61,7 +61,7 @@ MonoBehaviour:
   heavyBlowDuration: 0.7
   heavyBlowCoolDown: 1
   heavyBlowDamage: 1
-  engulfPrefab: {fileID: 888074877118327551, guid: f77c3e6626c5c5c4491be330fb055222, type: 3}
+  engulfPrefab: {fileID: 7862783153083293874, guid: 214bca012aac78c44948e01b3b06923f, type: 3}
   engulfCastTime: 0
   engulfDuration: 0.7
   engulfCoolDown: 1
