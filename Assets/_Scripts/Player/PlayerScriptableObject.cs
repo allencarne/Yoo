@@ -61,10 +61,12 @@ public class PlayerScriptableObject : ScriptableObject
 
     [Header("Zephyr Whirling Slash")]
     public GameObject whirlingSlashPrefab;
+    public float whirlingSlashDelay;
     public float whirlingSlashCastTime;
     public float whirlingSlashDuration;
     public float whirlingSlashCoolDown;
     public float whirlingSlashDamage;
+    public float whirlingSlashKnockBackForce;
 
     [Header("Zephyr Zephyr's Fury")]
     public GameObject zephyrsFuryPrefab;

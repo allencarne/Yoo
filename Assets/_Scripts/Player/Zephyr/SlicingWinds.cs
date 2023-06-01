@@ -17,9 +17,6 @@ public class SlicingWinds : MonoBehaviour
             // Debuff
             enemy.Vulnerability();
 
-            // Deal Damage
-            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.slicingWindsDamage);
-
             // Hit Spark
             Instantiate(zephyrHitSpark, collision.transform.position, collision.transform.rotation);
             Instantiate(windSlashHitSpark, collision.transform.position, transform.rotation, collision.transform);
@@ -27,6 +24,16 @@ public class SlicingWinds : MonoBehaviour
             // KnockBack
             enemy.KnockBack(enemy.transform.position, transform.position, enemyRB, PlayerManager.instance.player_SO.slicingWindsKnockBackForce);
 
+            // Damage
+            StartCoroutine(Delay(enemy));
         }
+    }
+
+    IEnumerator Delay(Enemy enemy)
+    {
+        yield return new WaitForSeconds(.01f);
+
+        // Deal Damage
+        enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.slicingWindsDamage);
     }
 }

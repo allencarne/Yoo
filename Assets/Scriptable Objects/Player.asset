@@ -16,7 +16,7 @@ MonoBehaviour:
   playerLevel: 1
   currentExperience: 0
   requiredExperience: 3
-  health: 10
+  health: 5
   maxHealth: 10
   movementSpeed: 5
   maxMovementSpeed: 5
@@ -53,7 +53,7 @@ MonoBehaviour:
   parryStrikeShieldDuration: 1
   parryStrikeCoolDown: 2
   heavyBlowPrefab: {fileID: 6731159717306367741, guid: e9da28aae9fafc34b892de29a50ba119, type: 3}
-  heavyBlowDamage: 4
+  heavyBlowDamage: 3
   heavyBlowCastTime: 0.3
   whirlingSlashPrefab: {fileID: 1190332297140430199, guid: 3ae323803a9d89943b34a879b45a0c66, type: 3}
   whirlingSlashCastTime: 0.3

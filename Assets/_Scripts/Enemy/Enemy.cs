@@ -374,16 +374,20 @@ public class Enemy : MonoBehaviour
         statusEffects.knockBackIcon.SetActive(false);
     }
 
-    public void Stun()
+    public void Stun(float duration)
     {
         statusEffects.stunIcon.SetActive(true);
 
-        StartCoroutine(StunDuration());
+        enemyAnimator.speed = 0;
+
+        StartCoroutine(StunDuration(duration));
     }
 
-    IEnumerator StunDuration()
+    IEnumerator StunDuration(float duration)
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(duration);
+
+        enemyAnimator.speed = 1;
 
         statusEffects.stunIcon.SetActive(false);
     }
@@ -397,7 +401,7 @@ public class Enemy : MonoBehaviour
         statusEffects.vulnerabilityIcon.SetActive(true);
 
         // Reduce Max Health by a percentage
-        float value = (int)(enemyMaxHealth * 20 / 100);
+        float value = (int)(enemyMaxHealth * 25 / 100);
 
         enemyMaxHealth -= value;
 

@@ -14,6 +14,8 @@ public class HeavyBlow : MonoBehaviour
 
         if (enemy != null)
         {
+            enemy.Stun(1f);
+
             // Deal Damage
             enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.heavyBlowDamage);
 

@@ -430,7 +430,7 @@ public class Zephyr : Player
 
     IEnumerator whirlingSlashDelay()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(playerManager.player_SO.whirlingSlashDelay);
 
         animator.Play("Sword Swing Right");
         animator.Play("Sword Swing Right", 1);
