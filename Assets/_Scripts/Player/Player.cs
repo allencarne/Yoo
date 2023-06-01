@@ -316,18 +316,18 @@ public class Player : MonoBehaviour
         opponentRB.velocity = Vector2.zero;
     }
 
-    protected virtual void Agility()
+    protected virtual void Agility(float duration)
     {
         statusEffects.agilityIcon.SetActive(true);
 
         animator.speed = 1.5f;
 
-        StartCoroutine(AgiligyDuration());
+        StartCoroutine(AgiligyDuration(duration));
     }
 
-    IEnumerator AgiligyDuration()
+    IEnumerator AgiligyDuration(float duration)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(duration);
 
         animator.speed = 1f;
 

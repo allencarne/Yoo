@@ -312,7 +312,7 @@ public class Zephyr : Player
             Instantiate(playerManager.player_SO.gustChargePrefab, transform.position, aimer.rotation);
 
             // Agility
-            Agility();
+            Agility(3f);
 
             StartCoroutine(UnpauseAimer(playerManager.player_SO.gustChargeDuration));
             StartCoroutine(GustChargeDuration());
@@ -481,6 +481,13 @@ public class Zephyr : Player
 
             animator.Play("Power-Up");
             animator.Play("Power-Up", 1);
+
+            // Heal
+            float value = (int)(playerManager.player_SO.maxHealth * 25 / 100);
+            RestoreHealth(value);
+
+            // Agility
+            Agility(5f);
 
             var ult = Instantiate(playerManager.player_SO.zephyrsFuryPrefab, transform.position, transform.rotation, transform);
             Destroy(ult, playerManager.player_SO.zephyrsFuryDuration);
