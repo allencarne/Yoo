@@ -71,6 +71,7 @@ public class PlayerScriptableObject : ScriptableObject
     [Header("Zephyr Zephyr's Fury")]
     public GameObject zephyrsFuryPrefab;
     public float zephyrsFuryCastTime;
+    public float zephyrsFuryAnimationDuration;
     public float zephyrsFuryDuration;
     public float zephyrsFuryCoolDown;
     public float zephyrsFuryDamage;

@@ -471,7 +471,7 @@ public class Zephyr : Player
 
     #endregion
 
-    #region Engulf
+    #region Zephyr's Fury
 
     protected override void PlayerUltimateState()
     {
@@ -483,21 +483,21 @@ public class Zephyr : Player
             animator.Play("Power-Up", 1);
 
             var ult = Instantiate(playerManager.player_SO.zephyrsFuryPrefab, transform.position, transform.rotation, transform);
-            Destroy(ult, 10f);
+            Destroy(ult, playerManager.player_SO.zephyrsFuryDuration);
 
-            StartCoroutine(EngulfAnimationDuration());
-            StartCoroutine(EngulfCoolDown());
+            StartCoroutine(ZephyrsFuryAnimationDuration());
+            StartCoroutine(ZephyrsFuryCoolDown());
         }
     }
 
-    IEnumerator EngulfAnimationDuration()
+    IEnumerator ZephyrsFuryAnimationDuration()
     {
-        yield return new WaitForSeconds(playerManager.player_SO.zephyrsFuryDuration);
+        yield return new WaitForSeconds(playerManager.player_SO.zephyrsFuryAnimationDuration);
 
         state = PlayerState.Idle;
     }
 
-    IEnumerator EngulfCoolDown()
+    IEnumerator ZephyrsFuryCoolDown()
     {
         yield return new WaitForSeconds(playerManager.player_SO.zephyrsFuryCoolDown);
 
