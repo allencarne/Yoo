@@ -356,7 +356,6 @@ GameObject:
   - component: {fileID: 4022038824452976920}
   - component: {fileID: 4022038824452976921}
   - component: {fileID: 6673610516282006809}
-  - component: {fileID: 7114198903743428762}
   - component: {fileID: 4195146774642308010}
   m_Layer: 6
   m_Name: Mushroom
@@ -540,42 +539,6 @@ MonoBehaviour:
   EnemyUI: {fileID: 2217385989591151365}
   chipSpeed: 2
   lerpTimer: 0
---- !u!114 &7114198903743428762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4022038824452976932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a4ab6ba76a19a947b8fd15e8cf78623, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shadowLayer: 0
-  maskLayer: 0
-  shadowType: 4
-  maskType: 0
-  shadowEffect: 0
-  shadowDistance: 1
-  shadowThickness: 0.5
-  shadowSoftness: 0
-  shadowTranslucency: 0
-  maskLit: 0
-  depth: 0
-  depthFalloff: 0
-  depthCustomValue: 0
-  mainShape:
-    shadowType: 4
-    maskType: 0
-    transform: {fileID: 4022038824452976934}
-    height: 1
-    thickness: 0.5
-    isStatic: 0
-  normalMapMode:
-    textureType: 0
-    texture: {fileID: 0}
-    sprite: {fileID: 0}
 --- !u!114 &4195146774642308010
 MonoBehaviour:
   m_ObjectHideFlags: 0

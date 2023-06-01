@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: be3dc8cdfb9ce02419c11f1a8fd19f33
+guid: 9cb3bb620bce7f5419e9ab6c61996eaa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,9 +44,9 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
-  alignment: 9
-  spritePivot: {x: 0.5, y: 0}
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NPC_0
+      name: NPCShadow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91d9279be8ce23947aed311c35588e14
-      internalID: 262634907
+      spriteID: 50694c5f6c415f649967c7fae0495215
+      internalID: -936331436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_1
+      name: NPCShadow_1
       rect:
         serializedVersion: 2
         x: 48
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ff7ff2b90991c844999b8aff799ef71
-      internalID: 1633742342
+      spriteID: b9104614cb5393142aea45f93681e41b
+      internalID: 2135717250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_2
+      name: NPCShadow_2
       rect:
         serializedVersion: 2
         x: 96
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 199e2eac7b3195f4fae055b841497574
-      internalID: -1244152323
+      spriteID: 54338eceef3293b4f95ceddc260e3980
+      internalID: -2048973154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_3
+      name: NPCShadow_3
       rect:
         serializedVersion: 2
         x: 144
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdfd757217eb2dd4185a5d47744d86d9
-      internalID: 995653663
+      spriteID: 26db5db7a15b6c247b8eaa280d5643d5
+      internalID: 688313531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_4
+      name: NPCShadow_4
       rect:
         serializedVersion: 2
         x: 192
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 495cbe85c9e52ae4bb39d21046449d4e
-      internalID: 702686531
+      spriteID: 2569b7306ecb2d04dbb2fbe34be200be
+      internalID: -1541072807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_5
+      name: NPCShadow_5
       rect:
         serializedVersion: 2
         x: 240
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0916766e68e68e44b15554781d25fdb
-      internalID: -1335415685
+      spriteID: 56368630c2d0abe4ba749c04edecd3b2
+      internalID: -2020589372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_6
+      name: NPCShadow_6
       rect:
         serializedVersion: 2
         x: 288
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: befc03b32ee367a4fbced28863e1f130
-      internalID: 1868341032
+      spriteID: 8f9291e9084ac6846bad236e8b004d9d
+      internalID: 1419572366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_7
+      name: NPCShadow_7
       rect:
         serializedVersion: 2
         x: 336
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdf6771959c18da4592c403b7ea7fafe
-      internalID: -181000904
+      spriteID: 6c8da7f9c81d94e4f896209fdfc5fa48
+      internalID: 1058428524
       vertices: []
       indices: 
       edges: []
@@ -288,21 +288,21 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NPC_0: 262634907
-      NPC_1: 1633742342
-      NPC_2: -1244152323
-      NPC_3: 995653663
-      NPC_4: 702686531
-      NPC_5: -1335415685
-      NPC_6: 1868341032
-      NPC_7: -181000904
+      NPCShadow_0: -936331436
+      NPCShadow_1: 2135717250
+      NPCShadow_2: -2048973154
+      NPCShadow_3: 688313531
+      NPCShadow_4: -1541072807
+      NPCShadow_5: -2020589372
+      NPCShadow_6: 1419572366
+      NPCShadow_7: 1058428524
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

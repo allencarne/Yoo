@@ -2182,7 +2182,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8233113972959511147}
   - component: {fileID: 8233113972959511146}
-  - component: {fileID: 4724488860592329914}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -2257,42 +2256,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &4724488860592329914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8233113972959511148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a4ab6ba76a19a947b8fd15e8cf78623, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shadowLayer: 0
-  maskLayer: 0
-  shadowType: 4
-  maskType: 0
-  shadowEffect: 0
-  shadowDistance: 1.5
-  shadowThickness: 1
-  shadowSoftness: 0
-  shadowTranslucency: 0
-  maskLit: 0
-  depth: 0
-  depthFalloff: 0
-  depthCustomValue: 0
-  mainShape:
-    shadowType: 4
-    maskType: 0
-    transform: {fileID: 8233113972959511147}
-    height: 1.5
-    thickness: 1
-    isStatic: 0
-  normalMapMode:
-    textureType: 0
-    texture: {fileID: 0}
-    sprite: {fileID: 0}
 --- !u!1 &8233113972998591176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2988,7 +2951,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8233113973901384250}
   - component: {fileID: 8233113973901384249}
-  - component: {fileID: 7932969097476148648}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -3063,42 +3025,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &7932969097476148648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8233113973901384251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a4ab6ba76a19a947b8fd15e8cf78623, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shadowLayer: 0
-  maskLayer: 0
-  shadowType: 4
-  maskType: 0
-  shadowEffect: 0
-  shadowDistance: 1
-  shadowThickness: 0.5
-  shadowSoftness: 0
-  shadowTranslucency: 0
-  maskLit: 0
-  depth: 0
-  depthFalloff: 0
-  depthCustomValue: 0
-  mainShape:
-    shadowType: 4
-    maskType: 0
-    transform: {fileID: 8233113973901384250}
-    height: 1
-    thickness: 0.5
-    isStatic: 0
-  normalMapMode:
-    textureType: 0
-    texture: {fileID: 0}
-    sprite: {fileID: 0}
 --- !u!1 &8233113973930911026
 GameObject:
   m_ObjectHideFlags: 0
