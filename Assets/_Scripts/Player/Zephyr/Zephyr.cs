@@ -245,6 +245,9 @@ public class Zephyr : Player
 
             PauseAimer();
 
+            // Ignores collision with Enemy
+            Physics2D.IgnoreLayerCollision(3, 6, true);
+
             canSlicingWinds = true;
 
             StartCoroutine(UnpauseAimer(playerManager.player_SO.slicingWindsDuration));
@@ -265,6 +268,9 @@ public class Zephyr : Player
     IEnumerator SlicingWindsDuration()
     {
         yield return new WaitForSeconds(playerManager.player_SO.slicingWindsSlideDuration);
+
+        // No Longer Ignores collision with Enemy
+        Physics2D.IgnoreLayerCollision(3, 6, false);
 
         rb.velocity = Vector2.zero;
 
