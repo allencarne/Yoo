@@ -13,7 +13,7 @@ public class Zephyr : Player
     //[Header("Gust Charge")]
 
     [Header("Parry Strike")]
-    bool isParryStrikeTriggered = false;
+    bool isCounterTriggered = false;
 
     //[Header("Heavy Blow")]
 
@@ -363,31 +363,29 @@ public class Zephyr : Player
             StartCoroutine(ParryStrikeCoolDown());
         }
 
-        if (isParryStrikeTriggered)
+        if (isCounterTriggered)
         {
-            isParryStrikeTriggered = false;
+            isCounterTriggered = false;
 
             // Animation
             animator.Play("Sword Swing Right");
             animator.Play("Sword Swing Right", 1);
 
             // Heal
-            // Reduce Max Health by a percentage
             float value = (int)(playerManager.player_SO.maxHealth * 25 / 100);
-
             RestoreHealth(value);
 
             AngleToMouse();
 
             SetAnimationDirection();
 
-            StartCoroutine(ParryStrikeCastTime());
+            StartCoroutine(HeavyBlowCastTime());
         }
     }
 
     IEnumerator ParryStrikeShieldDuration()
     {
-        yield return new WaitForSeconds(playerManager.player_SO.parryStrikeDuration);
+        yield return new WaitForSeconds(playerManager.player_SO.parryStrikeShieldDuration);
 
         gameObject.GetComponentInParent<CircleCollider2D>().enabled = true;
 
@@ -400,16 +398,16 @@ public class Zephyr : Player
         canDefensive = true;
     }
 
-    IEnumerator ParryStrikeCastTime()
+    IEnumerator HeavyBlowCastTime()
     {
-        yield return new WaitForSeconds(playerManager.player_SO.parryStrikeCastTime);
+        yield return new WaitForSeconds(playerManager.player_SO.heavyBlowCastTime);
 
-        Instantiate(playerManager.player_SO.parryStrikePrefab, transform.position, aimer.rotation);
+        Instantiate(playerManager.player_SO.heavyBlowPrefab, transform.position, aimer.rotation);
     }
 
     void PlayerParry()
     {
-        isParryStrikeTriggered = true;
+        isCounterTriggered = true;
     }
 
     #endregion

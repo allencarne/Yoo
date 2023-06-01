@@ -22,7 +22,7 @@ MonoBehaviour:
   maxMovementSpeed: 5
   attackDamage: 1
   attackSpeed: 1
-  fury: 0
+  fury: 50
   maxFury: 50
   windSlashPrefab: {fileID: 4553433666271236552, guid: c400f6e4aad52334eab165d98d7f3da3, type: 3}
   windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
@@ -50,12 +50,11 @@ MonoBehaviour:
   gustChargeDamage: 0
   gustChargeVelocity: 15
   parryStrikeShieldPrefab: {fileID: 1334164566803909805, guid: 0b69156d8e3effe4cb104906bf56f405, type: 3}
-  parryStrikePrefab: {fileID: 6731159717306367741, guid: e9da28aae9fafc34b892de29a50ba119, type: 3}
-  parryStrikeCastTime: 0.3
-  parryStrikeDuration: 1
+  parryStrikeShieldDuration: 1
   parryStrikeCoolDown: 2
-  parryStrikeDamage: 1
-  parryStrikeKnockBackForce: 4
+  heavyBlowPrefab: {fileID: 6731159717306367741, guid: e9da28aae9fafc34b892de29a50ba119, type: 3}
+  heavyBlowDamage: 4
+  heavyBlowCastTime: 0.3
   whirlingSlashPrefab: {fileID: 1190332297140430199, guid: 3ae323803a9d89943b34a879b45a0c66, type: 3}
   whirlingSlashCastTime: 0.3
   whirlingSlashDuration: 0.7

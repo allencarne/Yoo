@@ -352,24 +352,45 @@ public class Enemy : MonoBehaviour
     }
     #endregion
 
-    #region Status Effects
+    #region Crowd Control
 
     public void KnockBack(Vector3 aPosition, Vector3 bPosition, Rigidbody2D opponentRB, float knockBackAmount)
     {
         statusEffects.knockBackIcon.SetActive(true);
 
+        // Knock Back
         Vector2 direction = (aPosition - bPosition).normalized;
         opponentRB.velocity = direction * knockBackAmount;
 
-        StartCoroutine(KnockBackDuration());
+        StartCoroutine(KnockBackDuration(opponentRB));
     }
 
-    IEnumerator KnockBackDuration()
+    IEnumerator KnockBackDuration(Rigidbody2D opponentRB)
     {
         yield return new WaitForSeconds(.3f);
 
+        opponentRB.velocity = Vector2.zero;
+
         statusEffects.knockBackIcon.SetActive(false);
     }
+
+    public void Stun()
+    {
+        statusEffects.stunIcon.SetActive(true);
+
+        StartCoroutine(StunDuration());
+    }
+
+    IEnumerator StunDuration()
+    {
+        yield return new WaitForSeconds(.3f);
+
+        statusEffects.stunIcon.SetActive(false);
+    }
+
+    #endregion
+
+    #region Debuffs
 
     public void Vulnerability()
     {

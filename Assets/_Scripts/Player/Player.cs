@@ -299,6 +299,8 @@ public class Player : MonoBehaviour
 
     public void KnockBack(Vector3 aPosition, Vector3 bPosition, Rigidbody2D opponentRB, float knockBackAmount)
     {
+        statusEffects.knockBackIcon.SetActive(true);
+
         Vector2 direction = (aPosition - bPosition).normalized;
         opponentRB.velocity = direction * knockBackAmount;
 
@@ -308,6 +310,8 @@ public class Player : MonoBehaviour
     IEnumerator KnockBackDuration(Rigidbody2D opponentRB)
     {
         yield return new WaitForSeconds(.3f);
+
+        statusEffects.knockBackIcon.SetActive(false);
 
         opponentRB.velocity = Vector2.zero;
     }

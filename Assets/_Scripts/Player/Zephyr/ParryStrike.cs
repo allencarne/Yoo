@@ -15,15 +15,15 @@ public class ParryStrike : MonoBehaviour
         if (enemy != null)
         {
             // Deal Damage
-            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.parryStrikeDamage);
+            enemy.TakeDamage(PlayerManager.instance.player_SO.attackDamage + PlayerManager.instance.player_SO.heavyBlowDamage);
 
             // Hit Spark
             Instantiate(zephyrHitSpark, collision.transform.position, collision.transform.rotation);
             Instantiate(parryStrikeHitSpark, collision.transform.position, transform.rotation, collision.transform);
 
             // KnockBack
-            Vector2 direction = (enemy.transform.position - transform.position).normalized;
-            enemyRB.velocity = direction * PlayerManager.instance.player_SO.parryStrikeKnockBackForce;
+            //Vector2 direction = (enemy.transform.position - transform.position).normalized;
+            //enemyRB.velocity = direction * PlayerManager.instance.player_SO.parryStrikeKnockBackForce;
         }
     }
 }

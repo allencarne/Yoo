@@ -51,14 +51,13 @@ public class PlayerScriptableObject : ScriptableObject
     public float gustChargeDamage;
     public float gustChargeVelocity;
 
-    [Header("Zephyr Parry Strike")]
+    [Header("Zephyr Parry Strike / Heavy Blow")]
     public GameObject parryStrikeShieldPrefab;
-    public GameObject parryStrikePrefab;
-    public float parryStrikeCastTime;
-    public float parryStrikeDuration;
+    public float parryStrikeShieldDuration;
     public float parryStrikeCoolDown;
-    public float parryStrikeDamage;
-    public float parryStrikeKnockBackForce;
+    public GameObject heavyBlowPrefab;
+    public float heavyBlowDamage;
+    public float heavyBlowCastTime;
 
     [Header("Zephyr Whirling Slash")]
     public GameObject whirlingSlashPrefab;
