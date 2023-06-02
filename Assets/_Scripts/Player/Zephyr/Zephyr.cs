@@ -527,4 +527,12 @@ public class Zephyr : Player
 
         AimIndicator.pauseDirection = false;
     }
+
+    protected override void PlayerHurtState(float damage)
+    {
+        base.PlayerHurtState(damage);
+
+        canBasicAttack2 = false;
+        canBasicAttack3 = false;
+    } 
 }
