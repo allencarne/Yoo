@@ -84,9 +84,12 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(playerManager.player_SO.windSlashCastTime);
 
-        canSlide = true;
+        if (state != PlayerState.Hurt)
+        {
+            canSlide = true;
 
-        Instantiate(playerManager.player_SO.windSlashPrefab, transform.position, aimer.rotation);
+            Instantiate(playerManager.player_SO.windSlashPrefab, transform.position, aimer.rotation);
+        }
     }
 
     IEnumerator TransitionToWinsSlash2()
@@ -147,9 +150,12 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(playerManager.player_SO.windSlashCastTime);
 
-        canSlide = true;
+        if (state != PlayerState.Hurt)
+        {
+            canSlide = true;
 
-        Instantiate(playerManager.player_SO.windSlash2Prefab, transform.position, aimer.rotation);
+            Instantiate(playerManager.player_SO.windSlash2Prefab, transform.position, aimer.rotation);
+        }
     }
 
     IEnumerator TransitionToWinsSlash3()
@@ -200,9 +206,12 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(playerManager.player_SO.windSlashCastTime);
 
-        canSlide = true;
+        if (state != PlayerState.Hurt)
+        {
+            canSlide = true;
 
-        Instantiate(playerManager.player_SO.windSlash3Prefab, transform.position, aimer.rotation);
+            Instantiate(playerManager.player_SO.windSlash3Prefab, transform.position, aimer.rotation);
+        }
     }
 
     IEnumerator WindSlash3AnimationDuration()
@@ -252,7 +261,10 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(playerManager.player_SO.slicingWindsCastTime);
 
-        Instantiate(playerManager.player_SO.slicingWindsPrefab, transform.position, aimer.rotation);
+        if (state != PlayerState.Hurt)
+        {
+            Instantiate(playerManager.player_SO.slicingWindsPrefab, transform.position, aimer.rotation);
+        }
     }
 
     IEnumerator SlicingWindsDuration()
@@ -398,7 +410,10 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(playerManager.player_SO.heavyBlowCastTime);
 
-        Instantiate(playerManager.player_SO.heavyBlowPrefab, transform.position, aimer.rotation);
+        if (state != PlayerState.Hurt)
+        {
+            Instantiate(playerManager.player_SO.heavyBlowPrefab, transform.position, aimer.rotation);
+        }
     }
 
     void PlayerParry()
@@ -447,8 +462,10 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(playerManager.player_SO.whirlingSlashCastTime);
 
-        Instantiate(playerManager.player_SO.whirlingSlashPrefab, transform.position, aimer.rotation);
-        //Instantiate(playerManager.player_SO.heavyBlowPrefab, transform.position, aimer.rotation);
+        if (state != PlayerState.Hurt)
+        {
+            Instantiate(playerManager.player_SO.whirlingSlashPrefab, transform.position, aimer.rotation);
+        }
     }
 
     IEnumerator WhirlingSlashAnimationDuration()

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3374881051107148306}
   - component: {fileID: -2488191695574659083}
   - component: {fileID: 1193777359248740183}
+  - component: {fileID: 8190849417993951310}
   m_Layer: 0
   m_Name: WindSlash2
   m_TagString: Untagged
@@ -151,3 +152,15 @@ CapsuleCollider2D:
   m_Offset: {x: -0.005933272, y: -0.8905374}
   m_Size: {x: 2.50374, y: 1.7680221}
   m_Direction: 1
+--- !u!114 &8190849417993951310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8014090847236514753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9745e920a2bb4849a8dabfcbd7ad403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

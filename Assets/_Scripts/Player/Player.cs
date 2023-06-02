@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     protected bool canUltimate = true;
 
     public static event System.Action OnPlayerDeath;
+    public static event System.Action OnPlayerHurt;
 
     protected enum PlayerState
     {
@@ -222,6 +223,8 @@ public class Player : MonoBehaviour
             animator.Play("Hurt", 4, 0f);
 
             StartCoroutine(HurtAnimationDuration());
+
+            OnPlayerHurt?.Invoke();
         }
 
         if (playerManager.player_SO.health <= 0)

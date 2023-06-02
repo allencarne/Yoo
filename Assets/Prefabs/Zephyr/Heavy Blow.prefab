@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6731159717306367743}
   - component: {fileID: 7911860216181972054}
   - component: {fileID: 7313549998044115392}
+  - component: {fileID: 6850661558799708864}
   m_Layer: 0
   m_Name: Heavy Blow
   m_TagString: Untagged
@@ -151,3 +152,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zephyrHitSpark: {fileID: 8501758983010491550, guid: 753634479f7fcd749bfb4b553a4cde2e, type: 3}
   windSlashHitSpark: {fileID: 8921433344616605027, guid: 70d8a148474ae124c8b3947f4d68d1ad, type: 3}
+--- !u!114 &6850661558799708864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731159717306367741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9745e920a2bb4849a8dabfcbd7ad403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
