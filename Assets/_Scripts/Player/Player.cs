@@ -82,8 +82,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(state);
-
         switch (state)
         {
             case PlayerState.Spawn:
@@ -210,7 +208,7 @@ public class Player : MonoBehaviour
         UltimateKeyPressed();
     }
 
-    public void PlayerHurtState(float damage)
+    protected virtual void PlayerHurtState(float damage)
     {
 
         if (isPlayerHurt)

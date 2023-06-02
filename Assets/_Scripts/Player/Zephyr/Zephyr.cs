@@ -5,7 +5,7 @@ using UnityEngine;
 public class Zephyr : Player
 {
     [Header("WindSlash")]
-    bool isWindSlashActive = false;
+    //bool isWindSlashActive = false;
 
     [Header("Slicing Winds")]
     bool canSlicingWinds = false;
@@ -77,16 +77,6 @@ public class Zephyr : Player
             StartCoroutine(WindSlashCoolDown());
         }
 
-        // Instantiate WindSlash Prefab
-        if (isWindSlashActive)
-        {
-            isWindSlashActive = false;
-
-            canSlide = true;
-
-            Instantiate(playerManager.player_SO.windSlashPrefab, transform.position, aimer.rotation);
-        }
-
         BasicAttack2KeyPressed();
     }
 
@@ -94,7 +84,9 @@ public class Zephyr : Player
     {
         yield return new WaitForSeconds(playerManager.player_SO.windSlashCastTime);
 
-        isWindSlashActive = true;
+        canSlide = true;
+
+        Instantiate(playerManager.player_SO.windSlashPrefab, transform.position, aimer.rotation);
     }
 
     IEnumerator TransitionToWinsSlash2()
@@ -143,22 +135,21 @@ public class Zephyr : Player
             PauseAimer();
 
             StartCoroutine(UnpauseAimer(playerManager.player_SO.windSlashDuration));
-            StartCoroutine(WindSlashCastTime());
+            StartCoroutine(WindSlash2CastTime());
             StartCoroutine(TransitionToWinsSlash3());
             StartCoroutine(WindSlash2AnimationDuration());
         }
 
-        // Instantiate WindSlash Prefab
-        if (isWindSlashActive)
-        {
-            isWindSlashActive = false;
-
-            canSlide = true;
-
-            Instantiate(playerManager.player_SO.windSlash2Prefab, transform.position, aimer.rotation);
-        }
-
         BasicAttack3KeyPressed();
+    }
+
+    IEnumerator WindSlash2CastTime()
+    {
+        yield return new WaitForSeconds(playerManager.player_SO.windSlashCastTime);
+
+        canSlide = true;
+
+        Instantiate(playerManager.player_SO.windSlash2Prefab, transform.position, aimer.rotation);
     }
 
     IEnumerator TransitionToWinsSlash3()
@@ -200,19 +191,18 @@ public class Zephyr : Player
             PauseAimer();
 
             StartCoroutine(UnpauseAimer(playerManager.player_SO.windSlashDuration));
-            StartCoroutine(WindSlashCastTime());
+            StartCoroutine(WindSlash3CastTime());
             StartCoroutine(WindSlash3AnimationDuration());
         }
+    }
 
-        // Instantiate WindSlash Prefab
-        if (isWindSlashActive)
-        {
-            isWindSlashActive = false;
+    IEnumerator WindSlash3CastTime()
+    {
+        yield return new WaitForSeconds(playerManager.player_SO.windSlashCastTime);
 
-            canSlide = true;
+        canSlide = true;
 
-            Instantiate(playerManager.player_SO.windSlash3Prefab, transform.position, aimer.rotation);
-        }
+        Instantiate(playerManager.player_SO.windSlash3Prefab, transform.position, aimer.rotation);
     }
 
     IEnumerator WindSlash3AnimationDuration()
