@@ -416,7 +416,7 @@ MonoBehaviour:
   wanderRange: 1.5
   attackRange: 0.6
   biteTelegraph: {fileID: 3858061026189259149, guid: 97d7e12ba33348b4fa5974b793c6df10, type: 3}
-  biteCoolDown: 1.2
+  biteCoolDown: 3
 --- !u!212 &3249285051763241021
 SpriteRenderer:
   m_ObjectHideFlags: 0

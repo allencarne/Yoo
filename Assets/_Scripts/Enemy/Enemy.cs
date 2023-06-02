@@ -129,10 +129,13 @@ public class Enemy : MonoBehaviour
         // Chase State Movement
         if (state == EnemyState.chase && target != null)
         {
-            Vector2 direction = target.position - transform.position;
-            direction.Normalize();
+            if (Vector2.Distance(target.position, enemyRB.position) >= attackRange)
+            {
+                Vector2 direction = target.position - transform.position;
+                direction.Normalize();
 
-            enemyRB.MovePosition(enemyRB.position + direction * enemyMoveSpeed * Time.deltaTime);
+                enemyRB.MovePosition(enemyRB.position + direction * enemyMoveSpeed * Time.deltaTime);
+            }
         }
 
         // Reset State Movement
