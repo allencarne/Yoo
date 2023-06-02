@@ -588,7 +588,7 @@ MonoBehaviour:
   wanderRange: 1.5
   attackRange: 0.5
   shmackTelegraph: {fileID: 6699199583289124228, guid: 76f4bca37e36c9949bffa23dc56ea5fe, type: 3}
-  shmackCoolDown: 3
+  shmackCoolDown: 1.3
 --- !u!212 &7724802461809699462
 SpriteRenderer:
   m_ObjectHideFlags: 0
