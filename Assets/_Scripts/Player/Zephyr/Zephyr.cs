@@ -304,7 +304,7 @@ public class Zephyr : Player
             canMobility = false;
 
             // Animation
-            animator.Play("Run");
+            animator.Play("Dash");
             animator.Play("Run", 1);
 
             AngleToMouse();
