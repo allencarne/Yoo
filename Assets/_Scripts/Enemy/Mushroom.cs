@@ -46,6 +46,12 @@ public class Mushroom : Enemy
         if (enemyHealth <= 0)
         {
             OnMushroomDeath?.Invoke();
+
+            var player = PlayerManager.instance.playerInstance.GetComponent<LevelSystem>();
+            if (player)
+            {
+                player.GainExperienceFlatRate(expAmount);
+            }
         }
     }
 }

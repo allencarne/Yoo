@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float enemyMaxHealth;
     [SerializeField] float enemyMoveSpeed;
     [SerializeField] float enemyMaxMoveSpeed;
+    public float expAmount;
 
     [Header("Components")]
     StatusEffects statusEffects;

@@ -576,6 +576,7 @@ MonoBehaviour:
   enemyMaxHealth: 5
   enemyMoveSpeed: 0
   enemyMaxMoveSpeed: 1.5
+  expAmount: 1
   enemyUI: {fileID: 3678577336327877684}
   enemyHealthbar: {fileID: 3740568828636727594}
   enemyAnimator: {fileID: 7724802461809699463}

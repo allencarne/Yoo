@@ -2917,8 +2917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelText: {fileID: 8233113973042436955}
-  experienceText: {fileID: 0}
-  additionMultiplier: 300
+  additionMultiplier: 1
   powerMultiplier: 2
   divisionMultiplier: 7
 --- !u!1 &8233113973848941818

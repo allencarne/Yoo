@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Snail : Enemy
@@ -46,6 +47,12 @@ public class Snail : Enemy
         if (enemyHealth <= 0)
         {
             OnSnailDeath?.Invoke();
+
+            var player = PlayerManager.instance.playerInstance.GetComponent<LevelSystem>();
+            if (player)
+            {
+                player.GainExperienceFlatRate(expAmount);
+            }
         }
     }
 }

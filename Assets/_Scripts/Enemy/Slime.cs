@@ -46,6 +46,12 @@ public class Slime : Enemy
         if (enemyHealth <= 0)
         {
             OnSlimeDeath?.Invoke();
+
+            var player = PlayerManager.instance.playerInstance.GetComponent<LevelSystem>();
+            if (player)
+            {
+                player.GainExperienceFlatRate(expAmount);
+            }
         }
     }
 }
