@@ -4,10 +4,10 @@ using UnityEngine;
 public class PlayerScriptableObject : ScriptableObject
 {
     [Header("Player")]
-    [SerializeField] string playerName;
-    [SerializeField] int playerLevel;
-    [SerializeField] float currentExperience;
-    [SerializeField] float requiredExperience;
+    public string playerName;
+    public int playerLevel;
+    public float currentExperience;
+    public float requiredExperience;
 
     public float health;
     public float maxHealth;
