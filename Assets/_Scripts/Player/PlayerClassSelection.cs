@@ -16,6 +16,12 @@ public class PlayerClassSelection : MonoBehaviour
     public static bool staffEquipped;
     public static bool daggerEquipped;
 
+    [Header("Beginners")]
+    public static bool begginerWithSword;
+    public static bool begginerWithBow;
+    public static bool begginerWithStaff;
+    public static bool begginerWithDagger;
+
     [Header("Elements")]
     bool windEquipped;
     bool fireEquipped;
@@ -48,7 +54,6 @@ public class PlayerClassSelection : MonoBehaviour
 
     public static PlayerClass playerClass = PlayerClass.Beginner;
 
-    // Start is called before the first frame update
     void Start()
     {
         EquipmentManager.instance.onEquipmentChangedCallback += OnEquipmentChanged;
@@ -56,7 +61,6 @@ public class PlayerClassSelection : MonoBehaviour
 
     private void Update()
     {
-
         #region Class
 
         // Beginner
@@ -208,6 +212,46 @@ public class PlayerClassSelection : MonoBehaviour
         if (daggerEquipped && electricityEquipped)
         {
             playerClass = PlayerClass.ElectricityDagger;
+        }
+
+        #endregion
+
+        #region Begginer With Weapon
+        if (playerClass == PlayerClass.Beginner && swordEquipped)
+        {
+            begginerWithSword = true;
+        } 
+        else
+        {
+            begginerWithSword = false;
+        }
+
+        if (playerClass == PlayerClass.Beginner && bowEquipped)
+        {
+            begginerWithBow = true;
+        }
+        else
+        {
+            begginerWithBow = false;
+        }
+
+        if (playerClass == PlayerClass.Beginner && staffEquipped)
+        {
+            begginerWithStaff = true;
+        }
+        else
+        {
+            begginerWithStaff = false;
+        }
+
+        if (playerClass == PlayerClass.Beginner && daggerEquipped)
+        {
+            begginerWithDagger = true;
+        }
+        else
+        {
+            begginerWithDagger = false;
+
         }
 
         #endregion

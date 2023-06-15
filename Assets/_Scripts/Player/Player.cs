@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
         playerManager.player_SO.movementSpeed = playerManager.player_SO.maxMovementSpeed;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         switch (state)
         {

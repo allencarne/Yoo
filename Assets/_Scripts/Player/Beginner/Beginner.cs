@@ -4,6 +4,34 @@ using UnityEngine;
 
 public class Beginner : Player
 {
+    [Header("FireSlash")]
+    [SerializeField] GameObject fireSlashPrefab;
+    [SerializeField] float fireSlashCoolDown;
+    [SerializeField] bool isFireSlashActive;
+
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (PlayerClassSelection.begginerWithSword)
+        {
+            Debug.Log("Sword Test");
+        }
+        if (PlayerClassSelection.begginerWithBow)
+        {
+            Debug.Log("Bow Test");
+        }
+        if (PlayerClassSelection.begginerWithStaff)
+        {
+            Debug.Log("Staff Test");
+        }
+        if (PlayerClassSelection.begginerWithDagger)
+        {
+            Debug.Log("Dagger Test");
+        }
+    }
+
     protected override void PlayerIdleState()
     {
         // Animate Body
@@ -19,7 +47,7 @@ public class Beginner : Player
 
         // Tranitions
         MoveKeyPressed();
-        //BasicAttackKeyPressed();
+        BasicAttackKeyPressed();
     }
 
     protected override void PlayerRunState()
@@ -49,6 +77,83 @@ public class Beginner : Player
 
         // Transitions
         NoMoveKeyPressed();
-        //BasicAttackKeyPressed();
+        BasicAttackKeyPressed();
+    }
+
+    protected override void PlayerBasicAttackState()
+    {
+        if (PlayerClassSelection.begginerWithSword)
+        {
+            if (canBasicAttack)
+            {
+                canBasicAttack = false;
+
+                // Animation
+                animator.Play("Sword Swing Right");
+                animator.Play("Sword Swing Right", 1);
+
+                AngleToMouse();
+
+                SetAnimationDirection();
+
+                PauseAimer();
+
+                StartCoroutine(UnpauseAimer());
+                StartCoroutine(FireSlashCastTime());
+                StartCoroutine(FireSlashAnimationDuration());
+                StartCoroutine(FireSlashCoolDown());
+            }
+
+            if (isFireSlashActive)
+            {
+                isFireSlashActive = false;
+
+                canSlide = true;
+
+                Instantiate(fireSlashPrefab, transform.position, aimer.rotation);
+            }
+        }
+        if (PlayerClassSelection.begginerWithBow)
+        {
+            
+        }
+        if (PlayerClassSelection.begginerWithStaff)
+        {
+            
+        }
+        if (PlayerClassSelection.begginerWithDagger)
+        {
+            
+        }
+    }
+
+    IEnumerator FireSlashCastTime()
+    {
+        yield return new WaitForSeconds(.3f);
+
+        isFireSlashActive = true;
+    }
+
+    IEnumerator FireSlashAnimationDuration()
+    {
+        yield return new WaitForSeconds(.7f);
+
+        state = PlayerState.Idle;
+    }
+
+    IEnumerator FireSlashCoolDown()
+    {
+        yield return new WaitForSeconds(fireSlashCoolDown);
+
+        canBasicAttack = true;
+    }
+
+
+
+    IEnumerator UnpauseAimer()
+    {
+        yield return new WaitForSeconds(.3f);
+
+        AimIndicator.pauseDirection = false;
     }
 }
