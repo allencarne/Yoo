@@ -72,6 +72,10 @@ public class Player : MonoBehaviour
         cam = Camera.main;
         healthbar = GetComponentInParent<HealthBar>();
         furybar = GetComponentInParent<FuryBar>();
+
+        // Reset Player Level and Exp back to 1 at the start of the game (Testing)
+        playerManager.player_SO.currentExperience = 0;
+        playerManager.player_SO.playerLevel = 1;
     }
 
     protected virtual void Start()
