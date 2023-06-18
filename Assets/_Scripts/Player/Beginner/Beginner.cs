@@ -115,7 +115,34 @@ public class Beginner : Player
         }
         if (PlayerClassSelection.begginerWithBow)
         {
+            if (canBasicAttack)
+            {
+                canBasicAttack = false;
 
+                // Animation
+                animator.Play("Bow Shoot");
+                animator.Play("Bow Shoot", 2);
+
+                AngleToMouse();
+
+                SetAnimationDirection();
+
+                PauseAimer();
+
+                StartCoroutine(UnpauseAimer());
+                StartCoroutine(FireSlashCastTime());
+                StartCoroutine(FireSlashAnimationDuration());
+                StartCoroutine(FireSlashCoolDown());
+            }
+
+            if (isFireSlashActive)
+            {
+                isFireSlashActive = false;
+
+                canSlide = true;
+
+                Instantiate(fireSlashPrefab, transform.position, aimer.rotation);
+            }
         }
         if (PlayerClassSelection.begginerWithStaff)
         {
