@@ -148,6 +148,8 @@ public class Beginner : Player
                 angleToMouse = angleToMouse.normalized * 10;
 
                 arrowRB.AddForce(angleToMouse, ForceMode2D.Impulse);
+
+                Destroy(arrow, .7f);
             }
         }
         if (PlayerClassSelection.begginerWithStaff)
