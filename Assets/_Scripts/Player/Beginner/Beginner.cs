@@ -5,7 +5,8 @@ using UnityEngine;
 public class Beginner : Player
 {
     [Header("FireSlash")]
-    [SerializeField] GameObject fireSlashPrefab;
+    [SerializeField] GameObject beginnerSwordAttack;
+    [SerializeField] GameObject beginnerBowAttack;
     [SerializeField] float fireSlashCoolDown;
     [SerializeField] bool isFireSlashActive;
 
@@ -110,7 +111,7 @@ public class Beginner : Player
 
                 canSlide = true;
 
-                Instantiate(fireSlashPrefab, transform.position, aimer.rotation);
+                Instantiate(beginnerSwordAttack, transform.position, aimer.rotation);
             }
         }
         if (PlayerClassSelection.begginerWithBow)
@@ -141,7 +142,12 @@ public class Beginner : Player
 
                 canSlide = true;
 
-                Instantiate(fireSlashPrefab, transform.position, aimer.rotation);
+                var arrow = Instantiate(beginnerBowAttack, transform.position, aimer.rotation);
+                var arrowRB = arrow.GetComponent<Rigidbody2D>();
+
+                angleToMouse = angleToMouse.normalized * 10;
+
+                arrowRB.AddForce(angleToMouse, ForceMode2D.Impulse);
             }
         }
         if (PlayerClassSelection.begginerWithStaff)
@@ -172,7 +178,7 @@ public class Beginner : Player
 
                 canSlide = true;
 
-                Instantiate(fireSlashPrefab, transform.position, aimer.rotation);
+                Instantiate(beginnerSwordAttack, transform.position, aimer.rotation);
             }
         }
         if (PlayerClassSelection.begginerWithDagger)

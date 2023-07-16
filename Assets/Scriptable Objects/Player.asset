@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   playerName: AllenRene
-  playerLevel: 1
-  currentExperience: 0
-  requiredExperience: 0
-  health: 10
+  playerLevel: 13
+  currentExperience: 28
+  requiredExperience: 28
+  health: 8
   maxHealth: 10
   movementSpeed: 5
   maxMovementSpeed: 5
   attackDamage: 1
   attackSpeed: 1
-  fury: 0
+  fury: 29
   maxFury: 50
   windSlashPrefab: {fileID: 4553433666271236552, guid: c400f6e4aad52334eab165d98d7f3da3, type: 3}
   windSlash2Prefab: {fileID: 8014090847236514753, guid: 26561020d47655c4fad0475a7b5ecefb, type: 3}
