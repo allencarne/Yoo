@@ -142,7 +142,7 @@ public class Beginner : Player
 
                 canSlide = true;
 
-                var arrow = Instantiate(beginnerBowAttack, transform.position, aimer.rotation);
+                var arrow = Instantiate(beginnerBowAttack,midAimer.position, midAimer.rotation);
                 var arrowRB = arrow.GetComponent<Rigidbody2D>();
 
                 angleToMouse = angleToMouse.normalized * 10;
@@ -150,6 +150,25 @@ public class Beginner : Player
                 arrowRB.AddForce(angleToMouse, ForceMode2D.Impulse);
 
                 Destroy(arrow, .7f);
+
+                /*
+
+                Vector3 mousePosition = Input.mousePosition;
+
+                mousePosition.z = 10f; // Set a distance from the camera
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+                // Calculate the direction from the launcher to the mouse position
+                Vector2 direction = (worldPosition - midAimer.position).normalized;
+
+                // Instantiate the projectile at the launcher position
+                GameObject newProjectile = Instantiate(beginnerBowAttack, midAimer.position, Quaternion.identity);
+
+                // Set the velocity of the projectile to move in the calculated direction
+                Rigidbody2D projectileRb = newProjectile.GetComponent<Rigidbody2D>();
+                projectileRb.velocity = direction * 10;
+
+                */
             }
         }
         if (PlayerClassSelection.begginerWithStaff)

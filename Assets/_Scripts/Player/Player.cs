@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     [HideInInspector] HealthBar healthbar;
     [HideInInspector] FuryBar furybar;
     [SerializeField] protected Transform aimer;
+    [SerializeField] protected Transform midAimer;
     [SerializeField] GameObject floatingTextDamage;
     [SerializeField] GameObject floatingTextHeal;
 
@@ -215,7 +216,6 @@ public class Player : MonoBehaviour
 
     protected virtual void PlayerHurtState(float damage)
     {
-
         if (isPlayerHurt)
         {
             isPlayerHurt = false;
