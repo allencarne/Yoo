@@ -145,30 +145,27 @@ public class Beginner : Player
                 var arrow = Instantiate(beginnerBowAttack,midAimer.position, midAimer.rotation);
                 var arrowRB = arrow.GetComponent<Rigidbody2D>();
 
-                angleToMouse = angleToMouse.normalized * 10;
-
-                arrowRB.AddForce(angleToMouse, ForceMode2D.Impulse);
-
-                Destroy(arrow, .7f);
-
-                /*
-
                 Vector3 mousePosition = Input.mousePosition;
-
                 mousePosition.z = 10f; // Set a distance from the camera
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
                 // Calculate the direction from the launcher to the mouse position
                 Vector2 direction = (worldPosition - midAimer.position).normalized;
 
+                arrowRB.AddForce(direction * 10, ForceMode2D.Impulse);
+
+                //angleToMouse = angleToMouse.normalized * 10;
+                //arrowRB.AddForce(angleToMouse, ForceMode2D.Impulse);
+                //Destroy(arrow, .7f);
+
+
                 // Instantiate the projectile at the launcher position
-                GameObject newProjectile = Instantiate(beginnerBowAttack, midAimer.position, Quaternion.identity);
+                //GameObject newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
                 // Set the velocity of the projectile to move in the calculated direction
-                Rigidbody2D projectileRb = newProjectile.GetComponent<Rigidbody2D>();
-                projectileRb.velocity = direction * 10;
+                //Rigidbody2D projectileRb = newProjectile.GetComponent<Rigidbody2D>();
+                //projectileRb.velocity = direction * projectileSpeed;
 
-                */
             }
         }
         if (PlayerClassSelection.begginerWithStaff)
